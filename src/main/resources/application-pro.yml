@@ -5,7 +5,7 @@ spring:
   
   # mysql 的数据库配置
   datasource:
-    url: jdbc:mysql://localhost:3306/youkong?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    url: jdbc:mysql://localhost:3306/datacentor?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username: root
     password: admin
     driver-class-name: com.mysql.jdbc.Driver
