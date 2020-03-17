@@ -8,7 +8,7 @@ public class HelloController {
 	
 	@RequestMapping("/Hello")
 	public String welcome() {
-		return "HelloGit";
+		return "HelloGitV1";
 	}
 }
 	
