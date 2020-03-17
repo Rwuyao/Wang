@@ -1,0 +1,23 @@
+server:
+  port: 8061
+
+spring:
+  
+  # mysql 的数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/youkong?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+    
+  http:
+   encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+      
+      
+#mybatis 配置
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: org.datacenter.model
