@@ -8,7 +8,9 @@ class WangApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 		System.out.println("test");
+
 	}
 
 }
