@@ -1,0 +1,881 @@
+2020-03-18 13:40:29 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 8964 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 13:40:29 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 13:40:29 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 13:40:29 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 13:40:29 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 13:40:29 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 13:40:29 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 13:40:29 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 13:40:29 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 13:40:29 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 13:40:29 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 13:40:29 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 139 ms
+2020-03-18 13:40:29 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 13:40:30 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-8} inited
+2020-03-18 13:40:30 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:40:30 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 13:40:30 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 13:40:30 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.372 seconds (JVM running for 1927.983)
+2020-03-18 13:40:30 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 13:40:39 [Thread-40] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:40:39 [Thread-40] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-8} closing ...
+2020-03-18 13:40:39 [Thread-40] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-8} closed
+2020-03-18 13:40:39 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 8964 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 13:40:39 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 13:40:39 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 13:40:39 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 13:40:39 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 13:40:39 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 13:40:39 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 13:40:39 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 13:40:39 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 13:40:39 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 13:40:39 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 13:40:39 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 128 ms
+2020-03-18 13:40:39 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 13:40:39 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-9} inited
+2020-03-18 13:40:39 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:40:40 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 13:40:40 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 13:40:40 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.335 seconds (JVM running for 1937.917)
+2020-03-18 13:40:40 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 13:41:14 [Thread-45] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:41:14 [Thread-45] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-9} closing ...
+2020-03-18 13:41:14 [Thread-45] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-9} closed
+2020-03-18 13:41:14 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Filename pattern [./log/error/error.%d{yyyy-MM-dd}.%i.log.gz] contains an integer token converter, i.e. %i, INCOMPATIBLE with this configuration. Remove it.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:288)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.datacenter.WangApplication.main(WangApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2020-03-18 13:42:11 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Filename pattern [./log/error/error.%d{yyyy-MM-dd}.%i.log.gz] contains an integer token converter, i.e. %i, INCOMPATIBLE with this configuration. Remove it.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:288)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.datacenter.WangApplication.main(WangApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2020-03-18 13:43:34 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 15044 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 13:43:34 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 13:43:34 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-18 13:43:34 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-18 13:43:35 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 13:43:35 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:43:35 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 13:43:35 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 13:43:35 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 13:43:35 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 13:43:35 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 13:43:35 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 13:43:35 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 13:43:35 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 13:43:35 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 691 ms
+2020-03-18 13:43:35 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 13:43:35 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-18 13:43:35 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:43:36 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 13:43:36 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:43:36 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 13:43:36 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 1.763 seconds (JVM running for 2.322)
+2020-03-18 13:43:52 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 13:43:52 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-18 13:43:52 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-03-18 13:45:42 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2020-03-18 13:45:42 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:45:42 [RMI TCP Connection(2)-127.0.0.1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-03-18 13:45:42 [RMI TCP Connection(2)-127.0.0.1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-03-18 13:49:00 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 6560 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 13:49:00 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 13:49:00 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-18 13:49:00 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-18 13:49:00 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 13:49:00 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:49:00 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 13:49:00 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 13:49:00 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 13:49:00 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 13:49:00 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 13:49:00 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 13:49:00 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 13:49:00 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 13:49:00 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 697 ms
+2020-03-18 13:49:01 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 13:49:01 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-18 13:49:01 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:49:01 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 13:49:01 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:49:01 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 13:49:01 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 1.763 seconds (JVM running for 2.316)
+2020-03-18 13:51:55 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 13:51:55 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-18 13:51:55 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-03-18 13:54:32 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:54:32 [Thread-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-03-18 13:54:32 [Thread-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-03-18 13:54:32 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 6560 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 13:54:32 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 13:54:32 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 13:54:32 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:54:32 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 13:54:32 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 13:54:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 13:54:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 13:54:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 13:54:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 13:54:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 13:54:32 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 13:54:32 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 159 ms
+2020-03-18 13:54:32 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 13:54:32 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2020-03-18 13:54:32 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:54:32 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 13:54:32 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:54:32 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 13:54:32 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.4 seconds (JVM running for 333.396)
+2020-03-18 13:54:32 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 13:55:25 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 13:55:25 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-18 13:55:25 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-03-18 13:56:50 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:56:50 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closing ...
+2020-03-18 13:56:50 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2020-03-18 13:56:50 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 6560 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 13:56:50 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 13:56:51 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 13:56:51 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:56:51 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 13:56:51 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 13:56:51 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 13:56:51 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 13:56:51 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 13:56:51 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 13:56:51 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 13:56:51 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 13:56:51 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 144 ms
+2020-03-18 13:56:51 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 13:56:51 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2020-03-18 13:56:51 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:56:51 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 13:56:51 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:56:51 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 13:56:51 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.376 seconds (JVM running for 471.818)
+2020-03-18 13:56:51 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 13:56:58 [Thread-13] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:56:58 [Thread-13] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} closing ...
+2020-03-18 13:56:58 [Thread-13] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} closed
+2020-03-18 13:56:58 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 6560 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 13:56:58 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 13:56:59 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 13:56:59 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:56:59 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 13:56:59 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 13:56:59 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 13:56:59 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 13:56:59 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 13:56:59 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 13:56:59 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 13:56:59 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 13:56:59 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 163 ms
+2020-03-18 13:56:59 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 13:56:59 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2020-03-18 13:56:59 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:56:59 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 13:56:59 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:56:59 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 13:56:59 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.406 seconds (JVM running for 479.818)
+2020-03-18 13:56:59 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 13:57:05 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2020-03-18 13:57:05 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:57:05 [RMI TCP Connection(2)-127.0.0.1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} closing ...
+2020-03-18 13:57:05 [RMI TCP Connection(2)-127.0.0.1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} closed
+2020-03-18 13:57:12 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 15584 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 13:57:12 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 13:57:12 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-18 13:57:12 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-18 13:57:13 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 13:57:13 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:57:13 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 13:57:13 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 13:57:13 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 13:57:13 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 13:57:13 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 13:57:13 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 13:57:13 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 13:57:13 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 13:57:13 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 748 ms
+2020-03-18 13:57:13 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 13:57:13 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-18 13:57:13 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:57:13 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 13:57:13 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:57:13 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 13:57:13 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 1.986 seconds (JVM running for 2.635)
+2020-03-18 13:57:49 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 13:57:49 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-18 13:57:50 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-03-18 13:58:53 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2020-03-18 13:58:53 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:58:53 [RMI TCP Connection(2)-127.0.0.1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-03-18 13:58:53 [RMI TCP Connection(2)-127.0.0.1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-03-18 13:59:07 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 15572 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 13:59:07 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 13:59:07 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-18 13:59:07 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-18 13:59:07 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 13:59:07 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:59:07 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 13:59:07 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 13:59:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 13:59:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 13:59:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 13:59:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 13:59:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 13:59:07 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 13:59:07 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 731 ms
+2020-03-18 13:59:07 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 13:59:08 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-18 13:59:08 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 13:59:08 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 13:59:08 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 13:59:08 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 13:59:08 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 1.88 seconds (JVM running for 2.442)
+2020-03-18 13:59:25 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 13:59:25 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-18 13:59:25 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-03-18 14:00:41 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:00:41 [Thread-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-03-18 14:00:41 [Thread-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-03-18 14:00:41 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 15572 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:00:41 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:00:41 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:00:41 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:00:41 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:00:41 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:00:41 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:00:41 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:00:41 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:00:41 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:00:41 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:00:41 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:00:41 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 161 ms
+2020-03-18 14:00:41 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:00:41 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2020-03-18 14:00:41 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:00:41 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:00:41 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:00:41 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:00:41 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.418 seconds (JVM running for 95.546)
+2020-03-18 14:00:41 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:00:50 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 14:00:50 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-18 14:00:50 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2020-03-18 14:01:48 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:01:48 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closing ...
+2020-03-18 14:01:48 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2020-03-18 14:01:48 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 15572 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:01:48 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:01:48 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:01:48 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:01:48 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:01:48 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:01:48 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:01:48 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:01:48 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:01:48 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:01:48 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:01:48 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:01:48 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 148 ms
+2020-03-18 14:01:48 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:01:48 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2020-03-18 14:01:48 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:01:48 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:01:49 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:01:49 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 14:01:49 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.384 seconds (JVM running for 162.731)
+2020-03-18 14:01:49 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:01:56 [Thread-13] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:01:56 [Thread-13] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} closing ...
+2020-03-18 14:01:56 [Thread-13] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} closed
+2020-03-18 14:01:56 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 15572 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:01:56 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:01:56 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:01:56 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:01:56 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:01:56 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:01:56 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:01:56 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:01:56 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:01:56 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:01:56 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:01:56 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:01:56 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 148 ms
+2020-03-18 14:01:56 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:01:56 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2020-03-18 14:01:56 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:01:56 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:01:57 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:01:57 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-18 14:01:57 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.394 seconds (JVM running for 170.723)
+2020-03-18 14:01:57 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:02:33 [Thread-18] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:02:33 [Thread-18] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} closing ...
+2020-03-18 14:02:33 [Thread-18] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} closed
+2020-03-18 14:02:33 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 15572 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:02:33 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:02:33 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:02:33 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:02:33 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:02:33 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:02:33 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:02:33 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:02:33 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:02:33 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:02:33 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:02:33 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:02:33 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 181 ms
+2020-03-18 14:02:33 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:02:34 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} inited
+2020-03-18 14:02:34 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:02:34 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:02:34 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:02:34 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:02:34 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.42 seconds (JVM running for 207.876)
+2020-03-18 14:02:34 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:02:41 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 14:02:41 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-18 14:02:41 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-03-18 14:03:03 [Thread-23] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:03:03 [Thread-23] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} closing ...
+2020-03-18 14:03:03 [Thread-23] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} closed
+2020-03-18 14:03:08 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:03:08 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:03:09 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-18 14:03:09 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-18 14:03:09 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:03:09 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:03:09 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:03:09 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:03:09 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:03:09 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:03:09 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:03:09 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:03:09 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:03:09 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:03:09 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 827 ms
+2020-03-18 14:03:09 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:03:10 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-18 14:03:10 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:03:10 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:03:10 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:03:10 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:03:10 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 2.058 seconds (JVM running for 2.649)
+2020-03-18 14:08:44 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:08:44 [Thread-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-03-18 14:08:44 [Thread-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-03-18 14:08:44 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:08:44 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:08:44 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:08:44 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:08:44 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:08:44 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:08:44 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:08:44 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:08:44 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:08:44 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:08:44 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:08:44 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:08:44 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 160 ms
+2020-03-18 14:08:44 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:08:44 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2020-03-18 14:08:44 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:08:44 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:08:44 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:08:44 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:08:44 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.417 seconds (JVM running for 336.672)
+2020-03-18 14:08:44 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:09:11 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:09:11 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closing ...
+2020-03-18 14:09:11 [Thread-8] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2020-03-18 14:09:11 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:09:11 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:09:11 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:09:11 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:09:11 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:09:11 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:09:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:09:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:09:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:09:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:09:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:09:11 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:09:11 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 156 ms
+2020-03-18 14:09:11 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:09:11 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2020-03-18 14:09:11 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:09:11 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:09:11 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:09:11 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:09:11 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.422 seconds (JVM running for 363.762)
+2020-03-18 14:09:11 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:09:20 [Thread-13] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:09:20 [Thread-13] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} closing ...
+2020-03-18 14:09:20 [Thread-13] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-3} closed
+2020-03-18 14:09:20 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:09:20 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:09:20 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:09:20 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:09:20 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:09:20 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:09:20 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:09:20 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:09:20 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:09:20 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:09:20 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:09:20 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:09:20 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 143 ms
+2020-03-18 14:09:20 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:09:20 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2020-03-18 14:09:20 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:09:20 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:09:20 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:09:20 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:09:20 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.37 seconds (JVM running for 372.707)
+2020-03-18 14:09:20 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:09:31 [Thread-18] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:09:31 [Thread-18] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} closing ...
+2020-03-18 14:09:31 [Thread-18] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-4} closed
+2020-03-18 14:09:31 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:09:31 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:09:31 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:09:31 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:09:31 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:09:31 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:09:31 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:09:31 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:09:31 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:09:31 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:09:31 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:09:31 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:09:31 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 171 ms
+2020-03-18 14:09:31 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:09:31 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} inited
+2020-03-18 14:09:31 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:09:31 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:09:31 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:09:31 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:09:31 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.391 seconds (JVM running for 383.696)
+2020-03-18 14:09:31 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:15:31 [Thread-23] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:15:31 [Thread-23] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} closing ...
+2020-03-18 14:15:31 [Thread-23] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} closed
+2020-03-18 14:15:31 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:15:31 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:15:32 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:15:32 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:15:32 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:15:32 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:15:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:15:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:15:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:15:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:15:32 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:15:32 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:15:32 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 155 ms
+2020-03-18 14:15:32 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:15:32 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-6} inited
+2020-03-18 14:15:32 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:15:32 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:15:32 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:15:32 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:15:32 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.381 seconds (JVM running for 744.135)
+2020-03-18 14:15:32 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:18:04 [Thread-28] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:18:04 [Thread-28] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-6} closing ...
+2020-03-18 14:18:04 [Thread-28] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-6} closed
+2020-03-18 14:18:04 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:18:04 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:18:04 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:18:04 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:18:04 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:18:04 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:18:04 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:18:04 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:18:04 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:18:04 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:18:04 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:18:04 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:18:04 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:18:04 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 136 ms
+2020-03-18 14:18:04 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:18:04 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-7} inited
+2020-03-18 14:18:04 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:18:04 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:18:04 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:18:04 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:18:04 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.353 seconds (JVM running for 896.65)
+2020-03-18 14:18:04 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   DruidSpringAopConfiguration matched:
+      - @ConditionalOnProperty (spring.datasource.druid.aop-patterns) matched (OnPropertyCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2020-03-18 14:18:19 [Thread-33] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:18:19 [Thread-33] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-7} closing ...
+2020-03-18 14:18:19 [Thread-33] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-7} closed
+2020-03-18 14:18:19 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:18:19 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:18:19 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:18:19 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:18:19 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:18:19 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:18:19 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:18:19 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:18:19 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:18:19 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:18:19 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:18:19 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:18:19 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:18:19 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 143 ms
+2020-03-18 14:18:19 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:18:19 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-8} inited
+2020-03-18 14:18:19 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:18:19 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:18:19 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:18:19 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:18:19 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.366 seconds (JVM running for 911.617)
+2020-03-18 14:18:19 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:18:28 [Thread-38] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:18:28 [Thread-38] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-8} closing ...
+2020-03-18 14:18:28 [Thread-38] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-8} closed
+2020-03-18 14:18:28 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:18:28 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:18:28 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:18:28 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:18:28 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:18:28 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:18:28 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:18:28 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:18:28 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:18:28 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:18:28 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:18:28 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:18:28 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:18:28 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 140 ms
+2020-03-18 14:18:28 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:18:28 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-9} inited
+2020-03-18 14:18:28 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:18:28 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:18:28 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:18:28 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:18:28 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.359 seconds (JVM running for 920.559)
+2020-03-18 14:18:28 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:18:46 [Thread-43] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:18:46 [Thread-43] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-9} closing ...
+2020-03-18 14:18:46 [Thread-43] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-9} closed
+2020-03-18 14:18:46 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:18:46 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:18:46 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:18:46 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:18:46 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:18:46 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:18:46 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:18:46 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:18:46 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:18:46 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:18:46 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:18:46 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:18:46 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:18:46 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 144 ms
+2020-03-18 14:18:46 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:18:46 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-10} inited
+2020-03-18 14:18:46 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:18:46 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:18:46 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:18:46 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:18:46 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.37 seconds (JVM running for 938.564)
+2020-03-18 14:18:46 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:19:49 [Thread-48] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:19:49 [Thread-48] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-10} closing ...
+2020-03-18 14:19:49 [Thread-48] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-10} closed
+2020-03-18 14:19:49 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:19:49 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:19:49 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:19:49 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:19:49 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:19:49 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:19:49 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:19:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:19:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:19:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:19:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:19:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:19:49 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:19:49 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 138 ms
+2020-03-18 14:19:49 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:19:49 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-11} inited
+2020-03-18 14:19:49 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:19:49 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:19:49 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:19:49 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:19:49 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.353 seconds (JVM running for 1001.684)
+2020-03-18 14:19:49 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:20:11 [Thread-53] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:20:11 [Thread-53] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-11} closing ...
+2020-03-18 14:20:11 [Thread-53] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-11} closed
+2020-03-18 14:20:11 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:20:11 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:20:11 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:20:11 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:20:11 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:20:11 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:20:11 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:20:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:20:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:20:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:20:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:20:11 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:20:11 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:20:11 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 131 ms
+2020-03-18 14:20:11 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:20:11 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-12} inited
+2020-03-18 14:20:11 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:20:11 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:20:11 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:20:11 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:20:11 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.343 seconds (JVM running for 1023.65)
+2020-03-18 14:20:11 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   DruidStatViewServletConfiguration matched:
+      - @ConditionalOnWebApplication (required) found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnProperty (spring.datasource.druid.stat-view-servlet.enabled=true) matched (OnPropertyCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2020-03-18 14:20:23 [Thread-58] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:20:23 [Thread-58] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-12} closing ...
+2020-03-18 14:20:23 [Thread-58] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-12} closed
+2020-03-18 14:20:23 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:20:23 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:20:23 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:20:23 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:20:23 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:20:23 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:20:23 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:20:23 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:20:23 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:20:23 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:20:23 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:20:23 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:20:23 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:20:23 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 133 ms
+2020-03-18 14:20:23 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:20:23 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-13} inited
+2020-03-18 14:20:23 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:20:23 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:20:23 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:20:23 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:20:23 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.344 seconds (JVM running for 1035.588)
+2020-03-18 14:20:23 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:20:49 [Thread-63] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:20:49 [Thread-63] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-13} closing ...
+2020-03-18 14:20:49 [Thread-63] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-13} closed
+2020-03-18 14:20:49 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:20:49 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:20:49 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:20:49 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:20:49 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:20:49 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:20:49 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:20:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:20:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:20:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:20:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:20:49 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:20:49 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:20:49 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 130 ms
+2020-03-18 14:20:49 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:20:49 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-14} inited
+2020-03-18 14:20:49 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:20:49 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:20:49 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:20:49 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:20:49 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.346 seconds (JVM running for 1061.592)
+2020-03-18 14:20:49 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:20:53 [Thread-68] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:20:53 [Thread-68] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-14} closing ...
+2020-03-18 14:20:53 [Thread-68] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-14} closed
+2020-03-18 14:20:53 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:20:53 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:20:53 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:20:53 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-18 14:20:53 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:20:53 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:20:53 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:20:53 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:20:53 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:20:53 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:20:53 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:20:53 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:20:53 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:20:53 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 128 ms
+2020-03-18 14:20:53 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:20:53 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-15} inited
+2020-03-18 14:20:53 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:20:53 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:20:53 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-18 14:20:53 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/wang'
+2020-03-18 14:20:53 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.339 seconds (JVM running for 1065.513)
+2020-03-18 14:20:53 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:21:04 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 14:21:04 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-18 14:21:04 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-03-18 14:23:02 [Thread-73] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:23:02 [Thread-73] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-15} closing ...
+2020-03-18 14:23:02 [Thread-73] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-15} closed
+2020-03-18 14:23:02 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:23:02 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:23:02 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:23:02 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9001 (http)
+2020-03-18 14:23:02 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9001"]
+2020-03-18 14:23:02 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:23:02 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:23:02 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:23:02 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:23:02 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:23:02 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:23:02 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:23:02 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/wang] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:23:02 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 153 ms
+2020-03-18 14:23:02 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:23:02 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-16} inited
+2020-03-18 14:23:02 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:23:02 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:23:02 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9001"]
+2020-03-18 14:23:02 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9001 (http) with context path '/wang'
+2020-03-18 14:23:02 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.398 seconds (JVM running for 1194.862)
+2020-03-18 14:23:02 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:23:07 [Thread-78] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:23:07 [Thread-78] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-16} closing ...
+2020-03-18 14:23:07 [Thread-78] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-16} closed
+2020-03-18 14:23:07 [restartedMain] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 4208 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-18 14:23:07 [restartedMain] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-18 14:23:07 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-18 14:23:07 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9001 (http)
+2020-03-18 14:23:07 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9001"]
+2020-03-18 14:23:07 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-18 14:23:07 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-18 14:23:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-18 14:23:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-18 14:23:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-18 14:23:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-18 14:23:07 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-18 14:23:07 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-18 14:23:07 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 135 ms
+2020-03-18 14:23:07 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-18 14:23:07 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-17} inited
+2020-03-18 14:23:07 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-18 14:23:07 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-03-18 14:23:07 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9001"]
+2020-03-18 14:23:07 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9001 (http) with context path ''
+2020-03-18 14:23:07 [restartedMain] INFO  org.datacenter.WangApplication - Started WangApplication in 0.346 seconds (JVM running for 1199.795)
+2020-03-18 14:23:07 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-03-18 14:25:12 [http-nio-9001-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-18 14:25:12 [http-nio-9001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-18 14:25:12 [http-nio-9001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-03-18 14:32:01 [http-nio-9001-exec-5] WARN  org.apache.catalina.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [162] milliseconds.

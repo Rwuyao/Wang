@@ -1,14 +1,69 @@
 server:
-  port: 8061
-
+  port: 9001
+#  servlet:
+#    context-path: /wang
 spring:
   
   # mysql 的数据库配置
   datasource:
-    url: jdbc:mysql://localhost:3306/datacentor?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    url: jdbc:mysql://localhost:3306/wang?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
     username: root
     password: admin
     driver-class-name: com.mysql.jdbc.Driver
+    # druid數據源配置
+    druid:
+      # Druid 数据源配置，继承spring.datasource.* 配置，相同则覆盖
+      initial-size: 5
+      min-idle: 5
+      maxActive: 20
+      # 配置获取连接等待超时的时间
+      maxWait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      aop-patterns: org.datacenter.service.*
+     
+      # Filter 配置 其他 Filter 不再演示
+      filter:      
+        slf4j:
+          enabled: true
+        wall:
+          enabled: true
+        stat:
+          enabled: true
+          
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+    
+     # 配置下面参数用于启动监控页面，考虑安全问题，默认是关闭的，按需开启
+      web-stat-filter:
+        enabled: true
+        url-pattern: "/*"
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+
+      stat-view-servlet:
+        enabled: true
+        url-pattern: "/druid/*"
+        # IP白名单(没有配置或者为空，则允许所有访问)
+        # allow: 127.0.0.1,192.168.46.120
+        # IP黑名单 (存在共同时，deny优先于allow)
+        # deny: 192.168.46.121
+        #  禁用HTML页面上的“Reset All”功能
+        reset-enable: false
+        # 登录名
+        login-username: admin
+        # 登录密码
+        login-password: 123456
+   
+   
     
   http:
    encoding:
