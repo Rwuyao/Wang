@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.datacenter.mapper.RoleMapper">
+ 
+ <resultMap id="roles" type="org.datacenter.model.Role">
+  <result column="rolename" property="rolename"/>
+  <collection property="Resources" ofType="org.datacenter.model.Resource">
+    <result column="resource"  property="resource" />  
+    <result column="url"  property="url" /> 
+  </collection>
+</resultMap>
+ 
+    <select id="findRoleByRoleName" resultMap="roles">
+       select c.*,e.*  from   role  c left join role_resource d on c.rolename= d.rolename left join  resource e on  d.resource and e.resource
+         where c.rolename in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">  
+           =#{item}  
+        </foreach>  
+    </select>
+ 
+</mapper>

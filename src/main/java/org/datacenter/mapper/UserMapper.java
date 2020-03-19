@@ -6,5 +6,5 @@ import org.datacenter.model.User;
 @Mapper
 public interface  UserMapper {
 
-	User getUser(String account);  
+	User findByUserName(String username);  
 }

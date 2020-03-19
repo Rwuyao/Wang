@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.datacenter.mapper.UserMapper">
  
-    <select id="getUser" resultType="org.datacenter.model.User">
-        select * from user where account = #{account}
+   <select id="findByUserName" resultType="org.datacenter.model.User">
+       select a.*,c.*  from  user a,user_role b, role c where a.user=#{username} a.username=b.username and b.rolename=c.rolename 
     </select>
  
 </mapper>

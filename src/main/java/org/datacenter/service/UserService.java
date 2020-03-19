@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
 	 @Autowired UserMapper userMapper;
-	    public User getUser(String account){
-	        return userMapper.getUser(account);
+	    public User findByUserName(String username){
+	        return userMapper.findByUserName(username);
 	    }
 }

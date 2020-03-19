@@ -22,7 +22,7 @@ class WangApplicationTests {
 	@Test
 	void userService() {
 
-	User user=	userService.getUser("wangmin");
+	User user=	userService.findByUserName("wangmin");
 	System.out.println(user.getUsername());
 	}
 
