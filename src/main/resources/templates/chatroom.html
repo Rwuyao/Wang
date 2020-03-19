@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>测试websocket</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet"  th:href="@{/bootstrap/css/bootstrap.min.css}" >
+<body>
+
+<div class="container">
+ 
+ <div class="row">
+ 
+	<div class="col-md-8">
+		 <div class="jumbotron" style="width:100%;height:600px;overflow: auto;" id="chatbox">		 	
+		</div> 
+	
+	</div>
+	<div  class="col-md-4">
+  		 <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="stchannel">用户</label>
+        </div>
+        <select class="custom-select" id="stchannel">
+            <option selected value="Everyone">Everyone</option>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="ipmsg">
+        <div class="input-group-append">
+            <span class="input-group-text" onclick="btnsend()" id="btnsend">Send</span>
+        </div>
+    </div>
+	</div>
+ </div>
+</div>
+<script type="text/javascript" th:src="@{/js/jquery.min.js}" ></script>
+<script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.min.js}" ></script>
+<script language=javascript>
+	var websocket;
+	
+	$(function(){ 
+		 connect(); 
+	}); 
+
+	function disconnect(){
+		  if(websocket != null) {
+			  websocket.disconnect();
+	        }
+		  $("#btnconnect").removeClass("disabled"); // 追加样式     
+	}
+	
+	 function connect(){	 		  
+	        if ('WebSocket' in window) {
+	            console.log("WebSocket");
+	            websocket = new WebSocket("ws://localhost:9002/chat");
+	        } else if ('MozWebSocket' in window) {
+	            console.log("MozWebSocket");
+	            websocket = new MozWebSocket("ws://chat");
+	        } else {
+	            console.log("SockJS");
+	            websocket = new SockJS("http://127.0.0.1:9002/sockjs/chat");
+	        }
+	        websocket.onopen = function (evnt) {
+	            console.log("链接服务器成功!", evnt.data);
+	        };
+	        websocket.onmessage = function (evnt) {
+	            console.log('收到消息:', evnt.data);
+	            var json = JSON.parse(evnt.data);
+	            if (json.hasOwnProperty('users')) {
+	                var users = json.users;
+	                for (var i = 0; i < users.length; i++) {
+	                    $("#stchannel").append('<option value="' + users[i] + '">' + users[i] + '</option>');
+	                }
+	            } else {
+	                //打印消息
+	                $("#chatbox").append("<div ><span>"+json.username+" </span><span class='alert alert-success'>"+json.msg+"</span></div>");	               
+	            }
+	        };
+	        websocket.onerror = function (evnt) {
+	        };
+	        websocket.onclose = function (evnt) {
+	            console.log("与服务器断开了链接!")
+	        }		 
+	 }
+	 
+	function btnsend(){
+		 var url="/send";
+		 var value =$("#ipmsg").val();
+         //得到选择的用户
+         var name = $("#stchannel option:selected").val();
+         var type=1;
+         if (name != 'Everyone') {
+        	 type=2;
+         }
+		
+		//进行登录，登录成功则进行websocket连接
+		$.ajax({
+        type: "post",
+        url: url,
+//      data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
+        data: {"tousername":name,"msg": value,"type":type},
+        cache: false,
+        async : false,
+        dataType: "json",
+        success: function (data ,textStatus, jqXHR)
+        {
+        	if(data.code==200){
+        				
+        	}
+            
+        },
+        error:function (XMLHttpRequest, textStatus, errorThrown) {      
+        }
+     });
+		
+		
+	      /*  if (websocket != null) {
+               //根据勾选的人数确定是群聊还是单聊
+               var value =$("#ipmsg").val();
+               //得到选择的用户
+               var name = $("#stchannel option:selected").val();
+               console.log('选中的用户', name);
+               if (name === 'Everyone') {
+            	   var object = {
+                           msg: value,
+                           type: 1
+                       };
+                       //将object转成json字符串发送给服务端
+                       var json = JSON.stringify(object);
+                       websocket.send(json); 
+               } else {
+                   var object = {
+                       to: name,
+                       msg: value,
+                       type: 2
+                   };
+                   //将object转成json字符串发送给服务端
+                   var json = JSON.stringify(object);
+                   websocket.send(json);
+               }
+           } else {
+               console.log('未与服务器链接.');
+           } */
+	}
+
+</script>
+</body>
+</html>

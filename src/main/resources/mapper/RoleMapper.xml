@@ -14,7 +14,7 @@
        select c.*,e.*  from   role  c left join role_resource d on c.rolename= d.rolename left join  resource e on  d.resource and e.resource
          where c.rolename in
         <foreach collection="list" index="index" item="item" open="(" separator="," close=")">  
-           =#{item}  
+           #{item}  
         </foreach>  
     </select>
  
