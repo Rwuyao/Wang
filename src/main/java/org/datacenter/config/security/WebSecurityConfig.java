@@ -42,39 +42,51 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	 @Override
 	 public void configure(WebSecurity web)throws Exception{
-	        web.ignoring().antMatchers("/js/**","/css/**","/images/**","/bootstrap/**","/fonts/**");
+	        web
+	        .ignoring()
+	        .antMatchers("/js/**","/css/**","/images/**","/bootstrap/**","/fonts/**");
 	 }
 	
 	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		
-		  http.csrf().disable()
-	        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // 使用 JWT，关闭token
-	        .and()
-	        .httpBasic().authenticationEntryPoint(authenticationEntryPoint)
-	        .and()
-	        .exceptionHandling().accessDeniedHandler(accessDeniedHandler);
-          
-           http.formLogin()
-              .loginPage("/login")
-              .loginProcessingUrl("/login")//发送Ajax请求的路径
-              .usernameParameter("username")//请求验证参数
-              .passwordParameter("password")//请求验证参数
-              .successHandler(authenticationSuccessHandler) // 登录成功
-              .failureHandler(authenticationFailureHandler) // 登录失败
-              .and()
-              .logout()
-              .logoutSuccessHandler(logoutSuccessHandler);
-            
+		//session配置
+		  http
+		  .sessionManagement()         
+          .maximumSessions(1)//指定最大登录数      
+          .maxSessionsPreventsLogin(false); //当达到最大值时，是否保留已经登录的用户
+	       
+		//登录配置
+          http
+          .httpBasic().authenticationEntryPoint(authenticationEntryPoint)
+	      .and()
+	      .exceptionHandling()
+	      .accessDeniedHandler(accessDeniedHandler)
+	      .and()
+       	  .formLogin()
+          .loginPage("/login")
+          .loginProcessingUrl("/login")//发送Ajax请求的路径
+          .usernameParameter("username")//请求验证参数
+          .passwordParameter("password")//请求验证参数
+          .successHandler(authenticationSuccessHandler) // 登录成功
+          .failureHandler(authenticationFailureHandler) // 登录失败
+          .and()
+          .logout()
+          .logoutSuccessHandler(logoutSuccessHandler);
+           
+         //权限配置
            http.authorizeRequests() //允许匿名访问
-              //.antMatchers("/login", "/logout").permitAll()
-              .anyRequest().access("@rbacService.hasPermission(request,authentication)");// RABC 表达式管控
-              //.authenticate
+          //.antMatchers("/login", "/logout").permitAll()
+          .anyRequest().access("@rbacService.hasPermission(request,authentication)");// RABC 表达式管控
+          //.authenticate
 			
-		
-           http.rememberMe().rememberMeParameter("remember-me")
-           .tokenRepository(persistentTokenRepository()).tokenValiditySeconds(300);
+         //rememberMe 配置
+           http
+           .rememberMe()
+           .rememberMeParameter("remember-me")
+           .tokenRepository(persistentTokenRepository())
+           .tokenValiditySeconds(300);
 
     }
 	
