@@ -77,7 +77,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
            
          //权限配置
            http.authorizeRequests() //允许匿名访问
-          //.antMatchers("/login", "/logout").permitAll()
+          .antMatchers("/login", "/logout").permitAll()
           .anyRequest().access("@rbacService.hasPermission(request,authentication)");// RABC 表达式管控
           //.authenticate
 			
