@@ -5,7 +5,12 @@ public enum ResultEnum {
     SUCCESS(200,"成功"),
     FAILURE(201,"失败"),
     USER_NEED_AUTHORITIES(201,"用户未登录"),
-    USER_LOGIN_FAILED(202,"用户账号或密码错误"),
+    USER_LOGIN_FAILED(202,"登录失败"),
+    ACCOUNT_PASSWORD_WORNG(202,"用户账号或密码错误"),
+    PASSWORD_EXPIRE(202,"密码过期，请联系管理员!"),
+    ACCOUNT_EXPIRE(202,"用户过期，请联系管理员!"),
+    ACCOUNT_LOCK(202,"用户被锁定，请联系管理员!"),
+    ACCOUNT_FORBID(202,"用户被禁用，请联系管理员!"),
     USER_LOGIN_SUCCESS(203,"用户登录成功"),
     USER_NO_ACCESS(204,"用户无权访问"),
     USER_LOGOUT_SUCCESS(205,"用户登出成功"),
@@ -24,7 +29,7 @@ public enum ResultEnum {
     /**
      * @deprecation:通过code返回枚举
     */
-    public static ResultEnum parse(int code){
+    public static ResultEnum of(int code){
         ResultEnum[] values = values();
         for (ResultEnum value : values) {
             if(value.getCode() == code){
@@ -34,21 +39,26 @@ public enum ResultEnum {
         throw  new RuntimeException("Unknown code of ResultEnum");
     }
 
+    public static ResultEnum of(int code,String message){
+        ResultEnum[] values = values();
+        for (ResultEnum value : values) {
+            if(value.getCode() == code){
+            	return value;
+            }
+        }
+        throw  new RuntimeException("Unknown code of ResultEnum");
+    }
+    
 	public Integer getCode() {
 		return code;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return message;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+
     
     
 }
