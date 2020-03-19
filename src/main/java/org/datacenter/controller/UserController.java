@@ -13,7 +13,7 @@ public class UserController {
 	@Autowired UserService userService;
 	
 	@RequestMapping("/users/{username}")
-	public User getUserInfo(@PathVariable String username) {
-		return userService.findByUserName(username);
+	public String getUserInfo(@PathVariable String username) {
+		return null;
 	}	
 }
