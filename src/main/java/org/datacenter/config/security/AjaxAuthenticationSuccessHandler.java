@@ -25,7 +25,7 @@ public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHa
 		
 		  httpServletResponse 
 		  .getWriter()
-		  .write(JSON.toJSONString(Result.of(ResultEnum.USER_LOGIN_SUCCESS)));
+		  .write(JSON.toJSONString(Result.of(ResultEnum.SUCCESS)));
 		 
 		
 

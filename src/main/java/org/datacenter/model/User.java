@@ -18,7 +18,7 @@ public class User implements UserDetails{
 
 	private String username;
 	private String password;
-	private String name;
+	private String nickname;
 	private int sex;
 	private Date createtime;
 	private List<Role> roles;
@@ -34,21 +34,21 @@ public class User implements UserDetails{
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}	
 }

@@ -27,7 +27,7 @@
 	 </dependency>
 	
 	 <!--redis -->
-	<dependency>
+	<!-- <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
         </dependency>
@@ -35,7 +35,7 @@
 	<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
-		</dependency>
+		</dependency> -->
 	
 	<!--mysql相关依赖jar-->
 		<dependency>

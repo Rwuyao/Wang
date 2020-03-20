@@ -2,8 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.datacenter.mapper.UserMapper">
  
-   <select id="findByUserName" resultType="org.datacenter.model.User">
-       select a.*,c.*  from  user a,user_role b, role c where a.user=#{username} a.username=b.username and b.rolename=c.rolename 
+  <resultMap id="user" type="org.datacenter.model.User">
+  <result column="username" property="username"/>
+  <result column="password" property="password"/>
+  <result column="nickname" property="nickname"/>
+  <result column="sex" 	property="sex"/>
+  <collection property="roles" ofType="org.datacenter.model.Role">
+    <result column="description"  property="description" />  
+    <result column="rolename"  property="rolename" /> 
+  </collection>
+</resultMap>
+ 
+   <select id="findByUserName" resultMap="user" >
+       select a.nickname,a.username,a.password,a.sex,c.rolename,c.description  from  user a,user_role b, role c where a.username=#{username} and a.username=b.username and b.role=c.rolename 
     </select>
  
 </mapper>

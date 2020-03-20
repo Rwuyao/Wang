@@ -53,8 +53,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		//session配置
 		  http
-		  .sessionManagement()         
-          .maximumSessions(1)//指定最大登录数      
+		  .csrf().disable()
+		  .sessionManagement()      
+		  .maximumSessions(1)//指定最大登录数      
           .maxSessionsPreventsLogin(false); //当达到最大值时，是否保留已经登录的用户
 	       
 		//登录配置

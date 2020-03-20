@@ -22,17 +22,17 @@ spring:
       content-type: text/html
 
   #redis配置
-   redis:
-    host: 127.0.0.1
-    port: 6379
-    password: 
-    database: 0 
-    lettuce:
-      pool:
-        max-idle: 10
-        max-active: 10
-        min-idle: 5
-        max-wait: 10000
+#   redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    password: 
+#    database: 0 
+#    lettuce:
+#      pool:
+#        max-idle: 10
+#        max-active: 10
+#        min-idle: 5
+#        max-wait: 10000
   
   # mysql 的数据库配置
    datasource:

@@ -33,7 +33,11 @@ public class RbacAuthorityService {
                     out:
                     for(Role role : roles){
                         //循環獲取角色對應的資源地址進行判斷
-                        List<Resource> res=role.getResources()  ;
+                    	if(role.getRolename().equals("ROLE_ADMIN")) {
+                    		 hasPermission = true;
+                             break ;
+                    	}
+                    	List<Resource> res=role.getResources()  ;                      
                         for(Resource r: res){
                             if (antPathMatcher.match(r.getUrl(), request.getRequestURI())) {
                                 hasPermission = true;
