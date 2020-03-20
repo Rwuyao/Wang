@@ -11,11 +11,25 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 19/03/2020 22:05:22
+ Date: 20/03/2020 22:00:56
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for persistent_logins
+-- ----------------------------
+DROP TABLE IF EXISTS `persistent_logins`;
+CREATE TABLE `persistent_logins`  (
+  `username` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `series` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `token` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `last_used` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0) ON UPDATE CURRENT_TIMESTAMP(0),
+  PRIMARY KEY (`series`) USING BTREE,
+  INDEX `persistent_index1`(`username`) USING BTREE,
+  INDEX `persistent_index2`(`token`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for resource
@@ -81,7 +95,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'wangmin', '123456', 'admin', 0, '2020-03-18 12:12:03');
+INSERT INTO `user` VALUES (1, 'wangmin', '$2a$10$Q/8ZpTj3PTOOYuXAWmfus.dDK3RK20pclgKEjDTHQYXGkfLzoPvm.', 'admin', 0, '2020-03-18 12:12:03');
 
 -- ----------------------------
 -- Table structure for user_role

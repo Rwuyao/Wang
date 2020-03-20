@@ -40,6 +40,35 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired 
 	private CustomUserDetailsService customUserDetailsService;
 	
+	 @Autowired
+	 private DataSource dataSource;	
+	 
+	 @Bean
+	 public PersistentTokenRepository persistentTokenRepository(){
+	     JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
+	     tokenRepository.setDataSource(dataSource);
+	     // 如果token表不存在，使用下面语句可以初始化该表；若存在，会报错。
+	     //tokenRepository.setCreateTableOnStartup(true);
+	     return tokenRepository;
+	 }
+	
+	 
+	// 装载BCrypt密码编码器
+	    @Bean
+	    public PasswordEncoder passwordEncoder() {
+	        return new BCryptPasswordEncoder();
+	    }
+		
+		@Override
+	    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+			auth 
+			// 设置UserDetailsService
+	        .userDetailsService(customUserDetailsService)
+	        // 使用BCrypt进行密码的hash
+	        .passwordEncoder(passwordEncoder());
+	    }
+	 
+	 
 	 @Override
 	 public void configure(WebSecurity web)throws Exception{
 	        web
@@ -87,35 +116,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
            .rememberMe()
            .rememberMeParameter("remember-me")
            .tokenRepository(persistentTokenRepository())
-           .tokenValiditySeconds(300);
+           .tokenValiditySeconds(3600);
 
     }
 	
-	 @Autowired
-     @Qualifier("dataSource")
-     DataSource dataSource;	
-	 
-	 @Bean
-	 public PersistentTokenRepository persistentTokenRepository(){
-	     JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
-	     tokenRepository.setDataSource(dataSource);
-	     // 如果token表不存在，使用下面语句可以初始化该表；若存在，会报错。
-	     // tokenRepository.setCreateTableOnStartup(true);
-	     return tokenRepository;
-	 }
 	
-	@Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth 
-		// 设置UserDetailsService
-        .userDetailsService(customUserDetailsService)
-        // 使用BCrypt进行密码的hash
-        .passwordEncoder(passwordEncoder());
-    }
 	
-	// 装载BCrypt密码编码器
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	
 }
