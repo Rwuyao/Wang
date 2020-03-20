@@ -149,10 +149,12 @@
 														<input type="password" class="form-control" id="password1">
 													</div>
 												</div>
-
+<div class="checkbox">
+          <label><input type="checkbox" id="rememberme" name="remember-me"/> Remember Me</label>  
+     </div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<input type="submit" class="btn btn-primary" value="Login" onclick="login()">
+														<input type="button" class="btn btn-primary" value="Login" onclick="login()">
 													</div>
 												</div>
 											</form>	
@@ -240,6 +242,7 @@ function register(){
 function login(){
 	var username=$("#username1").val();
 	var password=$("#password1").val();
+	var rememberme=$("#rememberme").prop('checked');
 	if(username==""||password=="")
 	{	
 		return ;
@@ -251,7 +254,7 @@ function login(){
     type: "post",
     url: url,
 //  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
-    data: {"username":username,"password":password},
+    data: {"username":username,"password":password,"remember-me":rememberme},
     cache: false,
     async : false,
     dataType: "json",

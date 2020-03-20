@@ -84,7 +84,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		  http
 		  .csrf().disable()
 		  .sessionManagement()      
-		  .maximumSessions(1)//指定最大登录数      
+		  .maximumSessions(5)//指定最大登录数      
           .maxSessionsPreventsLogin(false); //当达到最大值时，是否保留已经登录的用户
 	       
 		//登录配置
@@ -115,8 +115,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
            http
            .rememberMe()
            .rememberMeParameter("remember-me")
+           .userDetailsService(customUserDetailsService)
            .tokenRepository(persistentTokenRepository())
-           .tokenValiditySeconds(3600);
+           .tokenValiditySeconds(86400);
 
     }
 	

@@ -11,6 +11,11 @@ public class RouterController {
         return "login";
     }
 	
+	@RequestMapping("/")
+    public String index() {
+        return "chatroom";
+    }
+	
 	@RequestMapping("/chatroom")
     public String chatroom() {
         return "chatroom";
