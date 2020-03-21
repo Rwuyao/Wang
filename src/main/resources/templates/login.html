@@ -260,7 +260,8 @@ function login(){
     dataType: "json",
     success: function (data ,textStatus, jqXHR)
     {
-    	if(data.code==200){
+    	jsonString=data; 
+    	if(jsonString.code==200){
     		//清空输入框，跳转
     		$("#username1").val("");
     		$("#password1").val("");

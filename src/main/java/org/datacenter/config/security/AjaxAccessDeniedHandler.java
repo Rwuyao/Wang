@@ -17,7 +17,11 @@ public class AjaxAccessDeniedHandler implements AccessDeniedHandler {
 
 	 @Override
 	    public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AccessDeniedException e) throws IOException, ServletException {
-	        httpServletResponse
+	       
+		 httpServletResponse
+		  .setCharacterEncoding("UTF-8");
+		 
+		 httpServletResponse
 	        .getWriter()
 	        .write(JSON.toJSONString(Result.of(ResultEnum.USER_NO_ACCESS)));
 	    }

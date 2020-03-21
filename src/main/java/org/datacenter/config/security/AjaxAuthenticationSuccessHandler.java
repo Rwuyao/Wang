@@ -23,6 +23,9 @@ public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHa
 	public void onAuthenticationSuccess(HttpServletRequest  httpServletRequest , HttpServletResponse httpServletResponse,
 			Authentication authentication) throws IOException, ServletException {
 		
+		  httpServletResponse
+		  .setCharacterEncoding("UTF-8");
+		  
 		  httpServletResponse 
 		  .getWriter()
 		  .write(JSON.toJSONString(Result.of(ResultEnum.SUCCESS)));
