@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.datacenter.mapper.UserMapper">
- 
-  <resultMap id="user" type="org.datacenter.model.User">
-  <result column="username" property="username"/>
-  <result column="password" property="password"/>
-  <result column="nickname" property="nickname"/>
-  <result column="sex" 	property="sex"/>
-  <collection property="roles" ofType="org.datacenter.model.Role">
-    <result column="description"  property="description" />  
-    <result column="rolename"  property="rolename" /> 
-  </collection>
-</resultMap>
- 
- <resultMap id="BaseResultMap" type="org.datacenter.model.User">
+<mapper namespace="org.datacenter.mapper.ResourceMapper">
+  <resultMap id="BaseResultMap" type="org.datacenter.model.Resource">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="resource" jdbcType="VARCHAR" property="resource" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -80,15 +67,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, nickname, password, username, sex, createtime
+    id, resource, description, url, createtime
   </sql>
-  <select id="selectByExample" parameterType="org.datacenter.model.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.datacenter.model.ResourceExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from user
+    from resource
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -99,44 +86,39 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from user
+    from resource
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from user
+    delete from resource
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="org.datacenter.model.UserExample">
-    delete from user
+  <delete id="deleteByExample" parameterType="org.datacenter.model.ResourceExample">
+    delete from resource
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="org.datacenter.model.User">
-    insert into user (id, nickname, password, 
-      username, sex, createtime
-      )
-    values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{username,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, #{createtime,jdbcType=TIMESTAMP}
-      )
+  <insert id="insert" parameterType="org.datacenter.model.Resource">
+    insert into resource (id, resource, description, 
+      url, createtime)
+    values (#{id,jdbcType=INTEGER}, #{resource,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="org.datacenter.model.User">
-    insert into user
+  <insert id="insertSelective" parameterType="org.datacenter.model.Resource">
+    insert into resource
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="nickname != null">
-        nickname,
+      <if test="resource != null">
+        resource,
       </if>
-      <if test="password != null">
-        password,
+      <if test="description != null">
+        description,
       </if>
-      <if test="username != null">
-        username,
-      </if>
-      <if test="sex != null">
-        sex,
+      <if test="url != null">
+        url,
       </if>
       <if test="createtime != null">
         createtime,
@@ -146,46 +128,40 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="nickname != null">
-        #{nickname,jdbcType=VARCHAR},
+      <if test="resource != null">
+        #{resource,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
       </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null">
-        #{sex,jdbcType=TINYINT},
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
       </if>
       <if test="createtime != null">
         #{createtime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.datacenter.model.UserExample" resultType="java.lang.Long">
-    select count(*) from user
+  <select id="countByExample" parameterType="org.datacenter.model.ResourceExample" resultType="java.lang.Long">
+    select count(*) from resource
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update user
+    update resource
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.nickname != null">
-        nickname = #{record.nickname,jdbcType=VARCHAR},
+      <if test="record.resource != null">
+        resource = #{record.resource,jdbcType=VARCHAR},
       </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
       </if>
-      <if test="record.username != null">
-        username = #{record.username,jdbcType=VARCHAR},
-      </if>
-      <if test="record.sex != null">
-        sex = #{record.sex,jdbcType=TINYINT},
+      <if test="record.url != null">
+        url = #{record.url,jdbcType=VARCHAR},
       </if>
       <if test="record.createtime != null">
         createtime = #{record.createtime,jdbcType=TIMESTAMP},
@@ -196,31 +172,27 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update user
+    update resource
     set id = #{record.id,jdbcType=INTEGER},
-      nickname = #{record.nickname,jdbcType=VARCHAR},
-      password = #{record.password,jdbcType=VARCHAR},
-      username = #{record.username,jdbcType=VARCHAR},
-      sex = #{record.sex,jdbcType=TINYINT},
+      resource = #{record.resource,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      url = #{record.url,jdbcType=VARCHAR},
       createtime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="org.datacenter.model.User">
-    update user
+  <update id="updateByPrimaryKeySelective" parameterType="org.datacenter.model.Resource">
+    update resource
     <set>
-      <if test="nickname != null">
-        nickname = #{nickname,jdbcType=VARCHAR},
+      <if test="resource != null">
+        resource = #{resource,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
       </if>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null">
-        sex = #{sex,jdbcType=TINYINT},
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
       </if>
       <if test="createtime != null">
         createtime = #{createtime,jdbcType=TIMESTAMP},
@@ -228,18 +200,12 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="org.datacenter.model.User">
-    update user
-    set nickname = #{nickname,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      username = #{username,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=TINYINT},
+  <update id="updateByPrimaryKey" parameterType="org.datacenter.model.Resource">
+    update resource
+    set resource = #{resource,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
- 
-   <select id="findByUserName" resultMap="user" >
-       select a.nickname,a.username,a.password,a.sex,c.rolename,c.description  from  user a,user_role b, role c where a.username=#{username} and a.username=b.username and b.role=c.rolename 
-    </select>
- 
 </mapper>

@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Role  implements GrantedAuthority{
 	
+	private int id;
 	private String rolename;
 	private String description;
 	private Date createtime;

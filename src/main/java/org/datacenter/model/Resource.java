@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Resource {
+	
+	private int id;
 	private String resource;
 	private String description;
 	private String url;
