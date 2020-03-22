@@ -15,6 +15,12 @@ public class RouterController {
     public String chatroom() {
         return "index";
     }
+	/*后台管理页面*/
+	@RequestMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
+	
 	/*登录*/
 	@RequestMapping("/signin")
     public String login() {

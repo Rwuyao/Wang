@@ -97,7 +97,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	      .accessDeniedHandler(accessDeniedHandler)
 	      .and()
        	  .formLogin()
-          .loginPage("/signin")
+          .loginPage("/signin")//登录页面
           .loginProcessingUrl("/login")//发送Ajax请求的路径
           .usernameParameter("username")//请求验证参数
           .passwordParameter("password")//请求验证参数
