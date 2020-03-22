@@ -18,8 +18,11 @@ public class AjaxLogoutSuccessHandler implements LogoutSuccessHandler {
 	    @Override
 	    public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
 	        	        
-	    	 httpServletResponse
+	    	  httpServletResponse
 			  .setCharacterEncoding("UTF-8");
+			  httpServletResponse
+			  .setContentType("text/html;charset=utf-8");
+			  
 	    	
 	    	httpServletResponse
 	        .getWriter()

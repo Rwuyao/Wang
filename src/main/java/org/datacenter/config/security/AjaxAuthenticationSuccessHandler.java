@@ -25,6 +25,8 @@ public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHa
 		
 		  httpServletResponse
 		  .setCharacterEncoding("UTF-8");
+		  httpServletResponse
+		  .setContentType("text/html;charset=utf-8");
 		  
 		  httpServletResponse 
 		  .getWriter()

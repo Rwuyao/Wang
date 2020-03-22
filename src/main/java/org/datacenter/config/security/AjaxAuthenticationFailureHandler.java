@@ -37,8 +37,11 @@ public class AjaxAuthenticationFailureHandler implements AuthenticationFailureHa
 	        } else {
 	        	res =Result.of(ResultEnum.USER_LOGIN_FAILED);
 	        }		 
-		 httpServletResponse
+		  httpServletResponse
 		  .setCharacterEncoding("UTF-8");
+		  httpServletResponse
+		  .setContentType("text/html;charset=utf-8");
+		  
 		 
 		 httpServletResponse
 	     .getWriter()

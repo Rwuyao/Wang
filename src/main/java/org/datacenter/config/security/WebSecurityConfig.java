@@ -75,7 +75,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	 public void configure(WebSecurity web)throws Exception{
 	        web
 	        .ignoring()
-	        .antMatchers("/js/**","/css/**","/images/**","/bootstrap/**","/fonts/**");
+	        .antMatchers("/js/**","/css/**","/images/**","/vendor/**","/fonts/**");
 	 }
 	
 	
@@ -97,7 +97,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	      .accessDeniedHandler(accessDeniedHandler)
 	      .and()
        	  .formLogin()
-          .loginPage("/login")
+          .loginPage("/signin")
           .loginProcessingUrl("/login")//发送Ajax请求的路径
           .usernameParameter("username")//请求验证参数
           .passwordParameter("password")//请求验证参数
@@ -105,12 +105,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
           .failureHandler(authenticationFailureHandler) // 登录失败
           .and()
           .logout()
-          .logoutRequestMatcher(new AntPathRequestMatcher("/logout","POST"))
+          .logoutRequestMatcher(new AntPathRequestMatcher("/signout","POST"))
           .logoutSuccessHandler(logoutSuccessHandler);
            
          //权限配置
-           http.authorizeRequests() //允许匿名访问
-          .antMatchers("/login", "/logout").permitAll()
+           http.authorizeRequests() //允许匿名访问 登录，注册，退出 "/signout","/signin"
+          .antMatchers("/join").permitAll()
           .anyRequest().access("@rbacService.hasPermission(request,authentication)");// RABC 表达式管控
           //.authenticate
 			

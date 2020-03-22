@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Login</title>
+    <title>Register</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -47,37 +47,34 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="#" >
-                               <div id="error-tip">		
+                            <form action="" method="post">
+                                <div id="error-tip">		
                                </div>
                                 <div class="form-group">
                                     <label>Username</label>
-                                    <input class="au-input au-input--full" type="text" name="username" placeholder="Username">
-                                </div>
+                                    <input class="au-input au-input--full" type="text" name="username" placeholder="Username" onblur="checkUsername()">
+                                </div>                              
                                 <div class="form-group">
                                     <label>Password</label>
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember">Remember Me
-                                    </label>
-                                    <label>
-                                        <a href="#">Forgotten Password?</a>
+                                        <input type="checkbox" name="aggree">Agree the terms and policy
                                     </label>
                                 </div>
-                                <input class="au-btn au-btn--block au-btn--green m-b-20"  type="button" value="sign in" onclick="login()">
+                                <input class="au-btn au-btn--block au-btn--green m-b-20" type="button" value="register" onclick="register()">
                                <!--  <div class="social-login-content">
                                     <div class="social-button">
-                                        <input class="au-btn au-btn--block au-btn--blue m-b-20"  type="button" value="sign in with QQ">
-                                        <input class="au-btn au-btn--block au-btn--blue2"  type="button" value="sign in with WeChat">
+                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
+                                        <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
                                     </div>
                                 </div> -->
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Don't you have account?
-                                    <a href="/join">Sign Up Here</a>
+                                    Already have account?
+                                    <a href="/signin">Sign In</a>
                                 </p>
                             </div>
                         </div>
@@ -111,14 +108,41 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
-	<script src="js/uitls/appendTips.js"></script>
+<script src="js/uitls/appendTips.js"></script>
 	<script type="text/javascript">
 	
-	function login(){
+	function checkUsername(){
 		var username=$('input[name="username"]').val();
-		var password=$('input[name="password"]').val();
-		var remember =$('input[name="remember"]').val();
+		if(username==""){
+			return;
+		}
+		var url="/users/"+username;
+		//进行登录，登录成功则进行websocket连接
+		$.ajax({
+	    type: "get",
+	    url: url,
+	//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
+	    data: {},
+	    cache: false,
+	    async : false,
+	    dataType: "json",
+	    success: function (data ,textStatus, jqXHR)
+	    {
+	    	if(data.code!=200){
+	    		$('input[name="username"]').val("");
+	    		errorTips("error-tip",data.msg);
+	    	}
+	        
+	    },
+	    error:function (XMLHttpRequest, textStatus, errorThrown) {      
+	    	//errorTips("error-tip",data.msg);
+	    }
+	 });
+	}
+	
+	function register(){
+		var username=$('input[name="username"]').val();
+		var password=$('input[name="password"]').val();	
 		if(username=="")
 		{	
 			errorTips("error-tip","账号不能为空！！");
@@ -129,21 +153,26 @@
 			errorTips("error-tip","密码不能为控！！");
 			return ;
 		}	
-		var url="/login";
+		if(!$('input[name="aggree"]').prop("checked")){
+			return;
+		};
+		
+		var url="/users/register";
 		//进行登录，登录成功则进行websocket连接
 		$.ajax({
 	    type: "post",
 	    url: url,
 	//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
-	    data: {"username":username,"password":password,"remember-me":remember},
+	    data:  JSON.stringify({"username":username,"password":password}),
 	    cache: false,
 	    async : false,
 	    dataType: "json",
+	    contentType:"application/json",
 	    success: function (data ,textStatus, jqXHR)
 	    {
 	    	if(data.code==200){
 	    		//清空输入框，跳转
-	    		window.location.href = "/index";
+	    		window.location.href = "/signin";
 	    	}else{
 	    		errorTips("error-tip",data.msg);
 	    	}
@@ -154,6 +183,12 @@
 	    }
 	 });
 	}
+	
+	
+	
+	 
+	
+	
 	</script>
 
 </body>

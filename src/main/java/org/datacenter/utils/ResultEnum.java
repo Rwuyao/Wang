@@ -11,7 +11,7 @@ public enum ResultEnum {
     ACCOUNT_EXPIRE(202,"用户过期，请联系管理员!"),
     ACCOUNT_LOCK(202,"用户被锁定，请联系管理员!"),
     ACCOUNT_FORBID(202,"用户被禁用，请联系管理员!"),
-    USER_LOGIN_SUCCESS(203,"用户登录成功"),
+    Parameter_Is_Empty(204,"参数为空"),
     USER_NO_ACCESS(204,"用户无权访问"),
     USER_LOGOUT_SUCCESS(205,"用户登出成功"),
     TOKEN_IS_BLACKLIST(206,"此token为黑名单"),

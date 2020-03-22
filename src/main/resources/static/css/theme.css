@@ -323,7 +323,8 @@ section {
 }
 
 .page-content--bge5 {
-    background: #e5e5e5;
+     background: #e5e5e5; 
+  /*  background-image: url(../images/bgimg.jpg); */
     height: 100vh;
 }
 
