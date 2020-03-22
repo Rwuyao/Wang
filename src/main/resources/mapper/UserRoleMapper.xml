@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.datacenter.mapper.UserMapper">
- 
-  <resultMap id="user" type="org.datacenter.model.User">
-  <result column="username" property="username"/>
-  <result column="password" property="password"/>
-  <result column="nickname" property="nickname"/>
-  <result column="sex" 	property="sex"/>
-  <collection property="roles" ofType="org.datacenter.model.Role">
-    <result column="description"  property="description" />  
-    <result column="rolename"  property="rolename" /> 
-  </collection>
-</resultMap>
- 
- <resultMap id="BaseResultMap" type="org.datacenter.model.User">
+<mapper namespace="org.datacenter.mapper.UserRoleMapper">
+  <resultMap id="BaseResultMap" type="org.datacenter.model.UserRole">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="sex" jdbcType="TINYINT" property="sex" />
-    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="role" jdbcType="VARCHAR" property="role" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -80,15 +65,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, nickname, password, username, sex, createtime
+    id, username, role
   </sql>
-  <select id="selectByExample" parameterType="org.datacenter.model.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.datacenter.model.UserRoleExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from user
+    from user_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -99,96 +84,67 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from user
+    from user_role
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from user
+    delete from user_role
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="org.datacenter.model.UserExample">
-    delete from user
+  <delete id="deleteByExample" parameterType="org.datacenter.model.UserRoleExample">
+    delete from user_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="org.datacenter.model.User">
-    insert into user (id, nickname, password, 
-      username, sex, createtime
+  <insert id="insert" parameterType="org.datacenter.model.UserRole">
+    insert into user_role (id, username, role
       )
-    values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{username,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, #{createtime,jdbcType=TIMESTAMP}
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="org.datacenter.model.User">
-    insert into user
+  <insert id="insertSelective" parameterType="org.datacenter.model.UserRole">
+    insert into user_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
-      <if test="nickname != null">
-        nickname,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
       <if test="username != null">
         username,
       </if>
-      <if test="sex != null">
-        sex,
-      </if>
-      <if test="createtime != null">
-        createtime,
+      <if test="role != null">
+        role,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="nickname != null">
-        #{nickname,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null">
-        #{sex,jdbcType=TINYINT},
-      </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="role != null">
+        #{role,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.datacenter.model.UserExample" resultType="java.lang.Long">
-    select count(*) from user
+  <select id="countByExample" parameterType="org.datacenter.model.UserRoleExample" resultType="java.lang.Long">
+    select count(*) from user_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update user
+    update user_role
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.nickname != null">
-        nickname = #{record.nickname,jdbcType=VARCHAR},
-      </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
-      </if>
       <if test="record.username != null">
         username = #{record.username,jdbcType=VARCHAR},
       </if>
-      <if test="record.sex != null">
-        sex = #{record.sex,jdbcType=TINYINT},
-      </if>
-      <if test="record.createtime != null">
-        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.role != null">
+        role = #{record.role,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -196,52 +152,30 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update user
+    update user_role
     set id = #{record.id,jdbcType=INTEGER},
-      nickname = #{record.nickname,jdbcType=VARCHAR},
-      password = #{record.password,jdbcType=VARCHAR},
       username = #{record.username,jdbcType=VARCHAR},
-      sex = #{record.sex,jdbcType=TINYINT},
-      createtime = #{record.createtime,jdbcType=TIMESTAMP}
+      role = #{record.role,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="org.datacenter.model.User">
-    update user
+  <update id="updateByPrimaryKeySelective" parameterType="org.datacenter.model.UserRole">
+    update user_role
     <set>
-      <if test="nickname != null">
-        nickname = #{nickname,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
-      </if>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null">
-        sex = #{sex,jdbcType=TINYINT},
-      </if>
-      <if test="createtime != null">
-        createtime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="role != null">
+        role = #{role,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="org.datacenter.model.User">
-    update user
-    set nickname = #{nickname,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      username = #{username,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=TINYINT},
-      createtime = #{createtime,jdbcType=TIMESTAMP}
+  <update id="updateByPrimaryKey" parameterType="org.datacenter.model.UserRole">
+    update user_role
+    set username = #{username,jdbcType=VARCHAR},
+      role = #{role,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
- 
-   <select id="findByUserName" resultMap="user" >
-       select a.nickname,a.username,a.password,a.sex,c.rolename,c.description  from  user a,user_role b, role c where a.username=#{username} and a.username=b.username and b.role=c.rolename 
-    </select>
- 
- 
- 
 </mapper>

@@ -109,8 +109,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
           .logoutSuccessHandler(logoutSuccessHandler);
            
          //权限配置
-           http.authorizeRequests() //允许匿名访问 登录，注册，退出 "/signout","/signin"
-          .antMatchers("/join").permitAll()
+           http.authorizeRequests() //允许匿名访问 登录，注册，用户名check  "/signout","/signin"
+          .antMatchers("/signin","/join","/users/*").permitAll()
           .anyRequest().access("@rbacService.hasPermission(request,authentication)");// RABC 表达式管控
           //.authenticate
 			

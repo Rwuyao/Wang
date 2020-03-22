@@ -118,7 +118,7 @@
 	function login(){
 		var username=$('input[name="username"]').val();
 		var password=$('input[name="password"]').val();
-		var remember =$('input[name="remember"]').val();
+		var remember =$('input[name="remember"]').prop("checked");
 		if(username=="")
 		{	
 			errorTips("error-tip","账号不能为空！！");
