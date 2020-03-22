@@ -1,5 +1,7 @@
 package org.datacenter;
 
+import java.util.List;
+
 import org.datacenter.model.User;
 import org.datacenter.service.UserService;
 import org.junit.jupiter.api.Test;
@@ -23,8 +25,7 @@ class WangApplicationTests {
 	
 	@Test
 	void userService() {
-	User user=	userService.findByUserName("wangmin");
-	System.out.println(user.getUsername());
+	List<User> user=	userService.getuser(1, 100);
 	}
 	
 	@Test
