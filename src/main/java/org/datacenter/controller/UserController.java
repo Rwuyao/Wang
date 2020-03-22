@@ -1,5 +1,7 @@
 package org.datacenter.controller;
 
+import java.util.Date;
+
 import org.datacenter.model.User;
 import org.datacenter.service.UserService;
 import org.datacenter.utils.Result;
@@ -68,6 +70,8 @@ public class UserController {
 			//对密码加密
 			PasswordEncoder encoder=new BCryptPasswordEncoder();
 			user.setPassword(encoder.encode(password));		
+			//设置日期
+			user.setCreatetime(new Date());
 			userService.insert(user);
 		}catch(Exception e) {
 			return Result.fail("账号["+username+"]注册失败，请重新尝试！！");
