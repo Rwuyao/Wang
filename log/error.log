@@ -888,3 +888,17 @@ Caused by: java.lang.UnsupportedOperationException: null
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
 	... 20 common frames omitted
+2020-03-21 22:32:48 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9001 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9001 or configure this application to listen on another port.
+
