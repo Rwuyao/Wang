@@ -3,13 +3,19 @@ server:
 #  servlet:
 #    context-path: /wang
 
-spring:  
+spring: 
+  #编码格式 
    http:
    encoding:
       charset: utf-8
       force: true
       enabled: true
-
+      
+  #put delete 请求支持
+   mvc:
+    hiddenmethod:
+     filter: true
+     
    # thymeleaf配置
    thymeleaf:
     cache: false

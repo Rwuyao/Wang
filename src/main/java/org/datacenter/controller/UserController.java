@@ -2,6 +2,7 @@ package org.datacenter.controller;
 
 import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
 import org.datacenter.model.User;
 import org.datacenter.service.UserService;
 import org.datacenter.utils.Result;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSON;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
 	
 	@Autowired UserService userService;
@@ -27,9 +29,9 @@ public class UserController {
 	 * @param username
 	 * @return
 	 */
-	@RequestMapping(value="/users/{username}",method= RequestMethod.GET)
+	@RequestMapping(value="/{username}",method= RequestMethod.GET)
 	public Result checkUserName(@PathVariable String username) {
-		if(username==null||username.equals("")) {
+		if(StringUtils.isNotBlank(username)) {
 			return Result.fail("username不能为空");
 		}
 		//检查该用户是否已经被注册
@@ -46,7 +48,7 @@ public class UserController {
 	 * @param password
 	 * @return
 	 */
-	@RequestMapping(value="/users/register",method= RequestMethod.POST)
+	@RequestMapping(value="/register",method= RequestMethod.POST)
 	public Result register(@RequestBody User user) {
 		//检查必要参数是否存在
 		if(user==null) {
@@ -54,10 +56,10 @@ public class UserController {
 		}
 		String username=user.getUsername();
 		String password=user.getPassword();		
-		if(username==null||username.equals("")) {
+		if(StringUtils.isNotBlank(username)) {
 			return Result.fail("未获取到username！！");
 		}
-		if(password==null||password.equals("")) {
+		if(StringUtils.isNotBlank(password)) {
 			return Result.fail("未获取到password！！");
 		}	
 		

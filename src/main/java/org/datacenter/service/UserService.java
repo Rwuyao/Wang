@@ -1,5 +1,7 @@
 package org.datacenter.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -27,9 +29,25 @@ public class UserService {
 	        return userMapper.findByUserName(username);
 	    }
 	 
-	 public List<User> getuser(int Page,int pagesize){
+	 public List<User> getuser(int Page,int pagesize,String sort,String sortOrder,String begintime,String endtime,String username) throws ParseException{
 		 PageHelper.startPage(Page, pagesize);		 
-		 UserExample example =new UserExample(); 
+		 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//注意月份是MM
+	        		 
+		 UserExample example =new UserExample();
+		 Criteria criteria =example.createCriteria();
+		 
+		 if(StringUtils.isNotBlank(sort)) {
+			 example.setOrderByClause(sort +" " +sortOrder); 
+		 }	
+		 if(StringUtils.isNotBlank(begintime)) {
+			 criteria.andCreatetimeGreaterThanOrEqualTo(simpleDateFormat.parse(begintime)) ;
+		 }
+		 if(StringUtils.isNotBlank(endtime)) {
+			 criteria.andCreatetimeLessThanOrEqualTo(simpleDateFormat.parse(endtime));
+		 }
+		 if(StringUtils.isNotBlank(username)) {
+			 criteria.andUsernameEqualTo(username);
+		 }	 
 		 List<User> userList=userMapper.selectByExample(example);
 		 return userList;
 	 }
@@ -61,9 +79,11 @@ public class UserService {
 	 }
 	 
 	 public void delete(String username) {
-		 UserExample example =new UserExample();
+		//删除用户
+		UserExample example =new UserExample();
 	    example.createCriteria().andUsernameEqualTo(username);
 		 userMapper.deleteByExample(example);
+		 //删除用户角色关联
 	 }
 	 
 }

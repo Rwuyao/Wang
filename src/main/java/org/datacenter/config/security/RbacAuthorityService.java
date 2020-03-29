@@ -28,8 +28,8 @@ public class RbacAuthorityService {
                 if(antPathMatcher.match("/ajax/**", request.getRequestURI())){
                     hasPermission = true;
                 }else{
-                    User user = (User) principal;
-                    List<Role> roles = user.getRoles();
+                	UserDetail user = (UserDetail) principal;
+                    List<Role> roles = user.getAuthorities();
                     out:
                     for(Role role : roles){
                         //循環獲取角色對應的資源地址進行判斷

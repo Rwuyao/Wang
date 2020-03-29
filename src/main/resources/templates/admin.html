@@ -20,6 +20,12 @@
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    
+    <!-- Bootstrap Table-->
+	<link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.min.css">
+ 	<!-- Bootstrap date-->
+	<link href="vendor/bootstrap-date/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
 
     <!-- Vendor CSS-->
     <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -546,39 +552,44 @@
                     </div>
                 </div>
             </section>
+            
             <!-- END WELCOME-->
-          
-
-            <!-- DATA TABLE-->
-            <section class="p-t-20">
+           <section class="p-t-20">
                 <div class="container">
+                <div class="row">
+                 	<div class='col-sm-7'>
+			             <div class="form-inline">
+			                <span>CreateTime：</span>
+			                <div class='input-group date' id='begintime'>
+			                    <span class="input-group-addon">
+			                        <span class="fa fa-calendar"></span>
+			                    </span>
+			                    <input type='text' class="form-control" />			                    
+			                </div>
+			            	<div>--</div>
+			                <div class='input-group date' id='endtime'>
+			                    <span class="input-group-addon">
+			                        <span class="fa fa-calendar"></span>
+			                    </span>
+			                    <input type='text' class="form-control" />			                    
+			                </div>
+							</div>
+	                </div>
+	          		<div class="col-sm-5">      
+		                <div class="form-inline">
+	      				<span>UserName：</span>
+	      				<input id="username" class="form-control" type="text" placeholder="Search">
+	    				<button id="search" type="submit" class="btn btn-primary">OK</button>
+	    				</div>     				
+    				</div>
+                </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title-5 m-b-35">data table</h3>
-                            <div class="table-data__tool">
-                                <div class="table-data__tool-left">
-                                    <div class="rs-select2--light rs-select2--md">
-                                        <select class="js-select2" name="property">
-                                            <option selected="selected">All Properties</option>
-                                            <option value="">Option 1</option>
-                                            <option value="">Option 2</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                    <div class="rs-select2--light rs-select2--sm">
-                                        <select class="js-select2" name="time">
-                                            <option selected="selected">Today</option>
-                                            <option value="">3 Days</option>
-                                            <option value="">1 Week</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                    <button class="au-btn-filter">
-                                        <i class="zmdi zmdi-filter-list"></i>filters</button>
-                                </div>
-                                <div class="table-data__tool-right">
-                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                        <i class="zmdi zmdi-plus"></i>add item</button>
+	                        <div id="toolbar">
+							  <div class="form-inline" role="form">
+							    	<button class="au-btn au-btn-icon au-btn--green au-btn--small" id="additem">
+                                        <i class="zmdi zmdi-plus"></i>add
+                                    </button>
                                     <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                         <select class="js-select2" name="type">
                                             <option selected="selected">Export</option>
@@ -586,176 +597,38 @@
                                             <option value="">Option 2</option>
                                         </select>
                                         <div class="dropDownSelect2"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-responsive table-responsive-data2">
-                                <table class="table table-data2">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </th>
-                                            <th>name</th>
-                                            <th>email</th>
-                                            <th>description</th>
-                                            <th>date</th>
-                                            <th>status</th>
-                                            <th>price</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">lori@example.com</span>
-                                            </td>
-                                            <td class="desc">Samsung S8 Black</td>
-                                            <td>2018-09-27 02:12</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$679.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">john@example.com</span>
-                                            </td>
-                                            <td class="desc">iPhone X 64Gb Grey</td>
-                                            <td>2018-09-29 05:57</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$999.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">lyn@example.com</span>
-                                            </td>
-                                            <td class="desc">iPhone X 256Gb Black</td>
-                                            <td>2018-09-25 19:03</td>
-                                            <td>
-                                                <span class="status--denied">Denied</span>
-                                            </td>
-                                            <td>$1199.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td>Lori Lynch</td>
-                                            <td>
-                                                <span class="block-email">doe@example.com</span>
-                                            </td>
-                                            <td class="desc">Camera C430W 4k</td>
-                                            <td>2018-09-24 19:10</td>
-                                            <td>
-                                                <span class="status--process">Processed</span>
-                                            </td>
-                                            <td>$699.00</td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END DATA TABLE-->
+                                    </div>		
+							  </div>
+							</div>  
+							                    
+         					<table id="table" class="table table-hover"></table>
+         				</div>
+         			</div>
+         		</div>
+         		
+         		
+         		<div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-lg" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        ...
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Understood</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+         	</section>
+          
+          
 
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
@@ -779,6 +652,11 @@
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+     <!-- Bootstrap Table JS-->
+    <script src="vendor/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="vendor/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <!-- Bootstrap date JS-->
+    <script src="vendor/bootstrap-date/bootstrap-datetimepicker.min.js"></script>
     <!-- Vendor JS       -->
     <script src="vendor/slick/slick.min.js">
     </script>
@@ -797,7 +675,272 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+	<script type="text/javascript">
+	
+	 var $table = $('#table');
+	 
+	$(document).ready(function(){
+	    $("#additem").bind("click",function(){
+	    	$table.bootstrapTable('insertRow', {
+		        index: 0,
+		        row: {
+		        	username: '',
+		        	password: '',
+		        	nickname: '',
+		        	sex:'',
+		        	createtime:''
+		        }
+		      })
+	    });
+	    
+	    
+	    $("#search").bind("click",function(){
+	    	$table.bootstrapTable('refresh');
+	    });
+	});
 
+	$('#begintime').datetimepicker({
+		fontAwesome:'font-awesome',
+		language : "zh-CN",
+		weekStart : 1,
+		todayBtn : 1,
+		autoclose : 1,
+		todayHighlight : 1,
+		startView : 1,
+		minView : 0,
+		maxView : 1,
+		forceParse : 0,
+		minuteStep : 1,
+		format : 'yyyy-mm-dd hh:ii'
+    });
+	$('#endtime').datetimepicker({
+		fontAwesome:'font-awesome',
+		language : "zh-CN",
+		weekStart : 1,
+		todayBtn : 1,
+		autoclose : 1,
+		todayHighlight : 1,
+		startView : 1,
+		minView : 0,
+		maxView : 1,
+		forceParse : 0,
+		minuteStep : 1,
+		format : 'yyyy-mm-dd hh:ii'
+    });
+	
+	var cloums=[
+	{
+       checkbox: true,
+       visible: true                  //是否显示复选框
+  	},
+  	{
+        field: 'no',
+        title: '序号',
+        width: 40,
+        formatter: function (value, row, index) {
+        	 return index + 1;
+        }
+    },
+	{
+        field: 'username',
+        title: 'USERNAME'
+    }, {
+        field: 'password',
+        title: 'PASSWORD'
+    },{
+        field: 'nickname',
+        title: 'NAME'
+    },{
+        field: 'sex',
+        title: 'SEX' 
+    },{
+        field: 'createtime',
+        title: 'CREATETIME'
+    },{
+    	field: 'operate',
+        title: '操作',
+        align: 'center',
+        valign: 'middle',
+        width: '10%',
+    	formatter: function (value, row, index) {	    
+	      	var str='<div class="table-data-feature">' +		        			       
+			      	 '<button class="item" data-toggle="tooltip" data-placement="top" title="Edit">'+
+		            '<i class="zmdi zmdi-edit"></i>' + 
+		            '</button>' +        
+	      			'<button class="item" data-toggle="tooltip" data-placement="top" title="Save">' + 
+			            '<i class="fa fa-floppy-o"></i>' + 
+			        '</button>' +  
+			        '<button class="item" data-toggle="tooltip" data-placement="top" title="Delete">' + 
+			            '<i class="zmdi zmdi-delete"></i>' + 
+			        '</button>' + 
+			        '<button class="item" data-toggle="tooltip" data-placement="top" title="More">' + 
+			            '<i class="zmdi zmdi-more"></i>' + 
+			        '</button>' + 
+			    	'</div>';
+	        return str;
+    	},
+       events: {
+	      'click button[title=Delete]': function (e, value, row, index) {
+	          if(confirm('此操作不可逆，请确认是否删除？')){
+	        	  ajaxDelete(row);
+	          }
+	      },
+	      'click button[title=Save]': function (e, value, row, index) {
+	          ajaxEdit(row);
+	      },
+	      'click button[title=Edit]': function (e, value, row, index) {
+	          //弹出模态框进行编辑详细信息或者跳转到新页面
+	    	 $('#myModal').modal('show');
+	          //ajaxEdit(row);
+	      },
+      }
+    }
+    ];
+	 function ajaxDelete(data) {
+		 $.ajax({
+			    type: "delete",
+			    url: '/admin/deleteuser/'+ data.username ,
+			//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
+			    data: JSON.stringify(data),
+			    cache: false,
+			    async : false,
+			    dataType: "json",
+			    contentType:"application/json",
+			    success: function (data ,textStatus, jqXHR)
+			    {
+			    	if(data.code==200){
+		                $('#table').bootstrapTable('refresh');
+			    	}else{
+			    		alert(data.msg);
+			    	}			        
+			    },
+			    error:function (XMLHttpRequest, textStatus, errorThrown) {      
+			    	//errorTips("error-tip",data.msg);
+			    }
+			 });
+	 }
+	
+	 function ajaxEdit(data) {
+		 $.ajax({
+			    type: "put",
+			    url: '/admin/edituser'  ,
+			    data: JSON.stringify(data),
+			    cache: false,
+			    async : false,
+			    dataType: "json",
+			    contentType:"application/json",
+			    success: function (data ,textStatus, jqXHR)
+			    {
+			    	if(data.code==200){
+		                $('#table').bootstrapTable('refresh');
+			    	}else{
+			    		alert(data.msg);
+			    	}			        
+			    },
+			    error:function (XMLHttpRequest, textStatus, errorThrown) {      
+			    	//errorTips("error-tip",data.msg);
+			    }
+			 });
+	 }
+	
+	  function ajaxRequest(params) {
+			$.ajax({
+			    type: "get",
+			    url: '/admin/getusers'  ,
+			//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
+			    data: $.param(params.data),
+			    cache: false,
+			    async : false,
+			    dataType: "json",		    
+			    success: function (data ,textStatus, jqXHR)
+			    {
+			    	if(data.code==200){			    		
+			    		 params.success({
+			    			rows : data.rows,
+		                    total : data.total
+		                }); 		                
+			    	}else{
+			    		 params.error(); 
+			    	}
+			        
+			    },
+			    error:function (XMLHttpRequest, textStatus, errorThrown) {      
+			    	 params.error(); 
+			    }
+			 });
+	  }
+	
+	
+	
+	$('#table').bootstrapTable({
+	   
+		ajax :ajaxRequest,
+		// url: '/admin/getusers',        // 表格数据来源
+	    columns: cloums ,
+	    toolbar:'#toolbar',//工具栏
+        toolbarAlign:'left',//工具栏的位置
+        clickEdit: true,
+        striped: true,                      //是否显示行间隔色
+        cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+        pagination: true,                   //是否显示分页（*）
+        sortable: true,                     //是否启用排序
+        sortOrder: "asc",                   //排序方式
+        sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
+        pageNumber: 1,                      //初始化加载第一页，默认第一页,并记录
+        pageSize: 10,                     //每页的记录行数（*）
+        pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）          
+        showRefresh: true,                  //是否显示刷新按钮
+        clickToSelect: false,                //是否启用点击选中行
+        //height: 500,                      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+        uniqueId: "username",               //每一行的唯一标识，一般为主键列
+        /**
+         * @param {点击列的 field 名称} field
+         * @param {点击列的 value 值} value
+         * @param {点击列的整行数据} row
+         * @param {td 元素} $element
+         */
+        onClickCell: function(field, value, row, $element) {
+        	if(field=='username' &&value!="") return;
+        	$element.attr('contenteditable', true);//设置属性为可编辑
+        	$element.blur(function(){
+        		  let index = $element.parent().data('index');
+                  let tdValue = $element.html();
+                  saveData(index, field, tdValue);
+        	});
+        }, 
+       //得到查询的参数
+         queryParams : function (params) {
+             //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
+             var temp = {   
+                 limit: params.limit,                         //页面大小
+                 page: (params.offset / params.limit) + 1,   //页码
+                 sort: params.sort,      //排序列名  
+                 sortOrder: params.order //排位命令（desc，asc） 
+             };
+             //获取时间，如果不为空则添加进temp
+             if($("#begintime").val()!=""){
+            	 temp.begintime= $("#begintime").val();
+             }
+             if($("#endtime").val()!=""){
+            	 temp.endtime= $("#endtime").val();
+             }
+             if($("#username").val()!=""){
+            	 temp.username= $("#username").val();
+             }
+             return temp;
+         },           
+	});
+	
+
+	 function saveData(index, field, value) {
+	        $table.bootstrapTable('updateCell', {
+	            index: index,       //行索引
+	            field: field,       //列名
+	            value: value        //cell值
+	        })
+	    }
+
+	</script>
 </body>
 
 </html>

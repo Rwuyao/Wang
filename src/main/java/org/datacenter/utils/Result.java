@@ -9,14 +9,22 @@ public class  Result  {
 	
 	public int code;
 	public String msg;
-	public Object data;
+	public Object rows;
+	public int total;
 	
+	public static  Result SUCCESS(Object data,int total) {
+        return Result.builder()
+                .code(ResultEnum.SUCCESS.getCode())
+                .total(total)
+                .rows(data)
+                .build();
+    }
 	
 	public static  Result SUCCESS(Object data,String msg) {
         return Result.builder()
                 .code(ResultEnum.SUCCESS.getCode())
                 .msg(msg)
-                .data(data)
+                .rows(data)
                 .build();
     }
 	
@@ -24,7 +32,7 @@ public class  Result  {
         return Result.builder()
                 .code(ResultEnum.SUCCESS.getCode())
                 .msg(ResultEnum.SUCCESS.getMessage())
-                .data(data)
+                .rows(data)
                 .build();
     }
 	
@@ -49,15 +57,17 @@ public class  Result  {
         return Result.builder()
                 .code(ResultEnum.FAILURE.getCode())
                 .msg(msg)
-                .data(data)
+                .rows(data)
                 .build();
     }
+	
+	
 	
 	public static  Result fail(Object data) {
         return Result.builder()
                 .code(ResultEnum.FAILURE.getCode())
                 .msg(ResultEnum.FAILURE.getMessage())
-                .data(data)
+                .rows(data)
                 .build();
     }
 	
@@ -81,7 +91,7 @@ public class  Result  {
         return Result.builder()
         		 .code(en.getCode())
                  .msg(en.getMessage())
-                .data(data)
+                .rows(data)
                 .build();
     }
 	
@@ -89,7 +99,7 @@ public class  Result  {
         return Result.builder()
         		 .code(en.getCode())
                  .msg(en.getMessage())
-                .data(data)
+                .rows(data)
                 .build();
     }
 

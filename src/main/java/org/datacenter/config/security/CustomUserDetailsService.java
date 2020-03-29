@@ -1,16 +1,12 @@
 package org.datacenter.config.security;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.datacenter.model.Resource;
 import org.datacenter.model.Role;
 import org.datacenter.model.User;
 import org.datacenter.service.RoleService;
 import org.datacenter.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -34,7 +30,7 @@ public class CustomUserDetailsService implements UserDetailsService{
 		List<String> nameList = user.getRoles().stream().map(Role::getRolename).collect(Collectors.toList());			
 		List<Role> rs=roleService.findRoleByRoleName(nameList);
 		user.setRoles(rs);	
-		return user;
+		return new UserDetail(user);
 	}
 
 }

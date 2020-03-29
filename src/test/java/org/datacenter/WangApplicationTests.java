@@ -25,7 +25,7 @@ class WangApplicationTests {
 	
 	@Test
 	void userService() {
-	List<User> user=	userService.getuser(1, 100);
+	//List<User> user=	userService.getuser(1, 100);
 	}
 	
 	@Test

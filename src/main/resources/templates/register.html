@@ -108,7 +108,7 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-<script src="js/uitls/appendTips.js"></script>
+	<script src="js/uitls/appendTips.js"></script>
 	<script type="text/javascript">
 	
 	function checkUsername(){
@@ -162,7 +162,6 @@
 		$.ajax({
 	    type: "post",
 	    url: url,
-	//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
 	    data:  JSON.stringify({"username":username,"password":password}),
 	    cache: false,
 	    async : false,
