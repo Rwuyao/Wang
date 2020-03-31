@@ -6,7 +6,10 @@ import org.datacenter.model.Userprofile;
 import org.datacenter.model.UserprofileExample;
 
 public interface UserprofileMapper {
-    long countByExample(UserprofileExample example);
+	
+	Userprofile findByUserName(String username); 
+	
+	long countByExample(UserprofileExample example);
 
     int deleteByExample(UserprofileExample example);
 

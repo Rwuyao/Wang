@@ -25,6 +25,7 @@ class WangApplicationTests {
 	
 	@Test
 	void userService() {
+		userService.getUserprofile("admin");
 	//List<User> user=	userService.getuser(1, 100);
 	}
 	

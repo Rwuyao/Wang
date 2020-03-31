@@ -13,32 +13,42 @@
     <title>Dashboard 3</title>
 
     <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="css/font-face.css" rel="stylesheet" media="all" />
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all" />
 
     <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all" />
     
     <!-- Bootstrap Table-->
-	<link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.min.css">
+	<link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.min.css" />
  	<!-- Bootstrap date-->
-	<link href="vendor/bootstrap-date/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap-date/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 
 
     <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all" />
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all" />
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all" />
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all" />
 
     <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="css/theme.css" rel="stylesheet" media="all" />
 
+	<style type="text/css">
+	#myModal div span{
+		min-width:100px;
+	}
+	#myModal .row{
+		margin-top:5px !important;	
+		margin-bottom:5px !important;	
+	}
+	</style>
+	
 </head>
 
 <body class="animsition">
@@ -585,9 +595,10 @@
                 </div>
                     <div class="row">
                         <div class="col-md-12">
+	                        <!--用户信息toolbar  -->
 	                        <div id="toolbar">
 							  <div class="form-inline" role="form">
-							    	<button class="au-btn au-btn-icon au-btn--green au-btn--small" id="additem">
+							    	<button class="au-btn au-btn-icon au-btn--green au-btn--small" id="adduser">
                                         <i class="zmdi zmdi-plus"></i>add
                                     </button>
                                     <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
@@ -616,15 +627,78 @@
 				          <span aria-hidden="true">&times;</span>
 				        </button>
 				      </div>
-				      <div class="modal-body">
-				        ...
+				      <div class="modal-body">			      
+				      <div class="container">
+                		<div class="row rowmargin" >
+                 			<div class='col-sm-6 form-inline'>
+                 				<span>Username</span>
+                 				<input class="form-control" name="username" type="text" placeholder="Username">
+                 			</div>                			             			
+                 			<div class='col-sm-6 form-inline'>
+                 				<span>Password</span>
+                 				<input class="form-control" name="password" type="password" placeholder="Password">
+                 			</div>
+                 		</div>
+                 	
+                 		<div class="row  rowmargin">              
+                 			<div class='col-sm-6 form-inline'>
+                 				<span>Nickname</span>
+                 				<input class="form-control" name="nickname" type="text" placeholder="Nickname">
+                 			</div>                			             			
+                 			<div class='col-sm-6 form-inline'>
+                 				<span>Age</span>
+                 				<input class="form-control"  name="age" type="text" placeholder="25">
+                 			</div>
+                 		</div>
+                 		<div class="row rowmargin">
+                 			<div class='col-sm-6 form-inline'>
+                 				<span>Telphone</span>
+                 				<input class="form-control" name="telphone" type="text" placeholder="Telphone">
+                 			</div>                			             			
+                 			<div class='col-sm-6 form-inline'>
+                 				<span>Email</span>
+                 				<input class="form-control" name="email" type="text" placeholder="Email">
+                 			</div>
+                 		</div>
+                 		<div class="row rowmargin">              			
+                 			<div class='col-sm-6 form-inline'>
+                 				<span>Sex</span>
+                 				<label><input type="radio" name="sex" value="女生">女生</label>
+                 				<label><input type="radio" name="sex" checked ="checked" value="男生">男生</label>								
+                 			</div>                			             			
+                 			<div class='col-sm-6 form-inline'>                				
+                 			<span>Role</span>                 			                			
+                 			</div>
+                 		</div>
+                 		
+                 		<div class="row rowmargin">
+                 			<div class='col-sm-6 form-inline' >
+                 				<img src="/images/bgimg.jpg" alt="..." name="headimg" class="img-thumbnail" style="z-index:300">                				
+                 				<button type="button" class="btn btn-dark" style="z-index:301;position:absolute;left:20px;bottom:4px;">
+                 					<i class="zmdi zmdi-edit"></i> Edit
+                 				</button>
+                 				<input type="file" name="headimgfile" style="z-index:302;position:absolute;left:20px;bottom:4px;opacity:0.0;filter:Alpha(opacity=0);"/>
+                 			</div>
+                 			<div class='col-sm-6 form-inline' >
+                 			<!--角色信息toolbar  -->
+	                        <div id="roletoolbar">
+							  <div class="form-inline" role="form">
+							    	<button class="au-btn au-btn-icon au-btn--green au-btn--small" id="addrole">
+                                        <i class="zmdi zmdi-plus"></i>add
+                                    </button>		
+							  </div>
+							</div>
+                 			<table id="roletable" class="table table-hover"></table>
+                 			</div>
+                 		</div>
 				      </div>
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				        <button type="button" class="btn btn-primary">Understood</button>
-				      </div>
+				      </div> 
 				    </div>
 				  </div>
+				 </div>
 				</div>
          	</section>
           
@@ -675,29 +749,12 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+	
+	<script src="js/admin/user.js"></script>
+	<script src="js/admin/userprofile.js"></script>
+	
 	<script type="text/javascript">
 	
-	 var $table = $('#table');
-	 
-	$(document).ready(function(){
-	    $("#additem").bind("click",function(){
-	    	$table.bootstrapTable('insertRow', {
-		        index: 0,
-		        row: {
-		        	username: '',
-		        	password: '',
-		        	nickname: '',
-		        	sex:'',
-		        	createtime:''
-		        }
-		      })
-	    });
-	    
-	    
-	    $("#search").bind("click",function(){
-	    	$table.bootstrapTable('refresh');
-	    });
-	});
 
 	$('#begintime').datetimepicker({
 		fontAwesome:'font-awesome',
@@ -728,217 +785,8 @@
 		format : 'yyyy-mm-dd hh:ii'
     });
 	
-	var cloums=[
-	{
-       checkbox: true,
-       visible: true                  //是否显示复选框
-  	},
-  	{
-        field: 'no',
-        title: '序号',
-        width: 40,
-        formatter: function (value, row, index) {
-        	 return index + 1;
-        }
-    },
-	{
-        field: 'username',
-        title: 'USERNAME'
-    }, {
-        field: 'password',
-        title: 'PASSWORD'
-    },{
-        field: 'nickname',
-        title: 'NAME'
-    },{
-        field: 'sex',
-        title: 'SEX' 
-    },{
-        field: 'createtime',
-        title: 'CREATETIME'
-    },{
-    	field: 'operate',
-        title: '操作',
-        align: 'center',
-        valign: 'middle',
-        width: '10%',
-    	formatter: function (value, row, index) {	    
-	      	var str='<div class="table-data-feature">' +		        			       
-			      	 '<button class="item" data-toggle="tooltip" data-placement="top" title="Edit">'+
-		            '<i class="zmdi zmdi-edit"></i>' + 
-		            '</button>' +        
-	      			'<button class="item" data-toggle="tooltip" data-placement="top" title="Save">' + 
-			            '<i class="fa fa-floppy-o"></i>' + 
-			        '</button>' +  
-			        '<button class="item" data-toggle="tooltip" data-placement="top" title="Delete">' + 
-			            '<i class="zmdi zmdi-delete"></i>' + 
-			        '</button>' + 
-			        '<button class="item" data-toggle="tooltip" data-placement="top" title="More">' + 
-			            '<i class="zmdi zmdi-more"></i>' + 
-			        '</button>' + 
-			    	'</div>';
-	        return str;
-    	},
-       events: {
-	      'click button[title=Delete]': function (e, value, row, index) {
-	          if(confirm('此操作不可逆，请确认是否删除？')){
-	        	  ajaxDelete(row);
-	          }
-	      },
-	      'click button[title=Save]': function (e, value, row, index) {
-	          ajaxEdit(row);
-	      },
-	      'click button[title=Edit]': function (e, value, row, index) {
-	          //弹出模态框进行编辑详细信息或者跳转到新页面
-	    	 $('#myModal').modal('show');
-	          //ajaxEdit(row);
-	      },
-      }
-    }
-    ];
-	 function ajaxDelete(data) {
-		 $.ajax({
-			    type: "delete",
-			    url: '/admin/deleteuser/'+ data.username ,
-			//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
-			    data: JSON.stringify(data),
-			    cache: false,
-			    async : false,
-			    dataType: "json",
-			    contentType:"application/json",
-			    success: function (data ,textStatus, jqXHR)
-			    {
-			    	if(data.code==200){
-		                $('#table').bootstrapTable('refresh');
-			    	}else{
-			    		alert(data.msg);
-			    	}			        
-			    },
-			    error:function (XMLHttpRequest, textStatus, errorThrown) {      
-			    	//errorTips("error-tip",data.msg);
-			    }
-			 });
-	 }
 	
-	 function ajaxEdit(data) {
-		 $.ajax({
-			    type: "put",
-			    url: '/admin/edituser'  ,
-			    data: JSON.stringify(data),
-			    cache: false,
-			    async : false,
-			    dataType: "json",
-			    contentType:"application/json",
-			    success: function (data ,textStatus, jqXHR)
-			    {
-			    	if(data.code==200){
-		                $('#table').bootstrapTable('refresh');
-			    	}else{
-			    		alert(data.msg);
-			    	}			        
-			    },
-			    error:function (XMLHttpRequest, textStatus, errorThrown) {      
-			    	//errorTips("error-tip",data.msg);
-			    }
-			 });
-	 }
-	
-	  function ajaxRequest(params) {
-			$.ajax({
-			    type: "get",
-			    url: '/admin/getusers'  ,
-			//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
-			    data: $.param(params.data),
-			    cache: false,
-			    async : false,
-			    dataType: "json",		    
-			    success: function (data ,textStatus, jqXHR)
-			    {
-			    	if(data.code==200){			    		
-			    		 params.success({
-			    			rows : data.rows,
-		                    total : data.total
-		                }); 		                
-			    	}else{
-			    		 params.error(); 
-			    	}
-			        
-			    },
-			    error:function (XMLHttpRequest, textStatus, errorThrown) {      
-			    	 params.error(); 
-			    }
-			 });
-	  }
-	
-	
-	
-	$('#table').bootstrapTable({
-	   
-		ajax :ajaxRequest,
-		// url: '/admin/getusers',        // 表格数据来源
-	    columns: cloums ,
-	    toolbar:'#toolbar',//工具栏
-        toolbarAlign:'left',//工具栏的位置
-        clickEdit: true,
-        striped: true,                      //是否显示行间隔色
-        cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-        pagination: true,                   //是否显示分页（*）
-        sortable: true,                     //是否启用排序
-        sortOrder: "asc",                   //排序方式
-        sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
-        pageNumber: 1,                      //初始化加载第一页，默认第一页,并记录
-        pageSize: 10,                     //每页的记录行数（*）
-        pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）          
-        showRefresh: true,                  //是否显示刷新按钮
-        clickToSelect: false,                //是否启用点击选中行
-        //height: 500,                      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-        uniqueId: "username",               //每一行的唯一标识，一般为主键列
-        /**
-         * @param {点击列的 field 名称} field
-         * @param {点击列的 value 值} value
-         * @param {点击列的整行数据} row
-         * @param {td 元素} $element
-         */
-        onClickCell: function(field, value, row, $element) {
-        	if(field=='username' &&value!="") return;
-        	$element.attr('contenteditable', true);//设置属性为可编辑
-        	$element.blur(function(){
-        		  let index = $element.parent().data('index');
-                  let tdValue = $element.html();
-                  saveData(index, field, tdValue);
-        	});
-        }, 
-       //得到查询的参数
-         queryParams : function (params) {
-             //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
-             var temp = {   
-                 limit: params.limit,                         //页面大小
-                 page: (params.offset / params.limit) + 1,   //页码
-                 sort: params.sort,      //排序列名  
-                 sortOrder: params.order //排位命令（desc，asc） 
-             };
-             //获取时间，如果不为空则添加进temp
-             if($("#begintime").val()!=""){
-            	 temp.begintime= $("#begintime").val();
-             }
-             if($("#endtime").val()!=""){
-            	 temp.endtime= $("#endtime").val();
-             }
-             if($("#username").val()!=""){
-            	 temp.username= $("#username").val();
-             }
-             return temp;
-         },           
-	});
-	
-
-	 function saveData(index, field, value) {
-	        $table.bootstrapTable('updateCell', {
-	            index: index,       //行索引
-	            field: field,       //列名
-	            value: value        //cell值
-	        })
-	    }
+	 
 
 	</script>
 </body>

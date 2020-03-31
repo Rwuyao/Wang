@@ -7,10 +7,14 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.datacenter.mapper.UserMapper;
 import org.datacenter.mapper.UserRoleMapper;
+import org.datacenter.mapper.UserprofileMapper;
 import org.datacenter.model.User;
 import org.datacenter.model.UserExample;
 import org.datacenter.model.UserExample.Criteria;
 import org.datacenter.model.UserRole;
+import org.datacenter.model.UserRoleExample;
+import org.datacenter.model.Userprofile;
+import org.datacenter.model.UserprofileExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,10 +28,51 @@ public class UserService {
 	 @Autowired UserMapper userMapper;
 	    
 	 @Autowired UserRoleMapper userRoleMapper;
+	
+	 @Autowired UserprofileMapper userprofileMapper;
+	 	 
+	 
+	 public long countLinkOfUserRole(String username) {
+		 	UserRoleExample example =new UserRoleExample();
+	    	example.createCriteria().andUsernameEqualTo(username);	    	
+	    	long count=userRoleMapper.countByExample(example);
+	    	return count;
+	 }
 	 
 	 public User findByUserName(String username){
 	        return userMapper.findByUserName(username);
 	    }
+	 
+	 public Userprofile getUserprofile(String username) {		 		
+		 Userprofile userprofile=userprofileMapper.findByUserName(username); 
+		 return userprofile;
+	 }
+	 
+	 public void saveLinkUserAndRole(UserRole userRole) {
+		 userRoleMapper.insert(userRole); 
+	 }
+	 
+	 public void deleteLinkUserAndRole(UserRole userRole) {
+		//删除用户角色关联
+		 	UserRoleExample example =new UserRoleExample();
+		    example.createCriteria()
+		    .andUsernameEqualTo(userRole.getUsername())
+		    .andRoleEqualTo(userRole.getRole());
+		    userRoleMapper.deleteByExample(example);
+			 
+		 }
+	 
+	 public boolean hasLinkUserAndRole(String username,String rolename) {
+		 UserRoleExample example =new UserRoleExample();
+	    	example.createCriteria().andUsernameEqualTo(username).andRoleEqualTo(rolename);	    	
+	    	long count=userRoleMapper.countByExample(example);
+	    	if(count>0) {
+	    		return true;
+	    	}else {	    		
+	    		return false;
+	    	}
+	 }
+	 
 	 
 	 public List<User> getuser(int Page,int pagesize,String sort,String sortOrder,String begintime,String endtime,String username) throws ParseException{
 		 PageHelper.startPage(Page, pagesize);		 

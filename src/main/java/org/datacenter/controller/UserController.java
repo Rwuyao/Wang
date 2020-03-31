@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.apache.commons.lang3.StringUtils;
 import org.datacenter.model.User;
+import org.datacenter.model.Userprofile;
 import org.datacenter.service.UserService;
 import org.datacenter.utils.Result;
 import org.datacenter.utils.ResultEnum;
@@ -24,12 +25,13 @@ public class UserController {
 	
 	@Autowired UserService userService;
 	
+	
 	/**
 	 * 获取用户信息
 	 * @param username
 	 * @return
 	 */
-	@RequestMapping(value="/{username}",method= RequestMethod.GET)
+	@RequestMapping(value="/checkaccount/{username}",method= RequestMethod.GET)
 	public Result checkUserName(@PathVariable String username) {
 		if(StringUtils.isNotBlank(username)) {
 			return Result.fail("username不能为空");
@@ -41,6 +43,9 @@ public class UserController {
 			return Result.SUCCESS();
 		}	
 	}
+	
+	
+	
 	
 	/**
 	 * 注册用户

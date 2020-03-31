@@ -1,80 +1,31 @@
-2020-03-29 10:45:48 [main] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 128 (D:\wang\target\classes started by xiong in D:\wang)
-2020-03-29 10:45:48 [main] INFO  org.datacenter.WangApplication - The following profiles are active: pro
-2020-03-29 10:45:49 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-03-29 10:45:49 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9001 (http)
-2020-03-29 10:45:49 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9001"]
-2020-03-29 10:45:49 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2020-03-29 10:45:49 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-29 10:45:49 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
-2020-03-29 10:45:49 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
-2020-03-29 10:45:49 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-03-29 10:45:49 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-03-29 10:45:49 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
-2020-03-29 10:45:49 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-03-29 10:45:49 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 984 ms
-2020-03-29 10:45:50 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
-2020-03-29 10:45:50 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-2020-03-29 10:45:50 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
-2020-03-29 10:45:50 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
-2020-03-29 10:45:50 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/images/**'], []
-2020-03-29 10:45:50 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/vendor/**'], []
-2020-03-29 10:45:50 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/fonts/**'], []
-2020-03-29 10:45:50 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35c8be21, org.springframework.security.web.context.SecurityContextPersistenceFilter@37d699a1, org.springframework.security.web.header.HeaderWriterFilter@633ddc0c, org.springframework.security.web.authentication.logout.LogoutFilter@687eb455, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1132baa3, org.springframework.security.web.session.ConcurrentSessionFilter@5db0003d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7d66a126, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@8eb6f9a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c07add6, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@34d9df9f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60807fd9, org.springframework.security.web.session.SessionManagementFilter@1471b98d, org.springframework.security.web.access.ExceptionTranslationFilter@1510b9a2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@60b1ff3b]
-2020-03-29 10:45:51 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-03-29 10:45:51 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
-2020-03-29 10:45:51 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9001"]
-2020-03-29 10:45:51 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9001 (http) with context path ''
-2020-03-29 10:45:51 [main] INFO  org.datacenter.WangApplication - Started WangApplication in 2.836 seconds (JVM running for 3.83)
-2020-03-29 10:46:38 [http-nio-9001-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-03-29 10:46:38 [http-nio-9001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-03-29 10:46:38 [http-nio-9001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
-2020-03-29 10:46:38 [http-nio-9001-exec-1] WARN  org.apache.catalina.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [175] milliseconds.
-2020-03-29 10:46:47 [http-nio-9001-exec-7] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
-2020-03-29 10:47:12 [main] INFO  org.datacenter.WangApplicationTests - Starting WangApplicationTests on DESKTOP-JOIIDRH with PID 14276 (started by xiong in D:\wang)
-2020-03-29 10:47:12 [main] INFO  org.datacenter.WangApplicationTests - The following profiles are active: pro
-2020-03-29 10:47:13 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-03-29 10:47:13 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
-2020-03-29 10:47:13 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-2020-03-29 10:47:14 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
-2020-03-29 10:47:14 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
-2020-03-29 10:47:14 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/images/**'], []
-2020-03-29 10:47:14 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/vendor/**'], []
-2020-03-29 10:47:14 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/fonts/**'], []
-2020-03-29 10:47:14 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5be7b749, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e1d8d41, org.springframework.security.web.header.HeaderWriterFilter@3d53e876, org.springframework.security.web.authentication.logout.LogoutFilter@18bb1b88, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@365e65bb, org.springframework.security.web.session.ConcurrentSessionFilter@69a73867, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@687b0ddc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@750e2d33, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44976b08, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@478530cb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44aeae34, org.springframework.security.web.session.SessionManagementFilter@aa0dbca, org.springframework.security.web.access.ExceptionTranslationFilter@1224e1b6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7ab1ad9]
-2020-03-29 10:47:15 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-03-29 10:47:15 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
-2020-03-29 10:47:15 [main] INFO  org.datacenter.WangApplicationTests - Started WangApplicationTests in 4.237 seconds (JVM running for 5.625)
-2020-03-29 10:47:16 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-2020-03-29 10:47:16 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
-2020-03-29 10:47:16 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-2020-03-29 10:48:01 [main] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 12736 (D:\wang\target\classes started by xiong in D:\wang)
-2020-03-29 10:48:02 [main] INFO  org.datacenter.WangApplication - The following profiles are active: pro
-2020-03-29 10:48:02 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-03-29 10:48:02 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9001 (http)
-2020-03-29 10:48:02 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9001"]
-2020-03-29 10:48:02 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2020-03-29 10:48:02 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-29 10:48:02 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
-2020-03-29 10:48:02 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
-2020-03-29 10:48:02 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-03-29 10:48:02 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-03-29 10:48:02 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
-2020-03-29 10:48:02 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-03-29 10:48:02 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 776 ms
-2020-03-29 10:48:02 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
-2020-03-29 10:48:03 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-2020-03-29 10:48:03 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
-2020-03-29 10:48:03 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
-2020-03-29 10:48:03 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/images/**'], []
-2020-03-29 10:48:03 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/vendor/**'], []
-2020-03-29 10:48:03 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/fonts/**'], []
-2020-03-29 10:48:03 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ad0bb4e, org.springframework.security.web.context.SecurityContextPersistenceFilter@675ec28b, org.springframework.security.web.header.HeaderWriterFilter@1d17423f, org.springframework.security.web.authentication.logout.LogoutFilter@40dd552c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@9be7319, org.springframework.security.web.session.ConcurrentSessionFilter@4ef5dd23, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1c68d0db, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@610fbe1c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a7a1a0d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5546e754, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7196a8f1, org.springframework.security.web.session.SessionManagementFilter@582dcd35, org.springframework.security.web.access.ExceptionTranslationFilter@6a5dd083, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75ad30c1]
-2020-03-29 10:48:03 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-03-29 10:48:03 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
-2020-03-29 10:48:03 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9001"]
-2020-03-29 10:48:03 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9001 (http) with context path ''
-2020-03-29 10:48:03 [main] INFO  org.datacenter.WangApplication - Started WangApplication in 2.255 seconds (JVM running for 2.853)
-2020-03-29 10:48:03 [http-nio-9001-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-03-29 10:48:03 [http-nio-9001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-03-29 10:48:03 [http-nio-9001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
-2020-03-29 10:48:34 [http-nio-9001-exec-7] WARN  org.apache.catalina.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [163] milliseconds.
+2020-03-31 19:02:43 [main] INFO  org.datacenter.WangApplication - Starting WangApplication on DESKTOP-JOIIDRH with PID 13768 (D:\wang\target\classes started by xiong in D:\wang)
+2020-03-31 19:02:43 [main] INFO  org.datacenter.WangApplication - The following profiles are active: pro
+2020-03-31 19:02:43 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidSpringAopConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 19:02:44 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9001 (http)
+2020-03-31 19:02:44 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9001"]
+2020-03-31 19:02:44 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-31 19:02:44 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-31 19:02:44 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-03-31 19:02:44 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-03-31 19:02:44 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-03-31 19:02:44 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-03-31 19:02:44 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-03-31 19:02:44 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-31 19:02:44 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 810 ms
+2020-03-31 19:02:44 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-31 19:02:44 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-31 19:02:44 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-03-31 19:02:44 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-03-31 19:02:44 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/images/**'], []
+2020-03-31 19:02:44 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/vendor/**'], []
+2020-03-31 19:02:44 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/fonts/**'], []
+2020-03-31 19:02:44 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fb0261e, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b6c2be6, org.springframework.security.web.header.HeaderWriterFilter@7a814310, org.springframework.security.web.authentication.logout.LogoutFilter@5e67a490, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@10131289, org.springframework.security.web.session.ConcurrentSessionFilter@383cdd4d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@50f4b83d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26d0ece6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5dcf0772, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@660b1a9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d6b532f, org.springframework.security.web.session.SessionManagementFilter@4e67cfe1, org.springframework.security.web.access.ExceptionTranslationFilter@b01cb8d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@34aa8b61]
+2020-03-31 19:02:45 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-31 19:02:45 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-31 19:02:45 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9001"]
+2020-03-31 19:02:45 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9001 (http) with context path ''
+2020-03-31 19:02:45 [main] INFO  org.datacenter.WangApplication - Started WangApplication in 2.363 seconds (JVM running for 3.216)
+2020-03-31 19:04:15 [http-nio-9001-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-31 19:04:15 [http-nio-9001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-31 19:04:15 [http-nio-9001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-03-31 19:04:16 [http-nio-9001-exec-1] WARN  org.apache.catalina.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [178] milliseconds.
