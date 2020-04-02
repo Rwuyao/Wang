@@ -1,8 +1,13 @@
 package org.datacenter.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.datacenter.model.Role;
@@ -14,13 +19,16 @@ import org.datacenter.service.UserService;
 import org.datacenter.utils.Result;
 import org.datacenter.utils.ResultEnum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSON;
 
@@ -28,28 +36,45 @@ import com.alibaba.fastjson.JSON;
 @RequestMapping("/admin")
 public class AdminController {
 	
+	
+	private static final PasswordEncoder encoder=new BCryptPasswordEncoder();
+	
+	@Value("${upload-path}")
+	private String uploadPath;
+	
 	@Autowired UserService userService;
 	
 	@Autowired RoleService roleService ;
 	
+	
+	@RequestMapping(value="/getUserRole",method= RequestMethod.GET)
+	public Result getUserRole(int limit,int page,String sort,String sortOrder,String username) {
+		if(!StringUtils.isNotBlank(username)) {
+			return Result.fail("未获取到参数");
+		}
+		List<Role> role = userService.getuserRole(page, limit, sort, sortOrder, username);		
+		return Result.SUCCESS(role,role.size());		
+	}
+	
+	
 	@RequestMapping(value="/deleteUserRole",method= RequestMethod.DELETE)
-	private Result deletUserRole(UserRole userRole) {
+	private Result deletUserRole(@RequestBody UserRole userRole) {
 		try {
-			userService.deleteLinkUserAndRole(userRole);
+				userService.deleteUserRole(userRole);
 			}catch(Exception e) {
-				return Result.fail("解除角色绑定["+userRole.getRole()+"]失败，请重新尝试！！");
+				return Result.fail("解除角色绑定["+userRole.getRolename()+"]失败，请重新尝试！！");
 			}
 		    return Result.SUCCESS();
 	}
 	
 	
-	@RequestMapping(value="/addUserRole",method= RequestMethod.PUT)
+	@RequestMapping(value="/addUserRole",method= RequestMethod.PUT )
 	public Result addrole(@RequestBody UserRole userRole) {
 		//检查必要参数是否存在		
 		if(userRole==null) {
 			return Result.of(ResultEnum.Parameter_Is_Empty);
 		}
-		String   rolename=userRole.getRole();
+		String   rolename=userRole.getRolename();
 		String   username=userRole.getUsername();
 		if(!StringUtils.isNotBlank(rolename)) {
 			return Result.fail("未获取到rolename！！");
@@ -62,14 +87,13 @@ public class AdminController {
 			return Result.fail("角色["+rolename+"]不存在！！");
 		}
 		//检查用户和角色是否是绑定关系
-		if(userService.hasLinkUserAndRole(username,rolename)) {
+		if(userService.isExitsUserRole(username, rolename)) {
 			return Result.SUCCESS();
 		}
 	
 		//插入记录
-		try {		
-			 
-			userService.saveLinkUserAndRole(new UserRole(username,rolename));
+		try {					 
+			userService.saveUserRole(new UserRole(username,rolename));
 		}catch(Exception e) {
 			return Result.fail("绑定["+rolename+"]失败，请重新尝试！！");
 		}
@@ -77,22 +101,7 @@ public class AdminController {
 	}
 	
 	
-	
-	@RequestMapping(value="/getusers",method= RequestMethod.GET)
-	public Result getusers(int limit,int page,String sort,String sortOrder,String begintime,String endtime,String username) {
-		//检查必要参数是否存在
-		List<User> rows;
-		try {
-			rows = userService.getuser(page, limit,sort, sortOrder, begintime, endtime, username);
-			if(rows==null || rows.size()<=0) {	
-				return Result.fail(0);
-			}
-		} catch (ParseException e) {
-			return Result.fail(0);
-		}	
-		return Result.SUCCESS(rows,rows.size());
-	}
-	
+
 	/**
 	 * 获取用户详细信息
 	 * @param username
@@ -107,41 +116,75 @@ public class AdminController {
 		return Result.SUCCESS(userprofile);		
 	}
 	
-	@RequestMapping(value="/edituserprofile",method= RequestMethod.PUT)
-	private Result edituserprofile(@RequestBody User user) {
+	
+	
+	@RequestMapping(value="/edituserprofile",method= RequestMethod.POST)
+	private Result edituserprofile(MultipartFile multipartFile,User user,Userprofile userProfile,HttpServletRequest httpServletRequest) {
+			
+		if(multipartFile!=null) {
+			// 创建文件在服务器端的存放路径
+			String dir =uploadPath;	            
+            File fileDir = new File(dir);
+            if (!fileDir.exists()) {
+                fileDir.mkdirs();
+            }
+            // 生成文件在服务器端存放的名字
+            String fileSuffix = multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf("."));
+            String fileName = UUID.randomUUID().toString() + fileSuffix;
+            File file = new File(fileDir + "/" + fileName);
+            // 上传
+            try {
+				multipartFile.transferTo(file);
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+				return Result.fail("修改头像失败！！");
+			}
+            //更新头像地址
+            userProfile.setHeadsculpture("/" + fileName);
+		}                 		
 		String username=user.getUsername();
 		String password=user.getPassword();
 		//检查用户名和密码是否为空
-		 if(StringUtils.isNotBlank(username)) {
-			 Result.fail("账号为空注册失败，请重新尝试！！");
+		 if(!StringUtils.isNotBlank(username)) {
+			 Result.fail("账号为空修改失败，请重新尝试！！");
 		 }
-		 if(StringUtils.isNotBlank(password)) {
-			 Result.fail("密码为空注册失败，请重新尝试！！"); 
+		 if(!StringUtils.isNotBlank(password)) {
+			 Result.fail("密码为空修改失败，请重新尝试！！"); 
 		 }
-		 
-		//更新
-		if(userService.isExits(username)){
-			try {
-				userService.update(user);
-				}catch(Exception e) {
-					return Result.fail("账号["+user.getUsername()+"]更新失败，请重新尝试！！");
-				}
-		}else {
-			//注册
-			try {
-				//对密码加密
-				PasswordEncoder encoder=new BCryptPasswordEncoder();
-				user.setPassword(encoder.encode(password));		
-				//设置日期
-				user.setCreatetime(new Date());
-				userService.insert(user);
-			}catch(Exception e) {
-				return Result.fail("账号["+username+"]注册失败，请重新尝试！！");
-			}
-		}	
+		 //检查密码是否为**********,否则将密码加密
+		 if(!password.equals("**********")) {
+			//对密码加密			
+			user.setPassword(encoder.encode(password));	
+		 }		 
+		//更新用户信息及用户详细信息	
+		try {
+			userService.updateUser(user); 
+			userService.updateUserprofile(userProfile);
+		}catch(Exception e) {
+			return Result.fail("账号["+user.getUsername()+"]更新失败，请重新尝试！！");
+		}			
 	    return Result.SUCCESS();
 	}
 	
+	
+	@RequestMapping(value="/getusers",method= RequestMethod.GET)
+	public Result getusers(int limit,int page,String sort,String sortOrder,String begintime,String endtime,String username) {
+		//检查必要参数是否存在
+		List<User> rows;
+		try {
+			rows = userService.getuser(page, limit,sort, sortOrder, begintime, endtime, username);
+			if(rows==null || rows.size()<=0) {	
+				return Result.fail(0);
+			}
+		} catch (ParseException e) {
+			return Result.fail(0);
+		}	
+		//循环将密码设置为10个*
+		for(User u: rows) {
+			u.setPassword("**********");
+		}
+		return Result.SUCCESS(rows,rows.size());
+	}
 	
 	@RequestMapping(value="/edituser",method= RequestMethod.PUT)
 	private Result edit(@RequestBody User user) {
@@ -149,28 +192,38 @@ public class AdminController {
 		String password=user.getPassword();
 		//检查用户名和密码是否为空
 		 if(StringUtils.isNotBlank(username)) {
-			 Result.fail("账号为空注册失败，请重新尝试！！");
+			 Result.fail("账号为空更新失败，请重新尝试！！");
 		 }
 		 if(StringUtils.isNotBlank(password)) {
-			 Result.fail("密码为空注册失败，请重新尝试！！"); 
+			 Result.fail("密码为空更新失败，请重新尝试！！"); 
 		 }
-		 
-		//更新
-		if(userService.isExits(username)){
+		 				 	
+		if(userService.isExitsUser(username)){
+			//更新
+			//检查密码是否为**********,否则将密码加密
+			 if(!password.equals("**********")) {
+				//对密码加密			
+				user.setPassword(encoder.encode(password));	
+			 }
 			try {
-				userService.update(user);
+				userService.updateUser(user); 
 				}catch(Exception e) {
 					return Result.fail("账号["+user.getUsername()+"]更新失败，请重新尝试！！");
 				}
 		}else {
 			//注册
 			try {
-				//对密码加密
-				PasswordEncoder encoder=new BCryptPasswordEncoder();
+				//对密码加密				
 				user.setPassword(encoder.encode(password));		
 				//设置日期
 				user.setCreatetime(new Date());
-				userService.insert(user);
+				//创建userprofile
+				Userprofile userprofile=new Userprofile();
+				userprofile.setUsername(username);
+				userprofile.setHeadsculpture(user.getSex()==0?"/images/girl.jpg":"/images/boy.jpg");
+				//插入记录
+				userService.saveUser(user);
+				userService.saveUserprofile(userprofile); 				
 			}catch(Exception e) {
 				return Result.fail("账号["+username+"]注册失败，请重新尝试！！");
 			}
@@ -181,7 +234,7 @@ public class AdminController {
 	@RequestMapping(value="/deleteuser/{username}",method= RequestMethod.DELETE)
 	private Result del(@PathVariable String username) {
 		try {
-			userService.delete(username);
+			userService.deleteUser(username); 
 			}catch(Exception e) {
 				return Result.fail("账号["+username+"]删除失败，请重新尝试！！");
 			}

@@ -239,9 +239,11 @@
   </update>
  
    <select id="findByUserName" resultMap="user" >
-       select a.nickname,a.username,a.password,a.sex,c.rolename,c.description  from  user a,user_role b, role c where a.username=#{username} and a.username=b.username and b.role=c.rolename 
+       select a.nickname,a.username,a.password,a.sex,c.rolename,c.description  from  user a,user_role b, role c where a.username=#{username} and a.username=b.username and b.rolename=c.rolename 
     </select>
  
- 
+ <select id="getRoleByUserName" resultType="org.datacenter.model.Role" >
+       select c.rolename,c.description  from  user a,user_role b, role c where a.username=#{username} and a.username=b.username and b.rolename=c.rolename 
+    </select>
  
 </mapper>

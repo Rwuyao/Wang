@@ -3,7 +3,7 @@
 <mapper namespace="org.datacenter.mapper.RoleResourceMapper">
   <resultMap id="BaseResultMap" type="org.datacenter.model.RoleResource">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="role" jdbcType="VARCHAR" property="role" />
+    <result column="rolename" jdbcType="VARCHAR" property="rolename" />
     <result column="resource" jdbcType="VARCHAR" property="resource" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -65,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, role, resource
+    id, rolename, resource
   </sql>
   <select id="selectByExample" parameterType="org.datacenter.model.RoleResourceExample" resultMap="BaseResultMap">
     select
@@ -98,9 +98,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="org.datacenter.model.RoleResource">
-    insert into role_resource (id, role, resource
+    insert into role_resource (id, rolename, resource
       )
-    values (#{id,jdbcType=INTEGER}, #{role,jdbcType=VARCHAR}, #{resource,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{resource,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="org.datacenter.model.RoleResource">
@@ -109,8 +109,8 @@
       <if test="id != null">
         id,
       </if>
-      <if test="role != null">
-        role,
+      <if test="rolename != null">
+        rolename,
       </if>
       <if test="resource != null">
         resource,
@@ -120,8 +120,8 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="role != null">
-        #{role,jdbcType=VARCHAR},
+      <if test="rolename != null">
+        #{rolename,jdbcType=VARCHAR},
       </if>
       <if test="resource != null">
         #{resource,jdbcType=VARCHAR},
@@ -140,8 +140,8 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.role != null">
-        role = #{record.role,jdbcType=VARCHAR},
+      <if test="record.rolename != null">
+        rolename = #{record.rolename,jdbcType=VARCHAR},
       </if>
       <if test="record.resource != null">
         resource = #{record.resource,jdbcType=VARCHAR},
@@ -154,7 +154,7 @@
   <update id="updateByExample" parameterType="map">
     update role_resource
     set id = #{record.id,jdbcType=INTEGER},
-      role = #{record.role,jdbcType=VARCHAR},
+      rolename = #{record.rolename,jdbcType=VARCHAR},
       resource = #{record.resource,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -163,8 +163,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="org.datacenter.model.RoleResource">
     update role_resource
     <set>
-      <if test="role != null">
-        role = #{role,jdbcType=VARCHAR},
+      <if test="rolename != null">
+        rolename = #{rolename,jdbcType=VARCHAR},
       </if>
       <if test="resource != null">
         resource = #{resource,jdbcType=VARCHAR},
@@ -174,7 +174,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="org.datacenter.model.RoleResource">
     update role_resource
-    set role = #{role,jdbcType=VARCHAR},
+    set rolename = #{rolename,jdbcType=VARCHAR},
       resource = #{resource,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>

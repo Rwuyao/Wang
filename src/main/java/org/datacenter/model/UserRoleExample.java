@@ -234,73 +234,73 @@ public class UserRoleExample {
             return (Criteria) this;
         }
 
-        public Criteria andRoleIsNull() {
-            addCriterion("role is null");
+        public Criteria andRolenameIsNull() {
+            addCriterion("rolename is null");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIsNotNull() {
-            addCriterion("role is not null");
+        public Criteria andRolenameIsNotNull() {
+            addCriterion("rolename is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRoleEqualTo(String value) {
-            addCriterion("role =", value, "role");
+        public Criteria andRolenameEqualTo(String value) {
+            addCriterion("rolename =", value, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleNotEqualTo(String value) {
-            addCriterion("role <>", value, "role");
+        public Criteria andRolenameNotEqualTo(String value) {
+            addCriterion("rolename <>", value, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleGreaterThan(String value) {
-            addCriterion("role >", value, "role");
+        public Criteria andRolenameGreaterThan(String value) {
+            addCriterion("rolename >", value, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleGreaterThanOrEqualTo(String value) {
-            addCriterion("role >=", value, "role");
+        public Criteria andRolenameGreaterThanOrEqualTo(String value) {
+            addCriterion("rolename >=", value, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleLessThan(String value) {
-            addCriterion("role <", value, "role");
+        public Criteria andRolenameLessThan(String value) {
+            addCriterion("rolename <", value, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleLessThanOrEqualTo(String value) {
-            addCriterion("role <=", value, "role");
+        public Criteria andRolenameLessThanOrEqualTo(String value) {
+            addCriterion("rolename <=", value, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleLike(String value) {
-            addCriterion("role like", value, "role");
+        public Criteria andRolenameLike(String value) {
+            addCriterion("rolename like", value, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleNotLike(String value) {
-            addCriterion("role not like", value, "role");
+        public Criteria andRolenameNotLike(String value) {
+            addCriterion("rolename not like", value, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIn(List<String> values) {
-            addCriterion("role in", values, "role");
+        public Criteria andRolenameIn(List<String> values) {
+            addCriterion("rolename in", values, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleNotIn(List<String> values) {
-            addCriterion("role not in", values, "role");
+        public Criteria andRolenameNotIn(List<String> values) {
+            addCriterion("rolename not in", values, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleBetween(String value1, String value2) {
-            addCriterion("role between", value1, value2, "role");
+        public Criteria andRolenameBetween(String value1, String value2) {
+            addCriterion("rolename between", value1, value2, "rolename");
             return (Criteria) this;
         }
 
-        public Criteria andRoleNotBetween(String value1, String value2) {
-            addCriterion("role not between", value1, value2, "role");
+        public Criteria andRolenameNotBetween(String value1, String value2) {
+            addCriterion("rolename not between", value1, value2, "rolename");
             return (Criteria) this;
         }
     }

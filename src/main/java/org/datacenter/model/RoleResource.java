@@ -1,21 +1,33 @@
 package org.datacenter.model;
 
-import java.util.Date;
-import java.util.List;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class RoleResource {
-    private int id;
+    private Integer id;
 
-    private String role;
+    private String rolename;
 
     private String resource;
 
-   
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getRolename() {
+        return rolename;
+    }
+
+    public void setRolename(String rolename) {
+        this.rolename = rolename == null ? null : rolename.trim();
+    }
+
+    public String getResource() {
+        return resource;
+    }
+
+    public void setResource(String resource) {
+        this.resource = resource == null ? null : resource.trim();
+    }
 }

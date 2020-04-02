@@ -148,8 +148,9 @@ $(document).ready(function(){
        * @param {td 元素} $element
        */
       onClickCell: function(field, value, row, $element) {
-      	if(field=='username' || field=="operate") return;
+      	if((field=='username'&& value!='') || field=="operate") return;
       	$element.attr('contenteditable', true);//设置属性为可编辑
+      	$element.unbind("blur");
       	$element.blur(function(){
       		  let index = $element.parent().data('index');
                 let tdValue = $element.html();
@@ -249,9 +250,9 @@ $(document).ready(function(){
 				    		$("input[name='username']").val(data.rows.username);
 				    		$("input[name='password']").val(userinfo.password);
 				    		$("input[name='nickname']").val(userinfo.nickname);	
-				    		$("input[name='sex']").attr('checked',true);
+				    		$("input:radio[name='sex'][value='"+ userinfo.sex +"']").prop("checked", "checked");
 				    		$("input[name='nickname']").val(userinfo.nickname);	
-				    		$("img[name='headimg']").attr("src",data.rows.headsculpture);
+				    		$("img[name='avatar']").attr("src",data.rows.headsculpture);
 				    		$("input[name='telphone']").val(data.rows.telphone);
 				    		$("input[name='email']").val(data.rows.email);
 				    		$("input[name='age']").val(data.rows.age);

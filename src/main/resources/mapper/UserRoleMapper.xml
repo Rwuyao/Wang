@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="org.datacenter.model.UserRole">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="role" jdbcType="VARCHAR" property="role" />
+    <result column="rolename" jdbcType="VARCHAR" property="rolename" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, username, role
+    id, username, rolename
   </sql>
   <select id="selectByExample" parameterType="org.datacenter.model.UserRoleExample" resultMap="BaseResultMap">
     select
@@ -98,9 +98,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="org.datacenter.model.UserRole">
-    insert into user_role (id, username, role
+    insert into user_role (id, username, rolename
       )
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{rolename,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="org.datacenter.model.UserRole">
@@ -112,8 +112,8 @@
       <if test="username != null">
         username,
       </if>
-      <if test="role != null">
-        role,
+      <if test="rolename != null">
+        rolename,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -123,8 +123,8 @@
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
       </if>
-      <if test="role != null">
-        #{role,jdbcType=VARCHAR},
+      <if test="rolename != null">
+        #{rolename,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -143,8 +143,8 @@
       <if test="record.username != null">
         username = #{record.username,jdbcType=VARCHAR},
       </if>
-      <if test="record.role != null">
-        role = #{record.role,jdbcType=VARCHAR},
+      <if test="record.rolename != null">
+        rolename = #{record.rolename,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -155,7 +155,7 @@
     update user_role
     set id = #{record.id,jdbcType=INTEGER},
       username = #{record.username,jdbcType=VARCHAR},
-      role = #{record.role,jdbcType=VARCHAR}
+      rolename = #{record.rolename,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -166,8 +166,8 @@
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
       </if>
-      <if test="role != null">
-        role = #{role,jdbcType=VARCHAR},
+      <if test="rolename != null">
+        rolename = #{rolename,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -175,7 +175,7 @@
   <update id="updateByPrimaryKey" parameterType="org.datacenter.model.UserRole">
     update user_role
     set username = #{username,jdbcType=VARCHAR},
-      role = #{role,jdbcType=VARCHAR}
+      rolename = #{rolename,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

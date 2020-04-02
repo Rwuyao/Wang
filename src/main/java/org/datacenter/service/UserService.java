@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.datacenter.mapper.UserMapper;
 import org.datacenter.mapper.UserRoleMapper;
 import org.datacenter.mapper.UserprofileMapper;
+import org.datacenter.model.Role;
 import org.datacenter.model.User;
 import org.datacenter.model.UserExample;
 import org.datacenter.model.UserExample.Criteria;
@@ -31,40 +32,51 @@ public class UserService {
 	
 	 @Autowired UserprofileMapper userprofileMapper;
 	 	 
-	 
-	 public long countLinkOfUserRole(String username) {
-		 	UserRoleExample example =new UserRoleExample();
-	    	example.createCriteria().andUsernameEqualTo(username);	    	
-	    	long count=userRoleMapper.countByExample(example);
-	    	return count;
+	 public void updateUserprofile(Userprofile userprofile) {
+		 UserprofileExample example =new UserprofileExample();
+		 example.createCriteria().andUsernameEqualTo(userprofile.getUsername());			
+		 userprofileMapper.updateByExampleSelective(userprofile, example);
 	 }
-	 
-	 public User findByUserName(String username){
-	        return userMapper.findByUserName(username);
-	    }
 	 
 	 public Userprofile getUserprofile(String username) {		 		
 		 Userprofile userprofile=userprofileMapper.findByUserName(username); 
 		 return userprofile;
 	 }
 	 
-	 public void saveLinkUserAndRole(UserRole userRole) {
+	 public void saveUserprofile(Userprofile userprofile) {
+		 userprofileMapper.insert(userprofile);
+	 }
+	 
+	 public long countUserRole(String username) {
+		 	UserRoleExample example =new UserRoleExample();
+	    	example.createCriteria().andUsernameEqualTo(username);	    	
+	    	long count=userRoleMapper.countByExample(example);
+	    	return count;
+	 }
+	 
+	 public List<Role> getuserRole(int Page,int pagesize,String sort,String sortOrder,String username) {
+		 PageHelper.startPage(Page, pagesize);		 	 
+		 List<Role> userList=userMapper.getRoleByUserName(username);		 
+		 return userList;
+	 }
+	 
+	 public void saveUserRole(UserRole userRole) {
 		 userRoleMapper.insert(userRole); 
 	 }
 	 
-	 public void deleteLinkUserAndRole(UserRole userRole) {
+	 public void deleteUserRole(UserRole userRole) {
 		//删除用户角色关联
 		 	UserRoleExample example =new UserRoleExample();
 		    example.createCriteria()
 		    .andUsernameEqualTo(userRole.getUsername())
-		    .andRoleEqualTo(userRole.getRole());
+		    .andRolenameEqualTo(userRole.getRolename());		   
 		    userRoleMapper.deleteByExample(example);
 			 
 		 }
 	 
-	 public boolean hasLinkUserAndRole(String username,String rolename) {
+	 public boolean isExitsUserRole(String username,String rolename) {
 		 UserRoleExample example =new UserRoleExample();
-	    	example.createCriteria().andUsernameEqualTo(username).andRoleEqualTo(rolename);	    	
+	    	example.createCriteria().andUsernameEqualTo(username).andRolenameEqualTo(rolename);	    	
 	    	long count=userRoleMapper.countByExample(example);
 	    	if(count>0) {
 	    		return true;
@@ -73,6 +85,10 @@ public class UserService {
 	    	}
 	 }
 	 
+	 
+	 public User findByUserName(String username){
+	        return userMapper.findByUserName(username);
+	   }
 	 
 	 public List<User> getuser(int Page,int pagesize,String sort,String sortOrder,String begintime,String endtime,String username) throws ParseException{
 		 PageHelper.startPage(Page, pagesize);		 
@@ -98,7 +114,7 @@ public class UserService {
 	 }
 	 
 	    
-	 public boolean isExits(String username) {
+	 public boolean isExitsUser(String username) {
 	    	UserExample example =new UserExample();
 	    	example.createCriteria().andUsernameEqualTo(username);	    	
 	    	long count=userMapper.countByExample(example);
@@ -109,21 +125,21 @@ public class UserService {
 	    	}
 	    }
 	 
-	 public void update(User user) {
+	 public void updateUser(User user) {
 		 UserExample example =new UserExample();
 		 example.createCriteria().andUsernameEqualTo(user.getUsername());			
 		 userMapper.updateByExampleSelective(user, example);
 	 }
 	 
 	 @Transactional
-	 public void insert(User user) {
+	 public void saveUser(User user) {
 		 //注册用户
 		 userMapper.insert(user);
 		 //绑定基本用户角色
 		 userRoleMapper.insert(new UserRole(user.getUsername(),"ROLE_USER"));
 	 }
 	 
-	 public void delete(String username) {
+	 public void deleteUser(String username) {
 		//删除用户
 		UserExample example =new UserExample();
 	    example.createCriteria().andUsernameEqualTo(username);

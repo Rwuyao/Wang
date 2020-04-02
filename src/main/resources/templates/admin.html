@@ -663,8 +663,8 @@
                  		<div class="row rowmargin">              			
                  			<div class='col-sm-6 form-inline'>
                  				<span>Sex</span>
-                 				<label><input type="radio" name="sex" value="女生">女生</label>
-                 				<label><input type="radio" name="sex" checked ="checked" value="男生">男生</label>								
+                 				<label><input type="radio" name="sex" value="0">女生</label>
+                 				<label><input type="radio" name="sex" value="1">男生</label>								
                  			</div>                			             			
                  			<div class='col-sm-6 form-inline'>                				
                  			<span>Role</span>                 			                			
@@ -673,11 +673,11 @@
                  		
                  		<div class="row rowmargin">
                  			<div class='col-sm-6 form-inline' >
-                 				<img src="/images/bgimg.jpg" alt="..." name="headimg" class="img-thumbnail" style="z-index:300">                				
-                 				<button type="button" class="btn btn-dark" style="z-index:301;position:absolute;left:20px;bottom:4px;">
+                 				<img src="/images/bgimg.jpg" alt="..." name="avatar" class="img-thumbnail" style="z-index:300;width:300px;height:300px;">                				
+                 				<button type="button" id="editheadSculpture" class="btn btn-dark" style="z-index:301;position:absolute;left:20px;bottom:4px;">
                  					<i class="zmdi zmdi-edit"></i> Edit
                  				</button>
-                 				<input type="file" name="headimgfile" style="z-index:302;position:absolute;left:20px;bottom:4px;opacity:0.0;filter:Alpha(opacity=0);"/>
+                 				<input type="file" id="file" name="headSculpture"  style="z-index:302;position:absolute;left:20px;bottom:4px;opacity:0.0;filter:Alpha(opacity=0);"/>
                  			</div>
                  			<div class='col-sm-6 form-inline' >
                  			<!--角色信息toolbar  -->
@@ -688,13 +688,13 @@
                                     </button>		
 							  </div>
 							</div>
-                 			<table id="roletable" class="table table-hover"></table>
+                 			<table id="roletable" class="table table-hover" style="max-height:200px;"></table>
                  			</div>
                  		</div>
 				      </div>
 				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				        <button type="button" class="btn btn-primary">Understood</button>
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+				        <button type="button" onclick="editUserProfile()" class="btn btn-primary">提交</button>
 				      </div> 
 				    </div>
 				  </div>

@@ -240,6 +240,6 @@
   </update>
   
    <select id="findByUserName" resultMap="user" >
-       select a.username,a.headsculpture,a.telphone,a.email,a.age,c.rolename,c.description  from  userprofile a,user_role b, role c where a.username=#{username} and a.username=b.username and b.role=c.rolename 
+       select a.username,a.headsculpture,a.telphone,a.email,a.age,c.rolename,c.description  from  userprofile a,user_role b, role c where a.username=#{username} and a.username=b.username and b.rolename=c.rolename 
     </select>
 </mapper>

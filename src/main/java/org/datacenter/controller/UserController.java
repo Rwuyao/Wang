@@ -37,7 +37,7 @@ public class UserController {
 			return Result.fail("username不能为空");
 		}
 		//检查该用户是否已经被注册
-		if(userService.isExits(username)){
+		if(userService.isExitsUser(username)){
 			return Result.fail("账号已经存在");
 		}else {
 			return Result.SUCCESS();
@@ -69,17 +69,23 @@ public class UserController {
 		}	
 		
 		//检查该用户是否已经被注册
-		if(userService.isExits(username)){
+		if(userService.isExitsUser(username)){
 			return Result.fail("账号["+username+"]已被注册！！");
 		}		
-		//插入记录
+		
 		try {
 			//对密码加密
 			PasswordEncoder encoder=new BCryptPasswordEncoder();
 			user.setPassword(encoder.encode(password));		
 			//设置日期
 			user.setCreatetime(new Date());
-			userService.insert(user);
+			//创建userprofile
+			Userprofile userprofile=new Userprofile();
+			userprofile.setUsername(username);
+			userprofile.setHeadsculpture(user.getSex()==0?"/images/girl.jpg":"/images/boy.jpg");
+			//插入记录
+			userService.saveUser(user);
+			userService.saveUserprofile(userprofile);
 		}catch(Exception e) {
 			return Result.fail("账号["+username+"]注册失败，请重新尝试！！");
 		}

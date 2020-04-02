@@ -1,24 +1,25 @@
 package org.datacenter.model;
 
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserRole {
-    private int id;
+    private Integer id;
 
     private String username;
 
-    private String role;
+    private String rolename;
 
-	public UserRole(String username, String role) {
+	public UserRole(String username, String rolename) {
 		super();
 		this.username = username;
-		this.role = role;
+		this.rolename = rolename;
 	}
 
    

@@ -31,7 +31,7 @@ class WangApplicationTests {
 	
 	@Test
 	void passwordcreate() {
-		PasswordEncoder encoder=new BCryptPasswordEncoder();
+		PasswordEncoder encoder=new BCryptPasswordEncoder();		
 		System.out.println(encoder.encode("123456"));
 	}
 

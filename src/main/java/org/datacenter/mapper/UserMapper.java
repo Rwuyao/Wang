@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.datacenter.model.Role;
 import org.datacenter.model.User;
 import org.datacenter.model.UserExample;
 
@@ -11,7 +12,8 @@ import org.datacenter.model.UserExample;
 public interface  UserMapper {
 
 	User findByUserName(String username); 
-	 
+	 List<Role> getRoleByUserName(String username); 
+	
 	long countByExample(UserExample example);
 
     int deleteByExample(UserExample example);
