@@ -7,6 +7,8 @@
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="parentid" jdbcType="INTEGER" property="parentid" />
+    <result column="enable" jdbcType="TINYINT" property="enable" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, resource, description, url, createtime
+    id, resource, description, url, createtime, parentid, enable
   </sql>
   <select id="selectByExample" parameterType="org.datacenter.model.ResourceExample" resultMap="BaseResultMap">
     select
@@ -101,9 +103,11 @@
   </delete>
   <insert id="insert" parameterType="org.datacenter.model.Resource">
     insert into resource (id, resource, description, 
-      url, createtime)
+      url, createtime, parentid, 
+      enable)
     values (#{id,jdbcType=INTEGER}, #{resource,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{url,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP})
+      #{url,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{parentid,jdbcType=INTEGER}, 
+      #{enable,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="org.datacenter.model.Resource">
     insert into resource
@@ -123,6 +127,12 @@
       <if test="createtime != null">
         createtime,
       </if>
+      <if test="parentid != null">
+        parentid,
+      </if>
+      <if test="enable != null">
+        enable,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -139,6 +149,12 @@
       </if>
       <if test="createtime != null">
         #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parentid != null">
+        #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="enable != null">
+        #{enable,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
@@ -166,6 +182,12 @@
       <if test="record.createtime != null">
         createtime = #{record.createtime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.parentid != null">
+        parentid = #{record.parentid,jdbcType=INTEGER},
+      </if>
+      <if test="record.enable != null">
+        enable = #{record.enable,jdbcType=TINYINT},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,7 +199,9 @@
       resource = #{record.resource,jdbcType=VARCHAR},
       description = #{record.description,jdbcType=VARCHAR},
       url = #{record.url,jdbcType=VARCHAR},
-      createtime = #{record.createtime,jdbcType=TIMESTAMP}
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      parentid = #{record.parentid,jdbcType=INTEGER},
+      enable = #{record.enable,jdbcType=TINYINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,6 +221,12 @@
       <if test="createtime != null">
         createtime = #{createtime,jdbcType=TIMESTAMP},
       </if>
+      <if test="parentid != null">
+        parentid = #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="enable != null">
+        enable = #{enable,jdbcType=TINYINT},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -205,7 +235,9 @@
     set resource = #{resource,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
-      createtime = #{createtime,jdbcType=TIMESTAMP}
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      parentid = #{parentid,jdbcType=INTEGER},
+      enable = #{enable,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

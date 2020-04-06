@@ -5,6 +5,7 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="rolename" jdbcType="VARCHAR" property="rolename" />
     <result column="resource" jdbcType="VARCHAR" property="resource" />
+    <result column="enable" jdbcType="TINYINT" property="enable" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, rolename, resource
+    id, rolename, resource, enable
   </sql>
   <select id="selectByExample" parameterType="org.datacenter.model.RoleResourceExample" resultMap="BaseResultMap">
     select
@@ -98,10 +99,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="org.datacenter.model.RoleResource">
-    insert into role_resource (id, rolename, resource
-      )
-    values (#{id,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{resource,jdbcType=VARCHAR}
-      )
+    insert into role_resource (id, rolename, resource, 
+      enable)
+    values (#{id,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{resource,jdbcType=VARCHAR}, 
+      #{enable,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="org.datacenter.model.RoleResource">
     insert into role_resource
@@ -115,6 +116,9 @@
       <if test="resource != null">
         resource,
       </if>
+      <if test="enable != null">
+        enable,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -125,6 +129,9 @@
       </if>
       <if test="resource != null">
         #{resource,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null">
+        #{enable,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
@@ -146,6 +153,9 @@
       <if test="record.resource != null">
         resource = #{record.resource,jdbcType=VARCHAR},
       </if>
+      <if test="record.enable != null">
+        enable = #{record.enable,jdbcType=TINYINT},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -155,7 +165,8 @@
     update role_resource
     set id = #{record.id,jdbcType=INTEGER},
       rolename = #{record.rolename,jdbcType=VARCHAR},
-      resource = #{record.resource,jdbcType=VARCHAR}
+      resource = #{record.resource,jdbcType=VARCHAR},
+      enable = #{record.enable,jdbcType=TINYINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -169,13 +180,17 @@
       <if test="resource != null">
         resource = #{resource,jdbcType=VARCHAR},
       </if>
+      <if test="enable != null">
+        enable = #{enable,jdbcType=TINYINT},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="org.datacenter.model.RoleResource">
     update role_resource
     set rolename = #{rolename,jdbcType=VARCHAR},
-      resource = #{resource,jdbcType=VARCHAR}
+      resource = #{resource,jdbcType=VARCHAR},
+      enable = #{enable,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -7,6 +7,8 @@ public class RoleResource {
 
     private String resource;
 
+    private Byte enable;
+
     public Integer getId() {
         return id;
     }
@@ -29,5 +31,13 @@ public class RoleResource {
 
     public void setResource(String resource) {
         this.resource = resource == null ? null : resource.trim();
+    }
+
+    public Byte getEnable() {
+        return enable;
+    }
+
+    public void setEnable(Byte enable) {
+        this.enable = enable;
     }
 }

@@ -119,9 +119,9 @@ public class AdminController {
 	
 	
 	@RequestMapping(value="/edituserprofile",method= RequestMethod.POST)
-	private Result edituserprofile(MultipartFile multipartFile,User user,Userprofile userProfile,HttpServletRequest httpServletRequest) {
+	private Result edituserprofile(MultipartFile files,User user,Userprofile userProfile,HttpServletRequest httpServletRequest) {
 			
-		if(multipartFile!=null) {
+		if(files!=null) {
 			// 创建文件在服务器端的存放路径
 			String dir =uploadPath;	            
             File fileDir = new File(dir);
@@ -129,12 +129,12 @@ public class AdminController {
                 fileDir.mkdirs();
             }
             // 生成文件在服务器端存放的名字
-            String fileSuffix = multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf("."));
+            String fileSuffix = files.getOriginalFilename().substring(files.getOriginalFilename().lastIndexOf("."));
             String fileName = UUID.randomUUID().toString() + fileSuffix;
             File file = new File(fileDir + "/" + fileName);
             // 上传
             try {
-				multipartFile.transferTo(file);
+            	files.transferTo(file);
 			} catch (IllegalStateException | IOException e) {
 				e.printStackTrace();
 				return Result.fail("修改头像失败！！");

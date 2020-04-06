@@ -1,13 +1,17 @@
+var addflag=true;//添加角色的falg，一次只能加一行
 
 $(document).ready(function(){	   
 		$("#addrole").bind("click",function(){
-			$('#roletable').bootstrapTable('insertRow', {
-		        index: 0,
-		        row: {
-		        	rolename: '',
-		        	description: ''
-		        }
-		      })
+			if(addflag){
+				addflag=false;
+				$('#roletable').bootstrapTable('insertRow', {
+			        index: 0,
+			        row: {
+			        	rolename: '',
+			        	description: ''
+			        }
+			      })	
+			}			
 	    });	
 		//点击头像触发事件
 		$("#editheadSculpture").bind("click",function(){
@@ -29,18 +33,18 @@ $(document).ready(function(){
 	});
 
 $('#roletable').bootstrapTable({
-		 toolbar:'#roletoolbar',//工具栏
-	     toolbarAlign:'left',//工具栏的位置
+		 toolbar:'#roletoolbar',              //工具栏
+	     toolbarAlign:'left',                 //工具栏的位置
 	      pagination: true,                   //是否显示分页（*）
 	      sortable: true,                     //是否启用排序
 	      sortOrder: "asc",                   //排序方式
 	      sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
 	      pageNumber: 1,                      //初始化加载第一页，默认第一页,并记录
-	      pageSize: 10,                     //每页的记录行数（*）
+	      pageSize: 4,  					  //每页的记录行数（*）
 	      pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）          
 	     clickEdit: true, 
 	     showRefresh: true,
-	     pageSize: 4,  //每页的记录行数（*）
+	     //height: 150,                         //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度	    
 	     queryParams : function (params) {
 	           //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
 	           var temp = {   
@@ -115,6 +119,7 @@ function ajaxroleEdit(data) {
 		    success: function (data ,textStatus, jqXHR)
 		    {
 		    	if(data.code==200){
+		    		addflag=true;
 		    		 $('#roletable').bootstrapTable('refresh',{ url:'/admin/getUserRole'});
 		    	}else{
 		    		alert(data.msg);
@@ -139,6 +144,7 @@ function ajaxroleDelete(data) {
 		    success: function (data ,textStatus, jqXHR)
 		    {
 		    	if(data.code==200){ 
+		    		addflag=true;
 	                $('#roletable').bootstrapTable('refresh',{ url:'/admin/getUserRole'});
 		    	}else{
 		    		alert(data.msg);
@@ -165,7 +171,7 @@ function editUserProfile(){
 	if(files.length >0 ){
 		var file = files[0];
 		// 将文件添加到formData对象中
-		formData.append("file",file);
+		formData.append("files",file);
 	}
 	//添加用户信息
 	formData.append("username",$("input[name='username']").val());
@@ -183,6 +189,7 @@ function editUserProfile(){
 	　　processData : false,// 必须，设置不转换为string，默认为true
 	　　contentType : false,
 	　　success:function(data){
+		addflag=true;
 		 //$('#myModal').modal('hide');
 	　　},
 	　　error:function(e){

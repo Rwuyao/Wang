@@ -12,6 +12,8 @@
     <!-- Title Page-->
     <title>Dashboard 3</title>
 
+ 	<link href="css/Glyphicons.css" rel="stylesheet" media="all" />
+
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all" />
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all" />
@@ -25,8 +27,11 @@
 	<link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.min.css" />
  	<!-- Bootstrap date-->
 	<link href="vendor/bootstrap-date/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-
-
+	
+	<!-- Bootstrap treeview-->
+	<link rel="stylesheet" href="vendor/bootstrap-treeview/bootstrap-treeview.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+	
     <!-- Vendor CSS-->
     <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all" />
     <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all" />
@@ -703,7 +708,24 @@
          	</section>
           
           
-
+ 			<section class="p-t-20">
+                <div class="container">
+                <div class="row">
+                 	<div class="col-sm-4">
+						<h2>菜单配置</h2>
+						<div id="treeview" >
+						</div>
+					</div>
+                </div>                  
+         		</div>  
+         		
+         		<ul id="the-node" class="btn-group-vertical">
+					<li class="btn btn-primary">right click me 1</li>
+					<li class="btn btn-primary">right click me 2</li>
+					<li class="btn btn-primary">right click me 3</li>
+					<li class="btn btn-primary">right click me 4</li>
+				</ul>    		
+         	</section>
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
                 <div class="container">
@@ -731,6 +753,9 @@
     <script src="vendor/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
     <!-- Bootstrap date JS-->
     <script src="vendor/bootstrap-date/bootstrap-datetimepicker.min.js"></script>
+     <!-- Bootstrap treeview JS-->
+    <script src="vendor/bootstrap-treeview/bootstrap-treeview.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
     <!-- Vendor JS       -->
     <script src="vendor/slick/slick.min.js">
     </script>
@@ -754,7 +779,7 @@
 	<script src="js/admin/userprofile.js"></script>
 	
 	<script type="text/javascript">
-	
+	  $(function() {
 
 	$('#begintime').datetimepicker({
 		fontAwesome:'font-awesome',
@@ -784,7 +809,107 @@
 		minuteStep : 1,
 		format : 'yyyy-mm-dd hh:ii'
     });
-	
+
+
+	$('#treeview').treeview({data: getTree()});
+
+	//注册右键菜单的项与动作
+    $('#treeview').contextMenu({
+        selector: 'li', // 选择器，为某一类元素绑定右键菜单
+        callback: function(key, options) {
+            var m = "clicked: " + key + " on " + $(this).text();
+            window.console && console.log(m) || alert(m); 
+        },
+        items: {
+            "edit": {name: "Edit", icon: "edit"},
+            "cut": {name: "Cut", icon: "cut"},
+            "copy": {name: "Copy", icon: "copy"},
+            "paste": {name: "Paste", icon: "paste"},
+            "delete": {name: "Delete", icon: "delete"},
+            "sep1": "---------",
+            "quit": {name: "Quit", icon: function($element, key, item){ return 'context-menu-icon context-menu-icon-quit'; }}
+        }
+    });
+	  });
+	//定义树里的数据来源
+	function getTree(){
+		var tree = [
+			  {
+			    text: "Parent 1",
+			    selectable: true,
+			    state: {
+			      checked: true,
+			      disabled: false,
+			      expanded: true,
+			      selected: true
+			    },
+			    nodes: [
+			      {
+			        text: "Child 1",
+			        selectable: true,
+			        state: {
+			          checked: true,
+			          disabled: false,
+			          expanded: true,
+			          selected: true
+			        },
+			        nodes: [
+			          {
+			            text: "Grandchild 1"
+			          },
+			          {
+			            text: "Grandchild 2"
+			          }
+			        ]
+			      },
+			      {
+			        text: "Child 2"
+			      }
+			    ]
+			  },
+			  {
+			    text: "Parent 2",
+			    	selectable: true,
+			    	  state: {
+			    	    checked: true,
+			    	    disabled: false,
+			    	    expanded: true,
+			    	    selected: true
+			    	  },
+			  },
+			  {
+			    text: "Parent 3",
+			    selectable: true,
+			    state: {
+			      checked: true,
+			      disabled: false,
+			      expanded: true,
+			      selected: true
+			    },
+			  },
+			  {
+			    text: "Parent 4",
+			    selectable: true,
+			    state: {
+			      checked: true,
+			      disabled: false,
+			      expanded: true,
+			      selected: true
+			    },
+			  },
+			  {
+			    text: "Parent 5",
+			    selectable: true,
+			    state: {
+			      checked: true,
+			      disabled: false,
+			      expanded: true,
+			      selected: true
+			    },
+			  }
+			];
+	return tree;
+	}
 	
 	 
 

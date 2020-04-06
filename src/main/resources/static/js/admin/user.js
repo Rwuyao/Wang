@@ -139,7 +139,7 @@ $(document).ready(function(){
       pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）          
       showRefresh: true,                  //是否显示刷新按钮
       clickToSelect: false,                //是否启用点击选中行
-      //height: 500,                      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+      //height: 800,                      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
       uniqueId: "username",               //每一行的唯一标识，一般为主键列
       /**
        * @param {点击列的 field 名称} field
@@ -256,11 +256,13 @@ $(document).ready(function(){
 				    		$("input[name='telphone']").val(data.rows.telphone);
 				    		$("input[name='email']").val(data.rows.email);
 				    		$("input[name='age']").val(data.rows.age);
-				    		//第2步，初始化bootstrap table			    			
+				    		//第2步，初始化bootstrap table	 初始化添加按钮
+				    		addflag=true;
 				    		$('#roletable').bootstrapTable('load', {
 				    			rows : data.rows.roles,
 			                    total : data.rows.roles.length
 			                 });
+				    		
 				    		$('#myModal').modal('show');			    		
 				    	}else{
 				    		alert(data.msg);
