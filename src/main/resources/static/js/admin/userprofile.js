@@ -1,10 +1,12 @@
+(function (){
+var $table = $('#roletable');
 var addflag=true;//添加角色的falg，一次只能加一行
 
 $(document).ready(function(){	   
 		$("#addrole").bind("click",function(){
 			if(addflag){
 				addflag=false;
-				$('#roletable').bootstrapTable('insertRow', {
+				$table.bootstrapTable('insertRow', {
 			        index: 0,
 			        row: {
 			        	rolename: '',
@@ -32,7 +34,7 @@ $(document).ready(function(){
 		});
 	});
 
-$('#roletable').bootstrapTable({
+	$table.bootstrapTable({
 		 toolbar:'#roletoolbar',              //工具栏
 	     toolbarAlign:'left',                 //工具栏的位置
 	      pagination: true,                   //是否显示分页（*）
@@ -84,30 +86,30 @@ $('#roletable').bootstrapTable({
 					      'click button[title=Delete]': function (e, value, row, index) {
 					          if(confirm('此操作不可逆，请确认是否删除？')){
 					        	  row.username=$("input[name='username']").val();
-					        	  ajaxroleDelete(row);
+					        	  ajaxDelete(row);
 					          }
 					      },
 					      'click button[title=Save]': function (e, value, row, index) {
 					    	  row.username=$("input[name='username']").val();
-					    	  ajaxroleEdit(row);
+					    	  ajaxEdit(row);
 					      },					    
 				      }
 				    }
 				    ] ,
 		    onClickCell: function(field, value, row, $element) {
-	        	if(field=='operate' &&value!="") return;
+	        	if((field=='rolename' &&value!="")||field=='operate') return;
 	        	if($element.attr('contenteditable')) return;
 	        	$element.attr('contenteditable', true);//设置属性为可编辑
 	        	$element.unbind("blur");
 	        	$element.blur(function(){
 	        		  let index = $element.parent().data('index');
 	                  let tdValue = $element.html();
-	                  saveRoleData(index, field, tdValue);
+	                  saveData(index, field, tdValue);
 	        	});
 	        }, 
 	 });
 
-function ajaxroleEdit(data) {
+function ajaxEdit(data) {
 	 $.ajax({
 		    type: "put",
 		    url: '/admin/addUserRole'  ,
@@ -120,7 +122,7 @@ function ajaxroleEdit(data) {
 		    {
 		    	if(data.code==200){
 		    		addflag=true;
-		    		 $('#roletable').bootstrapTable('refresh',{ url:'/admin/getUserRole'});
+		    		$table.bootstrapTable('refresh',{ url:'/admin/getUserRole'});
 		    	}else{
 		    		alert(data.msg);
 		    	}			        
@@ -131,7 +133,7 @@ function ajaxroleEdit(data) {
 		 });
 }
 
-function ajaxroleDelete(data) {
+function ajaxDelete(data) {
 	 $.ajax({
 		    type: "delete",
 		    url: '/admin/deleteUserRole/' ,
@@ -145,7 +147,7 @@ function ajaxroleDelete(data) {
 		    {
 		    	if(data.code==200){ 
 		    		addflag=true;
-	                $('#roletable').bootstrapTable('refresh',{ url:'/admin/getUserRole'});
+		    		$table.bootstrapTable('refresh',{ url:'/admin/getUserRole'});
 		    	}else{
 		    		alert(data.msg);
 		    	}			        
@@ -155,8 +157,8 @@ function ajaxroleDelete(data) {
 		    }
 		 });
 }
-function saveRoleData(index, field, value) {
-	$('#roletable').bootstrapTable('updateCell', {
+function saveData(index, field, value) {
+	$table.bootstrapTable('updateCell', {
         index: index,       //行索引
         field: field,       //列名
         value: value        //cell值
@@ -199,3 +201,4 @@ function editUserProfile(){
 	
 	
 }
+})()

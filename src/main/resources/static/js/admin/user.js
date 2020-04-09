@@ -1,4 +1,6 @@
-	 var $table = $('#table');
+	
+(function (){
+var $table = $('#table');
 $(document).ready(function(){
 	   
 		$("#adduser").bind("click",function(){
@@ -120,7 +122,7 @@ $(document).ready(function(){
 	
 	
 	
-	$('#table').bootstrapTable({
+	  $table.bootstrapTable({
 	   
 		ajax :ajaxRequest,
 		// url: '/admin/getusers',        // 表格数据来源
@@ -194,7 +196,7 @@ $(document).ready(function(){
 				    success: function (data ,textStatus, jqXHR)
 				    {
 				    	if(data.code==200){
-			                $('#table').bootstrapTable('refresh');
+				    		$table.bootstrapTable('refresh');
 				    	}else{
 				    		alert(data.msg);
 				    	}			        
@@ -217,7 +219,7 @@ $(document).ready(function(){
 				    success: function (data ,textStatus, jqXHR)
 				    {
 				    	if(data.code==200){
-			                $('#table').bootstrapTable('refresh');
+				    		$table.bootstrapTable('refresh');
 				    	}else{
 				    		alert(data.msg);
 				    	}			        
@@ -273,3 +275,5 @@ $(document).ready(function(){
 				    }
 				 });
 		}
+		 
+})()

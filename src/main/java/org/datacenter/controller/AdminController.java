@@ -6,18 +6,19 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang3.StringUtils;
+import org.datacenter.model.Resource;
 import org.datacenter.model.Role;
 import org.datacenter.model.User;
 import org.datacenter.model.UserRole;
 import org.datacenter.model.Userprofile;
+import org.datacenter.service.ResourceService;
 import org.datacenter.service.RoleService;
 import org.datacenter.service.UserService;
 import org.datacenter.utils.Result;
 import org.datacenter.utils.ResultEnum;
+import org.datacenter.utils.TreeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,11 +27,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.alibaba.fastjson.JSON;
 
 @RestController
 @RequestMapping("/admin")
@@ -46,6 +44,60 @@ public class AdminController {
 	
 	@Autowired RoleService roleService ;
 	
+	@Autowired ResourceService resourceService;
+	
+	@RequestMapping(value="/getMenuTree",method= RequestMethod.GET)
+	public Result getMenu() {		
+		List<Resource> nodes=resourceService.getAllResource(); 			
+		return Result.SUCCESS(TreeUtil.data(nodes));		
+	}
+	
+	
+	@RequestMapping(value="/getMenuTable",method= RequestMethod.GET)
+	public Result getMenuTable(int limit,int page,String sort,String sortOrder) {		
+		List<Resource> nodes=resourceService.getAllResource(); 			
+		return Result.SUCCESS(nodes,nodes.size());		
+	}
+	
+	@RequestMapping(value="/EditMenu",method= RequestMethod.PUT )
+	public Result EditMenu(@RequestBody Resource resource) {
+		//检查必要参数是否存在		
+		if(resource==null) {
+			return Result.of(ResultEnum.Parameter_Is_Empty);
+		}
+		Integer  Parentid=resource.getParentid();
+		if(Parentid==null) {
+			return Result.fail("未获取到必要参数！！");
+		}		
+		//检查该父目录是否存在
+		if(!Parentid.equals(0)) {
+			if(!resourceService.isExitsResource(Parentid)) {
+				return Result.fail("父目录不存在！！");
+			}
+		}
+		
+		try {
+			//检查资源是否存在，存在则更新，不存在则创建
+			if(resourceService.isExitsResource(resource.getResource())) {
+				resourceService.updateResource(resource);
+			}else {
+				resourceService.saveResource(resource);
+			}				
+		}catch(Exception e) {
+			return Result.fail("创建菜单["+resource.getResource()+"]失败，请重新尝试！！");
+		}
+		return Result.SUCCESS();
+	}
+
+	@RequestMapping(value="/deleteMenu/{id}",method= RequestMethod.DELETE)
+	private Result deleteMenu(@PathVariable Integer id) {
+		try {
+			resourceService.deleteResource(id);			
+			}catch(Exception e) {
+				return Result.fail("删除失败，请重新尝试！！");
+			}
+		    return Result.SUCCESS();
+	}
 	
 	@RequestMapping(value="/getUserRole",method= RequestMethod.GET)
 	public Result getUserRole(int limit,int page,String sort,String sortOrder,String username) {

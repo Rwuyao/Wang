@@ -7,7 +7,7 @@ public class RoleResource {
 
     private String resource;
 
-    private Byte enable;
+    private Boolean enable;
 
     public Integer getId() {
         return id;
@@ -33,11 +33,11 @@ public class RoleResource {
         this.resource = resource == null ? null : resource.trim();
     }
 
-    public Byte getEnable() {
+    public Boolean getEnable() {
         return enable;
     }
 
-    public void setEnable(Byte enable) {
+    public void setEnable(Boolean enable) {
         this.enable = enable;
     }
 }

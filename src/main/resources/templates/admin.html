@@ -553,51 +553,43 @@
                 </div>
             </section>
             <!-- END BREADCRUMB-->
-
-            <!-- WELCOME-->
-            <section class="welcome p-t-10">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="title-4">Welcome back
-                                <span>John!</span>
-                            </h1>
-                            <hr class="line-seprate">
-                        </div>
-                    </div>
-                </div>
-            </section>
             
             <!-- END WELCOME-->
            <section class="p-t-20">
                 <div class="container">
-                <div class="row">
-                 	<div class='col-sm-7'>
-			             <div class="form-inline">
-			                <span>CreateTime：</span>
-			                <div class='input-group date' id='begintime'>
-			                    <span class="input-group-addon">
-			                        <span class="fa fa-calendar"></span>
-			                    </span>
-			                    <input type='text' class="form-control" />			                    
-			                </div>
-			            	<div>--</div>
-			                <div class='input-group date' id='endtime'>
-			                    <span class="input-group-addon">
-			                        <span class="fa fa-calendar"></span>
-			                    </span>
-			                    <input type='text' class="form-control" />			                    
-			                </div>
-							</div>
+	                <div  class="row">
+	                	<div class="col-sm-12" >
+	                	<h1 class="title-4">用户管理</h1>
+	                     <hr class="line-seprate" style='margin-bottom:10px;'>
+	                	</div>
 	                </div>
-	          		<div class="col-sm-5">      
-		                <div class="form-inline">
-	      				<span>UserName：</span>
-	      				<input id="username" class="form-control" type="text" placeholder="Search">
-	    				<button id="search" type="submit" class="btn btn-primary">OK</button>
-	    				</div>     				
-    				</div>
-                </div>
+	                <div class="row">
+	                 	<div class='col-sm-7'>
+				             <div class="form-inline">
+				                <span>CreateTime：</span>
+				                <div class='input-group date' id='begintime'>
+				                    <span class="input-group-addon">
+				                        <span class="fa fa-calendar"></span>
+				                    </span>
+				                    <input type='text' class="form-control" />			                    
+				                </div>
+				            	<div>--</div>
+				                <div class='input-group date' id='endtime'>
+				                    <span class="input-group-addon">
+				                        <span class="fa fa-calendar"></span>
+				                    </span>
+				                    <input type='text' class="form-control" />			                    
+				                </div>
+								</div>
+		                </div>
+		          		<div class="col-sm-5">      
+			                <div class="form-inline">
+		      				<span>UserName：</span>
+		      				<input id="username" class="form-control" type="text" placeholder="Search">
+		    				<button id="search" type="submit" class="btn btn-primary">OK</button>
+		    				</div>     				
+	    				</div>
+	                </div>
                     <div class="row">
                         <div class="col-md-12">
 	                        <!--用户信息toolbar  -->
@@ -615,8 +607,7 @@
                                         <div class="dropDownSelect2"></div>
                                     </div>		
 							  </div>
-							</div>  
-							                    
+							</div>  							                    
          					<table id="table" class="table table-hover"></table>
          				</div>
          			</div>
@@ -710,21 +701,30 @@
           
  			<section class="p-t-20">
                 <div class="container">
+	            <div  class="row">
+	                	<div class="col-sm-12" >
+	                	<h1 class="title-4">菜单配置</h1>
+	                     <hr class="line-seprate">
+	                </div>
+                </div>
                 <div class="row">
-                 	<div class="col-sm-4">
-						<h2>菜单配置</h2>
-						<div id="treeview" >
+                 	<div class="col-sm-4" id="treediv" >
+						<div id="treeview" style="height:400px;margin-top:60px;">
 						</div>
+					</div>
+					<div class="col-sm-8" >
+						<div id="menutoolbar">
+							  <div class="form-inline" role="form">
+							    	<button class="au-btn au-btn-icon au-btn--green au-btn--small" id="addmenu">
+                                        <i class="zmdi zmdi-plus"></i>add
+                                    </button>    		
+							  </div>
+							</div>  
+						<table id="menutable" class="table table-hover"></table>
 					</div>
                 </div>                  
          		</div>  
-         		
-         		<ul id="the-node" class="btn-group-vertical">
-					<li class="btn btn-primary">right click me 1</li>
-					<li class="btn btn-primary">right click me 2</li>
-					<li class="btn btn-primary">right click me 3</li>
-					<li class="btn btn-primary">right click me 4</li>
-				</ul>    		
+         		    		
          	</section>
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">
@@ -774,13 +774,14 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    
 	
 	<script src="js/admin/user.js"></script>
 	<script src="js/admin/userprofile.js"></script>
+	<script src="js/admin/menu.js"></script>
 	
 	<script type="text/javascript">
-	  $(function() {
-
+	  
 	$('#begintime').datetimepicker({
 		fontAwesome:'font-awesome',
 		language : "zh-CN",
@@ -811,108 +812,8 @@
     });
 
 
-	$('#treeview').treeview({data: getTree()});
 
-	//注册右键菜单的项与动作
-    $('#treeview').contextMenu({
-        selector: 'li', // 选择器，为某一类元素绑定右键菜单
-        callback: function(key, options) {
-            var m = "clicked: " + key + " on " + $(this).text();
-            window.console && console.log(m) || alert(m); 
-        },
-        items: {
-            "edit": {name: "Edit", icon: "edit"},
-            "cut": {name: "Cut", icon: "cut"},
-            "copy": {name: "Copy", icon: "copy"},
-            "paste": {name: "Paste", icon: "paste"},
-            "delete": {name: "Delete", icon: "delete"},
-            "sep1": "---------",
-            "quit": {name: "Quit", icon: function($element, key, item){ return 'context-menu-icon context-menu-icon-quit'; }}
-        }
-    });
-	  });
-	//定义树里的数据来源
-	function getTree(){
-		var tree = [
-			  {
-			    text: "Parent 1",
-			    selectable: true,
-			    state: {
-			      checked: true,
-			      disabled: false,
-			      expanded: true,
-			      selected: true
-			    },
-			    nodes: [
-			      {
-			        text: "Child 1",
-			        selectable: true,
-			        state: {
-			          checked: true,
-			          disabled: false,
-			          expanded: true,
-			          selected: true
-			        },
-			        nodes: [
-			          {
-			            text: "Grandchild 1"
-			          },
-			          {
-			            text: "Grandchild 2"
-			          }
-			        ]
-			      },
-			      {
-			        text: "Child 2"
-			      }
-			    ]
-			  },
-			  {
-			    text: "Parent 2",
-			    	selectable: true,
-			    	  state: {
-			    	    checked: true,
-			    	    disabled: false,
-			    	    expanded: true,
-			    	    selected: true
-			    	  },
-			  },
-			  {
-			    text: "Parent 3",
-			    selectable: true,
-			    state: {
-			      checked: true,
-			      disabled: false,
-			      expanded: true,
-			      selected: true
-			    },
-			  },
-			  {
-			    text: "Parent 4",
-			    selectable: true,
-			    state: {
-			      checked: true,
-			      disabled: false,
-			      expanded: true,
-			      selected: true
-			    },
-			  },
-			  {
-			    text: "Parent 5",
-			    selectable: true,
-			    state: {
-			      checked: true,
-			      disabled: false,
-			      expanded: true,
-			      selected: true
-			    },
-			  }
-			];
-	return tree;
-	}
 	
-	 
-
 	</script>
 </body>
 

@@ -5,7 +5,7 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="rolename" jdbcType="VARCHAR" property="rolename" />
     <result column="resource" jdbcType="VARCHAR" property="resource" />
-    <result column="enable" jdbcType="TINYINT" property="enable" />
+    <result column="enable" jdbcType="BIT" property="enable" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -102,7 +102,7 @@
     insert into role_resource (id, rolename, resource, 
       enable)
     values (#{id,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{resource,jdbcType=VARCHAR}, 
-      #{enable,jdbcType=TINYINT})
+      #{enable,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="org.datacenter.model.RoleResource">
     insert into role_resource
@@ -131,7 +131,7 @@
         #{resource,jdbcType=VARCHAR},
       </if>
       <if test="enable != null">
-        #{enable,jdbcType=TINYINT},
+        #{enable,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -154,7 +154,7 @@
         resource = #{record.resource,jdbcType=VARCHAR},
       </if>
       <if test="record.enable != null">
-        enable = #{record.enable,jdbcType=TINYINT},
+        enable = #{record.enable,jdbcType=BIT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -166,7 +166,7 @@
     set id = #{record.id,jdbcType=INTEGER},
       rolename = #{record.rolename,jdbcType=VARCHAR},
       resource = #{record.resource,jdbcType=VARCHAR},
-      enable = #{record.enable,jdbcType=TINYINT}
+      enable = #{record.enable,jdbcType=BIT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -181,7 +181,7 @@
         resource = #{resource,jdbcType=VARCHAR},
       </if>
       <if test="enable != null">
-        enable = #{enable,jdbcType=TINYINT},
+        enable = #{enable,jdbcType=BIT},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -190,7 +190,7 @@
     update role_resource
     set rolename = #{rolename,jdbcType=VARCHAR},
       resource = #{resource,jdbcType=VARCHAR},
-      enable = #{enable,jdbcType=TINYINT}
+      enable = #{enable,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -8,7 +8,7 @@
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
     <result column="parentid" jdbcType="INTEGER" property="parentid" />
-    <result column="enable" jdbcType="TINYINT" property="enable" />
+    <result column="enable" jdbcType="BIT" property="enable" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -107,7 +107,7 @@
       enable)
     values (#{id,jdbcType=INTEGER}, #{resource,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{url,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{parentid,jdbcType=INTEGER}, 
-      #{enable,jdbcType=TINYINT})
+      #{enable,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="org.datacenter.model.Resource">
     insert into resource
@@ -154,7 +154,7 @@
         #{parentid,jdbcType=INTEGER},
       </if>
       <if test="enable != null">
-        #{enable,jdbcType=TINYINT},
+        #{enable,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -186,7 +186,7 @@
         parentid = #{record.parentid,jdbcType=INTEGER},
       </if>
       <if test="record.enable != null">
-        enable = #{record.enable,jdbcType=TINYINT},
+        enable = #{record.enable,jdbcType=BIT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -201,7 +201,7 @@
       url = #{record.url,jdbcType=VARCHAR},
       createtime = #{record.createtime,jdbcType=TIMESTAMP},
       parentid = #{record.parentid,jdbcType=INTEGER},
-      enable = #{record.enable,jdbcType=TINYINT}
+      enable = #{record.enable,jdbcType=BIT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -225,7 +225,7 @@
         parentid = #{parentid,jdbcType=INTEGER},
       </if>
       <if test="enable != null">
-        enable = #{enable,jdbcType=TINYINT},
+        enable = #{enable,jdbcType=BIT},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -237,7 +237,7 @@
       url = #{url,jdbcType=VARCHAR},
       createtime = #{createtime,jdbcType=TIMESTAMP},
       parentid = #{parentid,jdbcType=INTEGER},
-      enable = #{enable,jdbcType=TINYINT}
+      enable = #{enable,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
