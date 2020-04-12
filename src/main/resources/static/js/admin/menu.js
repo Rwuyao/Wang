@@ -1,7 +1,7 @@
 (function (){
 var $table = $('#menutable');
 $(document).ready(function(){
-	
+	//绑定菜单tbale 
 	$("#addmenu").bind("click",function(){
     	$table.bootstrapTable('insertRow', {
 	        index: 0,
@@ -15,7 +15,48 @@ $(document).ready(function(){
 	        }
 	      })
     });
-	 $.ajax({
+	//初始化菜单树
+	menuTreeInit();
+});
+
+	//注册右键菜单的项与动作
+	$('#treeview').contextMenu({
+	    selector: 'li', // 选择器，为某一类元素绑定右键菜单
+	    callback: function(key, options) {
+	        if(key=="add"){
+	        	//通过当前右键的节点的nodeid获取对应的节点，不必选择后才能添加
+	        	 var parentNode=$('#treeview').treeview('getNode', $(this).attr('data-nodeid'));	        	 
+	             ajaxEdit({ text: '子节点',parentid: parentNode.id}) ;	        	        	 
+	        }else if(key=="delete"){
+	        	//获取选中的节点
+	        	var node=$('#treeview').treeview('getNode', $(this).attr('data-nodeid'));		        	
+	        	ajaxDelete({ id: node.id});        	
+	        }    	
+	    },
+	    items: {
+	        "add": {name: "Add", icon: "add"},
+	        "delete": {name: "Delete", icon: "delete" },
+	        "refresh":{name: "Refresh", icon: "loading"},
+	        "sep1": "---------",
+	        "quit": {name: "Quit", icon: function($element, key, item){ return 'context-menu-icon context-menu-icon-quit'; }}//自定义方法来设置图标
+	    }
+	});
+	 
+	//在treeview的li之外添加根节点，只需添加这一功能即可 
+	$('#treediv').contextMenu({
+	    selector: '.treeview', // 选择器，为某一类元素绑定右键菜单
+	    callback: function(key, options) {
+	    	if(key=="add"){	    		 	
+	    		 ajaxEdit({ text: '根节点',parentid: 0}) ;  
+	    	}
+	    },
+	    items: {
+		    "add": {name: "Add", icon: "add"},
+	        "refresh":{name: "Refresh", icon: "loading"},
+	    }
+	});
+	function menuTreeInit(){
+		$.ajax({
 		    type: "get",
 		    url: '/admin/getMenuTree'  ,
 		//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。			 
@@ -25,45 +66,31 @@ $(document).ready(function(){
 		    success: function (data ,textStatus, jqXHR)
 		    {
 		    	if(data.code==200){			    		
-		    		$('#treeview').treeview({data: data.rows});		                
+		    		$('#treeview').treeview({
+		    			 data: data.rows,
+		    			 levels:1,
+		    	         onNodeSelected: function(event, node) {
+		    	        	//点击以后查询该节点下的所有菜单 	    	        		    	           
+		    	        	 if(node.id){
+		    	        		 //设置参数
+			    	        	 $("#treeViewInput").val(node.id);
+			    	        	 //刷新菜单		    	        	 
+			    	        	 $table.bootstrapTable('refresh');  
+		    	        	 }	    	        	
+		    	         },
+		    	          onNodeUnselected: function (event, node) {	
+		    	        	  //清空参数
+			    	         $("#treeViewInput").val("");
+		    	          }
+		    		});		                
 		    	}			        
 		    },
 		    error:function (XMLHttpRequest, textStatus, errorThrown) {      
 		    	 params.error(); 
 		    }
 		 });
+	}
 	
-	//注册右键菜单的项与动作
-    $('#treeview').contextMenu({
-        selector: 'li', // 选择器，为某一类元素绑定右键菜单
-        callback: function(key, options) {
-            var m = "clicked: " + key + " on " + $(this).text();
-            window.console && console.log(m) || alert(m); 
-        },
-        items: {
-            "edit": {name: "Edit", icon: "edit"},
-            "cut": {name: "Cut", icon: "cut"},
-            "copy": {name: "Copy", icon: "copy"},
-            "paste": {name: "Paste", icon: "paste"},
-            "delete": {name: "Delete", icon: "delete"},
-            "sep1": "---------",
-            "quit": {name: "Quit", icon: function($element, key, item){ return 'context-menu-icon context-menu-icon-quit'; }}
-        }
-    });
-	 
-  //注册右键菜单的项与动作
-    $('#treediv').contextMenu({
-        selector: '.treeview', // 选择器，为某一类元素绑定右键菜单
-        callback: function(key, options) {
-            var m = "clicked: " + key + " on " + $(this).text();
-            window.console && console.log(m) || alert(m); 
-        },
-        items: {
-            "edit": {name: "AddRootMenu", icon: "edit"}          
-        }
-    });
-	});
-
 	$table.bootstrapTable({
 	method: 'get',
     url: "/admin/getMenuTable",//请求路径
@@ -74,11 +101,11 @@ $(document).ready(function(){
      sortOrder: "asc",                   //排序方式
      sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
      pageNumber: 1,                      //初始化加载第一页，默认第一页,并记录
-     pageSize: 4,  					  //每页的记录行数（*）
+     pageSize: 5,  					  //每页的记录行数（*）
      pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）          
     clickEdit: true, 
     showRefresh: true,
-    //height: 150,                         //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度	    
+    //height: 500,                         //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度	    
     queryParams : function (params) {
           //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
           var temp = {   
@@ -87,6 +114,9 @@ $(document).ready(function(){
               sort: params.sort,      //排序列名  
               sortOrder: params.order //排位命令（desc，asc） 
           };
+          if($("#treeViewInput").val()!=""){
+           	 temp.parentid= $("#treeViewInput").val();
+            }
           return temp;
       },
     columns: [	
@@ -143,7 +173,7 @@ $(document).ready(function(){
 			    }
 			    ] ,
 	    onClickCell: function(field, value, row, $element) {
-		       	if((value!=""&&field=='id')  || field=='operate') return;
+		       	if(field=='id' || field=='operate') return;
 		       	if($element.attr('contenteditable')) return;
 		       	$element.attr('contenteditable', true);//设置属性为可编辑
 		       	$element.unbind("blur");
@@ -168,6 +198,8 @@ $(document).ready(function(){
 			    {
 			    	if(data.code==200){
 			    		$table.bootstrapTable('refresh');
+			    		//初始化菜单树
+			    		menuTreeInit();
 			    	}else{
 			    		alert(data.msg);
 			    	}			        
@@ -191,6 +223,8 @@ $(document).ready(function(){
 			    {
 			    	if(data.code==200){
 			    		$table.bootstrapTable('refresh');
+			    		//初始化菜单树
+			    		menuTreeInit();
 			    	}else{
 			    		alert(data.msg);
 			    	}			        
@@ -209,4 +243,6 @@ $(document).ready(function(){
 	        value: value        //cell值
 	    })
 	}
+	
+	
 })()

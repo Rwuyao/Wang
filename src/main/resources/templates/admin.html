@@ -10,9 +10,8 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard 3</title>
+    <title>ADMIN</title>
 
- 	<link href="css/Glyphicons.css" rel="stylesheet" media="all" />
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all" />
@@ -583,10 +582,10 @@
 								</div>
 		                </div>
 		          		<div class="col-sm-5">      
-			                <div class="form-inline">
+			                <div class="form-inline" style="float:right">
 		      				<span>UserName：</span>
 		      				<input id="username" class="form-control" type="text" placeholder="Search">
-		    				<button id="search" type="submit" class="btn btn-primary">OK</button>
+		    				<button id="usersearch" type="submit" class="btn btn-primary">OK</button>
 		    				</div>     				
 	    				</div>
 	                </div>
@@ -677,14 +676,14 @@
                  			</div>
                  			<div class='col-sm-6 form-inline' >
                  			<!--角色信息toolbar  -->
-	                        <div id="roletoolbar">
+	                        <div id="userRoleToolbar">
 							  <div class="form-inline" role="form">
-							    	<button class="au-btn au-btn-icon au-btn--green au-btn--small" id="addrole">
+							    	<button class="au-btn au-btn-icon au-btn--green au-btn--small" id="addUserRole">
                                         <i class="zmdi zmdi-plus"></i>add
                                     </button>		
 							  </div>
 							</div>
-                 			<table id="roletable" class="table table-hover" style="max-height:200px;"></table>
+                 			<table id="userRoleTable" class="table table-hover" style="max-height:200px;"></table>
                  			</div>
                  		</div>
 				      </div>
@@ -698,6 +697,34 @@
 				</div>
          	</section>
           
+             <section class="p-t-20">
+                <div class="container">
+	                <div  class="row">
+	                	<div class="col-sm-12" >
+	                	<h1 class="title-4">角色管理</h1>
+	                     <hr class="line-seprate" style='margin-bottom:10px;'>
+	                	</div>
+	                </div>	            
+                    <div class="row">
+                        <div class="col-md-12">
+	                        <!--用户信息toolbar  -->
+	                        <div id="roletoolbar">
+							  <div class="form-inline" role="form">
+							    	<button class="au-btn au-btn-icon au-btn--green au-btn--small" style="margin-right:10px;" id="addrole">
+                                        <i class="zmdi zmdi-plus"></i>add
+                                    </button>	
+
+                                    <span>RoleName：</span>
+				      				<input id="rolename" class="form-control" type="text" placeholder="Search">
+				    				<button id="rolesearch" type="submit" class="btn btn-primary">OK</button>
+
+							  </div>
+							</div>  							                    
+         					<table id="roletable" class="table table-hover"></table>
+         				</div>
+         			</div>
+         		</div>
+         	</section>
           
  			<section class="p-t-20">
                 <div class="container">
@@ -711,6 +738,7 @@
                  	<div class="col-sm-4" id="treediv" >
 						<div id="treeview" style="height:400px;margin-top:60px;">
 						</div>
+						<input type="hidden" id="treeViewInput" />
 					</div>
 					<div class="col-sm-8" >
 						<div id="menutoolbar">
@@ -720,10 +748,11 @@
                                     </button>    		
 							  </div>
 							</div>  
-						<table id="menutable" class="table table-hover"></table>
+						<table id="menutable"  class="table table-hover" ></table>
 					</div>
                 </div>                  
          		</div>  
+         		 
          		    		
          	</section>
             <!-- COPYRIGHT-->
@@ -778,6 +807,7 @@
 	
 	<script src="js/admin/user.js"></script>
 	<script src="js/admin/userprofile.js"></script>
+	<script src="js/admin/role.js"></script>
 	<script src="js/admin/menu.js"></script>
 	
 	<script type="text/javascript">

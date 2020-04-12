@@ -1,11 +1,19 @@
 package org.datacenter.service;
 
+import java.util.Date;
 import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
 import org.datacenter.mapper.ResourceMapper;
 import org.datacenter.model.Resource;
 import org.datacenter.model.ResourceExample;
+import org.datacenter.model.Role;
+import org.datacenter.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 
 @Service
@@ -13,29 +21,23 @@ public class ResourceService {
 
 	 @Autowired ResourceMapper resourceMapper;
 	   
-	 /*
-		 * public List<User> getuser(int Page,int pagesize,String sort,String
-		 * sortOrder,String begintime,String endtime,String username) throws
-		 * ParseException{ PageHelper.startPage(Page, pagesize); SimpleDateFormat
-		 * simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//注意月份是MM
-		 * 
-		 * UserExample example =new UserExample(); Criteria criteria
-		 * =example.createCriteria();
-		 * 
-		 * if(StringUtils.isNotBlank(sort)) { example.setOrderByClause(sort +" "
-		 * +sortOrder); } if(StringUtils.isNotBlank(begintime)) {
-		 * criteria.andCreatetimeGreaterThanOrEqualTo(simpleDateFormat.parse(begintime))
-		 * ; } if(StringUtils.isNotBlank(endtime)) {
-		 * criteria.andCreatetimeLessThanOrEqualTo(simpleDateFormat.parse(endtime)); }
-		 * if(StringUtils.isNotBlank(username)) { criteria.andUsernameEqualTo(username);
-		 * } List<User> userList=userMapper.selectByExample(example); return userList; }
-		 */
+	 //未点击菜单树时，查询需进行分页处理
+	 public PageInfo<Resource> getAllResource(int Page,int pagesize,String sort,String sortOrder){
+		 PageHelper.startPage(Page, pagesize);	
+		 ResourceExample example= new ResourceExample();		 
+		 if(StringUtils.isNotBlank(sort)) {
+			 example.setOrderByClause(sort +" " +sortOrder); 
+		 }	
+		 List<Resource> rs=resourceMapper.selectByExample(example);		
+		 PageInfo<Resource> pageInfo = new PageInfo<Resource>(rs);
+		 return pageInfo;
+	 }
 	 
-	 public List<Resource> getAllResource(){
+	 //点击菜单树后，直接返回所有菜单，再根据节点id进行筛选
+	 public List<Resource> getAllResource(){	
 		 ResourceExample example= new ResourceExample();
 		 return resourceMapper.selectByExample(example);	
 	 }
-	 
 	 
 	 public List<Resource> getByResourceName(String ResourceName){
 		 ResourceExample example= new ResourceExample();
@@ -54,9 +56,12 @@ public class ResourceService {
 	    	}
 	    }
 	 
-	 public boolean isExitsResource(String ResourceName) {
+	 public boolean isExitsResource(Integer id) {
+		if(id==null) {
+			return false;
+		}
 		 ResourceExample example= new ResourceExample();
-		 example.createCriteria().andResourceEqualTo(ResourceName);    	
+		 example.createCriteria().andIdEqualTo(id);    	
 	    	long count=resourceMapper.countByExample(example);
 	    	if(count>0) {
 	    		return true;
@@ -67,7 +72,7 @@ public class ResourceService {
 	 
 	 public void updateResource(Resource resource) {
 		 ResourceExample example= new ResourceExample();
-		 example.createCriteria().andResourceEqualTo(resource.getResource()); 		 			
+		 example.createCriteria().andIdEqualTo(resource.getId()); 		 			
 		 resourceMapper.updateByExampleSelective(resource, example);
 	 }
 	 

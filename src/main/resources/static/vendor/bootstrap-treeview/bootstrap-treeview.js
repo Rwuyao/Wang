@@ -124,6 +124,8 @@
 			remove: $.proxy(this._remove, this),
 
 			// Query methods
+			getNode: $.proxy(this.getNode, this),
+			getParent: $.proxy(this.getParent, this),
 			findNodes: $.proxy(this.findNodes, this),
 			getNodes: $.proxy(this.getNodes, this), // todo document + test
 			getParents: $.proxy(this.getParents, this),
@@ -752,7 +754,25 @@
 
 		this._setChecked(node, !node.state.checked, options);
 	};
-
+	Tree.prototype.getNode = function (nodeId) {
+		return this._nodes[nodeId];
+	};
+	
+	Tree.prototype.getParent = function (identifier) {
+		var node=this.identifyNode(identifier);
+		var parentNode = node.parentId ? this._nodes[node.parentId] : false;
+		if (parentNode) {
+			return parentNode;
+		}else{
+			return 'Empty';
+		}
+	
+	};
+	Tree.prototype.identifyNode = function (identifier) {
+		return ((typeof identifier) === 'string') ?
+						this._nodes[identifier] :
+						identifier;
+	};
 	Tree.prototype._setChecked = function (node, state, options) {
 
 		// We never pass options when rendering, so the only time

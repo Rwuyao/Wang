@@ -1,9 +1,9 @@
 (function (){
-var $table = $('#roletable');
+var $table = $('#userRoleTable');
 var addflag=true;//添加角色的falg，一次只能加一行
 
 $(document).ready(function(){	   
-		$("#addrole").bind("click",function(){
+		$("#addUserRole").bind("click",function(){
 			if(addflag){
 				addflag=false;
 				$table.bootstrapTable('insertRow', {
@@ -35,14 +35,14 @@ $(document).ready(function(){
 	});
 
 	$table.bootstrapTable({
-		 toolbar:'#roletoolbar',              //工具栏
+		 toolbar:'#userRoleToolbar',              //工具栏
 	     toolbarAlign:'left',                 //工具栏的位置
 	      pagination: true,                   //是否显示分页（*）
 	      sortable: true,                     //是否启用排序
 	      sortOrder: "asc",                   //排序方式
 	      sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
 	      pageNumber: 1,                      //初始化加载第一页，默认第一页,并记录
-	      pageSize: 4,  					  //每页的记录行数（*）
+	      pageSize: 3,  					  //每页的记录行数（*）
 	      pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）          
 	     clickEdit: true, 
 	     showRefresh: true,
@@ -192,7 +192,7 @@ function editUserProfile(){
 	　　contentType : false,
 	　　success:function(data){
 		addflag=true;
-		 //$('#myModal').modal('hide');
+		 $('#myModal').modal('hide');
 	　　},
 	　　error:function(e){
 	　　　　alert("上传失败");

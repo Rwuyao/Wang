@@ -1,23 +1,20 @@
 	
 (function (){
-var $table = $('#table');
+var $table = $('#roletable');
 $(document).ready(function(){
 	   
-		$("#adduser").bind("click",function(){
+		$("#addrole").bind("click",function(){
 	    	$table.bootstrapTable('insertRow', {
 		        index: 0,
 		        row: {
-		        	username: '',
-		        	password: '',
-		        	nickname: '',
-		        	sex:'',
-		        	createtime:''
+			      rolename:'',
+			      description:'',			     
+			      createtime:''
 		        }
 		      })
 	    });
-	    
-	    
-	    $("#usersearch").bind("click",function(){
+	        
+	    $("#rolesearch").bind("click",function(){
 	    	$table.bootstrapTable('refresh');
 	    });
 	});
@@ -38,18 +35,12 @@ $(document).ready(function(){
 	        }
 	    },
 		{
-	        field: 'username',
-	        title: 'USERNAME'
+	        field: 'rolename',
+	        title: 'RoLENAME'
 	    }, {
-	        field: 'password',
-	        title: 'PASSWORD'
-	    },{
-	        field: 'nickname',
-	        title: 'NAME'
-	    },{
-	        field: 'sex',
-	        title: 'SEX' 
-	    },{
+	        field: 'description',
+	        title: 'DESCRIPTION'
+	    },{	     
 	        field: 'createtime',
 	        title: 'CREATETIME'
 	    },{
@@ -59,10 +50,7 @@ $(document).ready(function(){
 	        valign: 'middle',
 	        width: '10%',
 	    	formatter: function (value, row, index) {	    
-		      	var str='<div class="table-data-feature">' +		        			       
-				      	 '<button class="item" data-toggle="tooltip" data-placement="top" title="Edit">'+
-			            '<i class="zmdi zmdi-edit"></i>' + 
-			            '</button>' +        
+		      	var str='<div class="table-data-feature">' +		        			       				      	     
 		      			'<button class="item" data-toggle="tooltip" data-placement="top" title="Save">' + 
 				            '<i class="fa fa-floppy-o"></i>' + 
 				        '</button>' +  
@@ -83,11 +71,7 @@ $(document).ready(function(){
 		      },
 		      'click button[title=Save]': function (e, value, row, index) {
 		          ajaxEdit(row);
-		      },
-		      'click button[title=Edit]': function (e, value, row, index) {
-		          //弹出模态框进行编辑详细信息或者跳转到新页面	    	 
-		          ajaxProfileEdit(row);
-		      },
+		      }		      
 	      }
 	    }
 	    ];
@@ -96,7 +80,7 @@ $(document).ready(function(){
 	  function ajaxRequest(params) {
 			$.ajax({
 			    type: "get",
-			    url: '/admin/getusers'  ,
+			    url: '/admin/getroles'  ,
 			//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
 			    data: $.param(params.data),
 			    cache: false,
@@ -127,7 +111,7 @@ $(document).ready(function(){
 		ajax :ajaxRequest,
 		// url: '/admin/getusers',        // 表格数据来源
 	    columns: cloums ,
-	    toolbar:'#toolbar',//工具栏
+	    toolbar:'#roletoolbar',//工具栏
       toolbarAlign:'left',//工具栏的位置
       clickEdit: true,
       striped: true,                      //是否显示行间隔色
@@ -142,7 +126,7 @@ $(document).ready(function(){
       showRefresh: true,                  //是否显示刷新按钮
       clickToSelect: false,                //是否启用点击选中行
       //height: 800,                      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-      uniqueId: "username",               //每一行的唯一标识，一般为主键列
+      uniqueId: "rolename",               //每一行的唯一标识，一般为主键列
       /**
        * @param {点击列的 field 名称} field
        * @param {点击列的 value 值} value
@@ -150,7 +134,7 @@ $(document).ready(function(){
        * @param {td 元素} $element
        */
       onClickCell: function(field, value, row, $element) {
-      	if((field=='username'&& value!='') || field=="operate") return;
+      	if((field=='rolename'&& value!='') || field=="operate") return;
       	$element.attr('contenteditable', true);//设置属性为可编辑
       	$element.unbind("blur");
       	$element.blur(function(){
@@ -169,14 +153,8 @@ $(document).ready(function(){
                sortOrder: params.order //排位命令（desc，asc） 
            };
            //获取时间，如果不为空则添加进temp
-           if($("#begintime").val()!=""){
-          	 temp.begintime= $("#begintime").val();
-           }
-           if($("#endtime").val()!=""){
-          	 temp.endtime= $("#endtime").val();
-           }
-           if($("#username").val()!=""){
-          	 temp.username= $("#username").val();
+           if($("#rolename").val()!=""){
+          	 temp.rolename= $("#rolename").val();
            }
            return temp;
        },           
@@ -186,7 +164,7 @@ $(document).ready(function(){
 		 function ajaxDelete(data) {
 			 $.ajax({
 				    type: "delete",
-				    url: '/admin/deleteuser/'+ data.username ,
+				    url: '/admin/deleterole/'+ data.rolename ,
 				//  data: "para="+para,  此处data可以为 a=1&b=2类型的字符串 或 json数据。
 				    data: JSON.stringify(data),
 				    cache: false,
@@ -210,7 +188,7 @@ $(document).ready(function(){
 		 function ajaxEdit(data) {
 			 $.ajax({
 				    type: "put",
-				    url: '/admin/edituser'  ,
+				    url: '/admin/editrole'  ,
 				    data: JSON.stringify(data),
 				    cache: false,
 				    async : false,
@@ -236,44 +214,5 @@ $(document).ready(function(){
 		            field: field,       //列名
 		            value: value        //cell值
 		        })
-		    }
-		 
-		 function ajaxProfileEdit(userinfo) {
-			 $.ajax({
-				    type: "get",
-				    url: '/admin/userprofile/'+ userinfo.username  ,			    
-				    cache: false,
-				    async : false,
-				    dataType: "json",
-				    success: function (data ,textStatus, jqXHR)
-				    {
-				    	if(data.code==200){
-				    		//设置模态框的值
-				    		$("input[name='username']").val(data.rows.username);
-				    		$("input[name='password']").val(userinfo.password);
-				    		$("input[name='nickname']").val(userinfo.nickname);	
-				    		$("input:radio[name='sex'][value='"+ userinfo.sex +"']").prop("checked", "checked");
-				    		$("input[name='nickname']").val(userinfo.nickname);	
-				    		$("img[name='avatar']").attr("src",data.rows.headsculpture);
-				    		$("input[name='telphone']").val(data.rows.telphone);
-				    		$("input[name='email']").val(data.rows.email);
-				    		$("input[name='age']").val(data.rows.age);
-				    		//第2步，初始化bootstrap table	 初始化添加按钮
-				    		addflag=true;
-				    		$('#userRoleTable').bootstrapTable('load', {
-				    			rows : data.rows.roles,
-			                    total : data.rows.roles.length
-			                 });
-				    		
-				    		$('#myModal').modal('show');			    		
-				    	}else{
-				    		alert(data.msg);
-				    	}			        
-				    },
-				    error:function (XMLHttpRequest, textStatus, errorThrown) {      
-				    	//errorTips("error-tip",data.msg);
-				    }
-				 });
-		}
-		 
+		    }		 			 
 })()

@@ -30,6 +30,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.github.pagehelper.PageInfo;
+
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
@@ -46,6 +48,63 @@ public class AdminController {
 	
 	@Autowired ResourceService resourceService;
 	
+	/**
+	 *  角色配置
+	 * */
+	@RequestMapping(value="/getroles",method= RequestMethod.GET)
+	public Result getroles(int limit,int page,String sort,String sortOrder,String rolename) {
+		//检查必要参数是否存在
+		PageInfo<Role> pageinfo;
+		pageinfo = roleService.getrole(page, limit, sort, sortOrder,rolename);
+		if(pageinfo==null || pageinfo.getTotal()<=0) {	
+			return Result.fail();
+		}		
+		return Result.SUCCESS(pageinfo.getList(),(int)pageinfo.getTotal());
+	}
+	
+	@RequestMapping(value="/editrole",method= RequestMethod.PUT)
+	private Result editrole(@RequestBody Role role) {		
+		if(role==null) {
+			return Result.of(ResultEnum.Parameter_Is_Empty);
+		}
+		String rolename=role.getRolename();
+		//检查用户名和密码是否为空
+		 if(StringUtils.isNotBlank(rolename)) {
+			 Result.fail("角色名为空更新失败，请重新尝试！！");
+		 }		 				 	
+		if(roleService.isExits(rolename)){
+			//更新	
+			try {
+					roleService.updateRole(role);
+			}catch(Exception e) {
+					return Result.fail("角色["+rolename+"]更新失败，请重新尝试！！");
+			}
+		}else {
+			//注册
+			try {
+				role.setCreatetime(new Date());
+				roleService.saveRole(role);		
+			}catch(Exception e) {
+				return Result.fail("角色["+rolename+"]创建失败，请重新尝试！！");
+			}
+		}	
+	    return Result.SUCCESS();
+	}
+	
+	@RequestMapping(value="/deleterole/{rolename}",method= RequestMethod.DELETE)
+	private Result deleterole(@PathVariable String rolename) {
+		try {
+			roleService.deleteRole(rolename); 
+			}catch(Exception e) {
+				return Result.fail("角色["+rolename+"]删除失败，请重新尝试！！");
+			}
+		    return Result.SUCCESS();
+	}
+	
+	
+	/**
+	 *  菜单配置
+	 * */
 	@RequestMapping(value="/getMenuTree",method= RequestMethod.GET)
 	public Result getMenu() {		
 		List<Resource> nodes=resourceService.getAllResource(); 			
@@ -54,9 +113,18 @@ public class AdminController {
 	
 	
 	@RequestMapping(value="/getMenuTable",method= RequestMethod.GET)
-	public Result getMenuTable(int limit,int page,String sort,String sortOrder) {		
-		List<Resource> nodes=resourceService.getAllResource(); 			
-		return Result.SUCCESS(nodes,nodes.size());		
+	public Result getMenuTable(Integer  parentid,int limit,int page,String sort,String sortOrder) {		
+		List<Resource> nodes;
+		if(parentid!=null) {
+			nodes=resourceService.getAllResource(); 
+			nodes=TreeUtil.data(nodes,parentid);
+			return Result.SUCCESS(nodes,nodes.size());
+		}else {
+			PageInfo<Resource> pageinfo;
+			pageinfo=resourceService.getAllResource(page, limit,sort,sortOrder); 
+			return Result.SUCCESS(pageinfo.getList(),(int)pageinfo.getTotal());
+		}				
+				
 	}
 	
 	@RequestMapping(value="/EditMenu",method= RequestMethod.PUT )
@@ -78,9 +146,11 @@ public class AdminController {
 		
 		try {
 			//检查资源是否存在，存在则更新，不存在则创建
-			if(resourceService.isExitsResource(resource.getResource())) {
+			if(resourceService.isExitsResource(resource.getId())) {
 				resourceService.updateResource(resource);
 			}else {
+				resource.setCreatetime(new Date());
+				resource.setEnable(true);
 				resourceService.saveResource(resource);
 			}				
 		}catch(Exception e) {
@@ -99,24 +169,32 @@ public class AdminController {
 		    return Result.SUCCESS();
 	}
 	
+	/**
+	 * 用户和角色建立关系
+	 */
 	@RequestMapping(value="/getUserRole",method= RequestMethod.GET)
 	public Result getUserRole(int limit,int page,String sort,String sortOrder,String username) {
 		if(!StringUtils.isNotBlank(username)) {
 			return Result.fail("未获取到参数");
 		}
-		List<Role> role = userService.getuserRole(page, limit, sort, sortOrder, username);		
-		return Result.SUCCESS(role,role.size());		
+		PageInfo<Role> pageinfo;
+		pageinfo = userService.getuserRole(page, limit, sort, sortOrder, username);		
+		return Result.SUCCESS(pageinfo.getList(),(int)pageinfo.getTotal());		
 	}
 	
 	
 	@RequestMapping(value="/deleteUserRole",method= RequestMethod.DELETE)
 	private Result deletUserRole(@RequestBody UserRole userRole) {
+		//检查必要参数是否存在		
+		if(userRole==null) {
+			return Result.of(ResultEnum.Parameter_Is_Empty);
+		}
 		try {
 				userService.deleteUserRole(userRole);
-			}catch(Exception e) {
+		}catch(Exception e) {
 				return Result.fail("解除角色绑定["+userRole.getRolename()+"]失败，请重新尝试！！");
-			}
-		    return Result.SUCCESS();
+		}
+		return Result.SUCCESS();
 	}
 	
 	
@@ -155,9 +233,7 @@ public class AdminController {
 	
 
 	/**
-	 * 获取用户详细信息
-	 * @param username
-	 * @return
+	 * 用户详细信息配置
 	 */
 	@RequestMapping(value="/userprofile/{username}",method= RequestMethod.GET)
 	public Result findUserProfile(@PathVariable String username) {
@@ -172,7 +248,10 @@ public class AdminController {
 	
 	@RequestMapping(value="/edituserprofile",method= RequestMethod.POST)
 	private Result edituserprofile(MultipartFile files,User user,Userprofile userProfile,HttpServletRequest httpServletRequest) {
-			
+		//检查必要参数是否存在		
+		if(user==null||userProfile==null) {
+			return Result.of(ResultEnum.Parameter_Is_Empty);
+		}	
 		if(files!=null) {
 			// 创建文件在服务器端的存放路径
 			String dir =uploadPath;	            
@@ -218,28 +297,34 @@ public class AdminController {
 	    return Result.SUCCESS();
 	}
 	
-	
+	/**
+	 * 用户配置
+	 */
 	@RequestMapping(value="/getusers",method= RequestMethod.GET)
 	public Result getusers(int limit,int page,String sort,String sortOrder,String begintime,String endtime,String username) {
 		//检查必要参数是否存在
-		List<User> rows;
+		PageInfo<User> pageinfo;
 		try {
-			rows = userService.getuser(page, limit,sort, sortOrder, begintime, endtime, username);
-			if(rows==null || rows.size()<=0) {	
+			pageinfo = userService.getuser(page, limit,sort, sortOrder, begintime, endtime, username);
+			if(pageinfo==null || pageinfo.getTotal()<=0) {	
 				return Result.fail(0);
 			}
 		} catch (ParseException e) {
 			return Result.fail(0);
 		}	
 		//循环将密码设置为10个*
-		for(User u: rows) {
+		List<User> users=pageinfo.getList();
+		for(User u: users) {
 			u.setPassword("**********");
 		}
-		return Result.SUCCESS(rows,rows.size());
+		return Result.SUCCESS(users,(int)pageinfo.getTotal());
 	}
 	
 	@RequestMapping(value="/edituser",method= RequestMethod.PUT)
 	private Result edit(@RequestBody User user) {
+		if(user==null) {
+			return Result.of(ResultEnum.Parameter_Is_Empty);
+		}		
 		String username=user.getUsername();
 		String password=user.getPassword();
 		//检查用户名和密码是否为空

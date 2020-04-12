@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.datacenter.mapper.UserMapper;
 import org.datacenter.mapper.UserRoleMapper;
 import org.datacenter.mapper.UserprofileMapper;
+import org.datacenter.model.Resource;
 import org.datacenter.model.Role;
 import org.datacenter.model.User;
 import org.datacenter.model.UserExample;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 
 @Service
@@ -54,10 +56,11 @@ public class UserService {
 	    	return count;
 	 }
 	 
-	 public List<Role> getuserRole(int Page,int pagesize,String sort,String sortOrder,String username) {
+	 public PageInfo<Role>  getuserRole(int Page,int pagesize,String sort,String sortOrder,String username) {
 		 PageHelper.startPage(Page, pagesize);		 	 
-		 List<Role> userList=userMapper.getRoleByUserName(username);		 
-		 return userList;
+		 List<Role> List=userMapper.getRoleByUserName(username);		 
+		 PageInfo<Role> pageInfo = new PageInfo<Role>(List);
+		 return pageInfo;
 	 }
 	 
 	 public void saveUserRole(UserRole userRole) {
@@ -90,7 +93,7 @@ public class UserService {
 	        return userMapper.findByUserName(username);
 	   }
 	 
-	 public List<User> getuser(int Page,int pagesize,String sort,String sortOrder,String begintime,String endtime,String username) throws ParseException{
+	 public PageInfo<User> getuser(int Page,int pagesize,String sort,String sortOrder,String begintime,String endtime,String username) throws ParseException{
 		 PageHelper.startPage(Page, pagesize);		 
 		 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//注意月份是MM
 	        		 
@@ -110,7 +113,8 @@ public class UserService {
 			 criteria.andUsernameEqualTo(username);
 		 }	 
 		 List<User> userList=userMapper.selectByExample(example);
-		 return userList;
+		 PageInfo<User> pageInfo = new PageInfo<User>(userList);
+		 return pageInfo;
 	 }
 	 
 	    
